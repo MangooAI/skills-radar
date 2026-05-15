@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-05-10",
+    "source": "Skills Radar - R-004"
+  },
+  "dimensions": [
+    {
+      "key": "maturity",
+      "label": "技术成熟度",
+      "weight": 0.30,
+      "description": "概念验证到大规模应用的演进程度"
+    },
+    {
+      "key": "innovation",
+      "label": "创新性",
+      "weight": 0.25,
+      "description": "技术的原创性和前沿程度"
+    },
+    {
+      "key": "adoption",
+      "label": "落地程度",
+      "weight": 0.25,
+      "description": "在实际产品/项目中的应用广度"
+    },
+    {
+      "key": "ecosystem",
+      "label": "生态活跃度",
+      "weight": 0.20,
+      "description": "社区贡献者数量、更新频率"
+    }
+  ],
+  "categories": [
+    {
+      "id": "generation",
+      "label": "Skill 生成",
+      "label_en": "Generation",
+      "color": "#FF6B6B",
+      "technologies": [
+        {
+          "id": "trace2skill",
+          "name": "Trace2Skill",
+          "description": "从执行轨迹中自动提取可复用技能",
+          "scores": [0.55, 0.70, 0.40, 0.45],
+          "status": "active"
+        },
+        {
+          "id": "d2skill",
+          "name": "D2Skill",
+          "description": "双粒度动态技能库，驱动策略-技能协同进化",
+          "scores": [0.50, 0.75, 0.35, 0.40],
+          "status": "active"
+        },
+        {
+          "id": "skillx",
+          "name": "SkillX",
+          "description": "为Agent打造自动化构建、可复用的Skill库",
+          "scores": [0.45, 0.65, 0.30, 0.35],
+          "status": "active"
+        },
+        {
+          "id": "memento",
+          "name": "Memento-Skills",
+          "description": "让Agent自主设计Skill，实现自我进化",
+          "scores": [0.40, 0.90, 0.25, 0.30],
+          "status": "research"
+        },
+        {
+          "id": "skillrl",
+          "name": "SKILLRL",
+          "description": "通过技能的强化学习促进Agent自进化",
+          "scores": [0.45, 0.80, 0.30, 0.40],
+          "status": "active"
+        },
+        {
+          "id": "skill-creator",
+          "name": "Skill Creator 2.0",
+          "description": "Anthropic人机协作持续优化，使Agent能加载专业技能",
+          "scores": [0.60, 0.55, 0.65, 0.70],
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "id": "recall",
+      "label": "Skill 召回",
+      "label_en": "Recall/Routing",
+      "color": "#4ECDC4",
+      "technologies": [
+        {
+          "id": "skill-router",
+          "name": "SkillRouter",
+          "description": "破解大规模Skills选择难题的新范式",
+          "scores": [0.80, 0.55, 0.75, 0.60],
+          "status": "active"
+        },
+        {
+          "id": "skillorchestra",
+          "name": "SkillOrchestra",
+          "description": "基于技能的Agent路由策略，提升22.5%",
+          "scores": [0.75, 0.65, 0.70, 0.55],
+          "status": "active"
+        },
+        {
+          "id": "graph-of-skills",
+          "name": "Graph of Skills",
+          "description": "千级规模Skill库的结构感知检索方案",
+          "scores": [0.70, 0.60, 0.65, 0.50],
+          "status": "active"
+        },
+        {
+          "id": "agentskillos",
+          "name": "AgentSkillOS",
+          "description": "生态级规模下技能的组织、编排与基准测试",
+          "scores": [0.65, 0.55, 0.60, 0.65],
+          "status": "active"
+        },
+        {
+          "id": "skillnet",
+          "name": "SkillNet",
+          "description": "创建、评估与连接AI技能",
+          "scores": [0.60, 0.50, 0.55, 0.45],
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "id": "execution",
+      "label": "Skill 执行",
+      "label_en": "Execution",
+      "color": "#45B7D1",
+      "technologies": [
+        {
+          "id": "progressive-disclosure",
+          "name": "渐进式披露",
+          "description": "分阶段加载Skill内容，控制Token消耗",
+          "scores": [0.75, 0.70, 0.80, 0.65],
+          "status": "active"
+        },
+        {
+          "id": "skvm",
+          "name": "SkVM",
+          "description": "给Skills做个编译器，一次编写，到处运行",
+          "scores": [0.50, 0.80, 0.35, 0.30],
+          "status": "research"
+        },
+        {
+          "id": "execution-trace",
+          "name": "执行流图",
+          "description": "可视化Skill执行路径追踪",
+          "scores": [0.65, 0.60, 0.55, 0.50],
+          "status": "active"
+        },
+        {
+          "id": "sandbox",
+          "name": "Permission Sandboxing",
+          "description": "Skill执行时的安全沙箱隔离",
+          "scores": [0.55, 0.65, 0.50, 0.40],
+          "status": "active"
+        },
+        {
+          "id": "skill-pipeline",
+          "name": "Skill Pipeline",
+          "description": "多Skill协同的并行调度",
+          "scores": [0.45, 0.55, 0.40, 0.35],
+          "status": "research"
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "label": "Skill 评测",
+      "label_en": "Evaluation",
+      "color": "#96CEB4",
+      "technologies": [
+        {
+          "id": "skill-insight",
+          "name": "skill-insight",
+          "description": "多维评测、执行追溯、归因分析",
+          "scores": [0.85, 0.80, 0.75, 0.70],
+          "status": "active"
+        },
+        {
+          "id": "skillsbench",
+          "name": "SkillsBench",
+          "description": "衡量智能体技能在多样化任务中的表现的基准测试",
+          "scores": [0.70, 0.65, 0.60, 0.55],
+          "status": "active"
+        },
+        {
+          "id": "skillprobe",
+          "name": "SkillProbe",
+          "description": "用Skill审计Skills安全漏洞",
+          "scores": [0.65, 0.70, 0.55, 0.50],
+          "status": "active"
+        },
+        {
+          "id": "cross-eval",
+          "name": "Cross-Evaluation",
+          "description": "多Skill、多模型、多任务横向对比",
+          "scores": [0.60, 0.55, 0.50, 0.45],
+          "status": "active"
+        },
+        {
+          "id": "agent-skills-eval",
+          "name": "agent-skills-eval",
+          "description": "Agent Skills评测框架，with_skill vs without_skill对比测试",
+          "scores": [0.65, 0.70, 0.50, 0.60],
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "id": "optimization",
+      "label": "Skill 优化",
+      "label_en": "Optimization",
+      "color": "#DDA0DD",
+      "technologies": [
+        {
+          "id": "skill-insight-optimizer",
+          "name": "skill-insight Optimizer",
+          "description": "基于归因结果的自动修复",
+          "scores": [0.70, 0.75, 0.60, 0.55],
+          "status": "active"
+        },
+        {
+          "id": "skillforge",
+          "name": "SkillForge",
+          "description": "让企业级Agent Skills实现自主进化",
+          "scores": [0.55, 0.80, 0.40, 0.35],
+          "status": "research"
+        },
+        {
+          "id": "iterative-optimizer",
+          "name": "Iterative Optimizer",
+          "description": "多次评测-优化-再评测闭环",
+          "scores": [0.65, 0.60, 0.55, 0.50],
+          "status": "active"
+        },
+        {
+          "id": "skill-reducer",
+          "name": "SkillReducer",
+          "description": "为Skills瘦身40%，破解Token低效难题",
+          "scores": [0.50, 0.65, 0.45, 0.40],
+          "status": "research"
+        },
+        {
+          "id": "d2skill-opt",
+          "name": "D2Skill",
+          "description": "根据模型能力动态调整Skill策略",
+          "scores": [0.50, 0.75, 0.35, 0.40],
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "id": "management",
+      "label": "Skill 管理",
+      "label_en": "Management",
+      "color": "#B8B8B8",
+      "technologies": [
+        {
+          "id": "agentskillos-mgmt",
+          "name": "AgentSkillOS",
+          "description": "生态级技能的组织、编排与生命周期管理",
+          "scores": [0.45, 0.50, 0.40, 0.50],
+          "status": "active"
+        },
+        {
+          "id": "skillnet-mgmt",
+          "name": "SkillNet",
+          "description": "创建、评估与连接AI技能",
+          "scores": [0.40, 0.45, 0.35, 0.40],
+          "status": "active"
+        },
+        {
+          "id": "skills-standard",
+          "name": "Agent Skills 标准",
+          "description": "跨平台的Skill格式与协议标准",
+          "scores": [0.55, 0.60, 0.65, 0.70],
+          "status": "active"
+        },
+        {
+          "id": "rbac",
+          "name": "RBAC Permission",
+          "description": "基于角色的Skill权限管控",
+          "scores": [0.35, 0.40, 0.30, 0.30],
+          "status": "research"
+        },
+        {
+          "id": "git-versioning",
+          "name": "Git-based Versioning",
+          "description": "基于Git的Skill版本控制",
+          "scores": [0.60, 0.35, 0.55, 0.60],
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "categorySummary": [
+    {
+      "id": "generation",
+      "label": "Skill 生成",
+      "maturityLevel": "growing",
+      "overallScore": 0.52,
+      "status": "🟡 成长期"
+    },
+    {
+      "id": "recall",
+      "label": "Skill 召回",
+      "maturityLevel": "mature",
+      "overallScore": 0.66,
+      "status": "🟢 成熟期"
+    },
+    {
+      "id": "execution",
+      "label": "Skill 执行",
+      "maturityLevel": "growing",
+      "overallScore": 0.54,
+      "status": "🟡 成长期"
+    },
+    {
+      "id": "evaluation",
+      "label": "Skill 评测",
+      "maturityLevel": "mature",
+      "overallScore": 0.73,
+      "status": "🟢 成熟期"
+    },
+    {
+      "id": "optimization",
+      "label": "Skill 优化",
+      "maturityLevel": "growing",
+      "overallScore": 0.53,
+      "status": "🟡 成长期"
+    },
+    {
+      "id": "management",
+      "label": "Skill 管理",
+      "maturityLevel": "exploring",
+      "overallScore": 0.39,
+      "status": "🔴 探索期"
+    }
+  ]
+}
