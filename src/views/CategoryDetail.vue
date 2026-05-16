@@ -482,10 +482,10 @@ function getTechnicalAreas(id) {
 function getResources(id) {
   const resources = {
     generation: [
-      { type: 'paper', title: 'Trace2Skill 论文', description: '从执行轨迹自动提取可复用技能', url: 'https://arxiv.org/abs/2404.16275' },
-      { type: 'paper', title: 'D2Skill 论文', description: '双粒度动态技能库', url: 'https://arxiv.org/abs/2402.09942' },
-      { type: 'paper', title: 'SkillX 论文', description: '为 Agent 打造自动化 Skill 库', url: 'https://arxiv.org/abs/2403.04782' },
-      { type: 'paper', title: 'Memento-Skills 论文', description: '让 Agent 自主设计 Skill', url: 'https://arxiv.org/abs/2402.15672' }
+      { type: 'paper', title: 'Trace2Skill 论文', description: '从执行轨迹自动提取可复用技能', url: 'https://arxiv.org/abs/2603.25158' },
+      { type: 'paper', title: 'D2Skill 论文', description: '双粒度动态技能库', url: 'https://arxiv.org/abs/2603.28716' },
+      { type: 'paper', title: 'SkillX 论文', description: '为 Agent 打造自动化 Skill 库', url: 'https://arxiv.org/abs/2604.04804' },
+      { type: 'paper', title: 'Memento-Skills 论文', description: '让 Agent 自主设计 Skill', url: 'https://arxiv.org/abs/2603.18743' }
     ],
     recall: [
       { type: 'paper', title: 'SkillRouter 论文', description: '破解大规模 Skills 选择难题', url: 'https://arxiv.org/abs/2403.04782' },
