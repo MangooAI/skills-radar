@@ -260,7 +260,8 @@
               <tbody>
                 <tr v-for="tech in technologies" :key="tech.id"
                   class="border-b border-slate-100">
-                  <td class="px-4 py-3 font-medium text-slate-800">{{ tech.name }}</td>
+                  <td class="px-4 py-3 font-medium text-slate-800 hover:text-teal-600 cursor-pointer transition-colors"
+                    @click="goToTech(tech.id)">{{ tech.name }}</td>
                   <td class="px-4 py-3 text-center text-slate-600">{{ tech.scores?.[0]?.toFixed(2) }}</td>
                   <td class="px-4 py-3 text-center text-slate-600">{{ tech.scores?.[1]?.toFixed(2) }}</td>
                   <td class="px-4 py-3 text-center text-slate-600">{{ tech.scores?.[2]?.toFixed(2) }}</td>
