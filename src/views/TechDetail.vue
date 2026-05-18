@@ -215,26 +215,6 @@
           </div>
         </section>
 
-        <!-- Related Technologies -->
-        <section v-if="techContent?.relatedTechs?.length" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
-              <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-              </svg>
-            </div>
-            <h2 class="text-xl font-bold text-slate-900">相关技术</h2>
-          </div>
-
-          <div class="flex flex-wrap gap-2">
-            <span v-for="related in techContent.relatedTechs" :key="related"
-              @click="goToRelatedTech(related)"
-              class="px-3 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50 cursor-pointer transition-all">
-              {{ related }}
-            </span>
-          </div>
-        </section>
-
         <!-- Reference Links -->
         <section v-if="techContent?.references?.length" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
           <div class="flex items-center gap-3 mb-6">
@@ -343,7 +323,6 @@ function parseMarkdownContent(markdown) {
     capabilities: [],
     scenarios: [],
     limitations: [],
-    relatedTechs: [],
     references: []
   }
 
@@ -457,18 +436,6 @@ function parseMarkdownContent(markdown) {
     })
   }
 
-  // 提取相关技术
-  const relatedSection = markdown.match(/## 相关技术\s*\n([\s\S]*?)(?=## 参考资料|---)/)
-  if (relatedSection) {
-    const lines = relatedSection[1].trim().split('\n')
-    lines.forEach(line => {
-      const match = line.match(/- (.+)[:：]\s*(.+)/)
-      if (match) {
-        content.relatedTechs.push(match[1].trim())
-      }
-    })
-  }
-
   // 提取参考资料
   const referencesSection = markdown.match(/## 参考资料\s*\n([\s\S]*?)$/)
   if (referencesSection) {
@@ -515,14 +482,6 @@ function getStatusClass(status) {
     'px-3 py-1.5 rounded-lg text-sm font-medium': true,
     'bg-emerald-100 text-emerald-700': status === 'active',
     'bg-purple-100 text-purple-700': status === 'research'
-  }
-}
-
-function goToRelatedTech(name) {
-  // 尝试通过名称找到技术
-  const relatedTech = store.technologies.find(t => t.name.includes(name) || name.includes(t.name))
-  if (relatedTech) {
-    router.push(`/tech/${relatedTech.id}`)
   }
 }
 </script>
