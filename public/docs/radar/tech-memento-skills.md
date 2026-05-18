@@ -84,6 +84,6 @@ Memento-Skills 基于**Stateful Reflective Decision Process（有状态反思决
 
 ## 参考资料
 
-- [Memento-Skills 论文](https://arxiv.org/pdf/2603.18743)
-- [Memento-Skills 代码](https://github.com/Memento-Teams/Memento-Skills)
-- [Agent Skills洞察与实践 - Memento-Skills原文](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】20-Memento-Skills：让Agent自主设计Skill，实现自我进化.md)
+- [论文](https://arxiv.org/pdf/2603.18743)
+- [代码](https://github.com/Memento-Teams/Memento-Skills)
+- [详解](https://zhuanlan.zhihu.com/p/2027479618127405311)

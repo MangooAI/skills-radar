@@ -122,7 +122,7 @@
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.80 | skill-insight 已实现完整评测体系 |
+| 技术成熟度 | 0.80 | Skill-insight 已实现完整评测体系 |
 | 创新性 | 0.75 | 多维评测、归因分析具有原创性 |
 | 落地程度 | 0.70 | OpenCode、Claude Code 等已接入 |
 | 生态活跃度 | 0.65 | openEuler 社区持续维护 |
@@ -157,7 +157,7 @@
 | Skill 生成 | 🟡 成长期 | 0.52 | Trace2Skill、Skill Creator 2.0 |
 | Skill 召回 | 🟢 成熟期 | 0.66 | SkillRouter、Graph of Skills |
 | Skill 执行 | 🟡 成长期 | 0.54 | Progressive Disclosure、SkVM |
-| Skill 评测 | 🟢 成熟期 | 0.73 | skill-insight、SkillsBench |
+| Skill 评测 | 🟢 成熟期 | 0.73 | Skill-insight、SkillsBench |
 | Skill 优化 | 🟡 成长期 | 0.53 | SkillForge、Iterative Optimizer |
 | Skill 管理 | 🔴 探索期 | 0.39 | AgentSkillOS、Skills 标准 |
 

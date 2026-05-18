@@ -52,11 +52,12 @@ SkillsBench 研究揭示了以下关键发现：
 
 ## 相关技术
 
-- skill-insight：多维评测与归因
+- Skill-insight：多维评测与归因
 - SkillProbe：安全审计
 
 ---
 
 ## 参考资料
 
-- [SkillsBench 相关论文引用](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】05-集成Skills的单智能体，能否终结多智能体？.md)
+- [论文](https://arxiv.org/pdf/2602.12670)
+- [详解](https://zhuanlan.zhihu.com/p/2014393687812110022)

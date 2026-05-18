@@ -58,5 +58,6 @@ D2Skill 在消融实验中对比了 SKILLRL，发现：
 
 ## 参考资料
 
-- [SKILLRL GitHub](https://github.com/aiming-lab/SkillRL)
-- [D2Skill 论文中相关对比](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】14-D2Skill：双粒度动态技能库，驱动策略-技能协同进化的新范式.md)
+- [论文](https://arxiv.org/pdf/2602.08234)
+- [代码](https://github.com/aiming-lab/SkillRL)
+- [详解](https://zhuanlan.zhihu.com/p/2015436383439847936)

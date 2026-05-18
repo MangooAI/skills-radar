@@ -175,7 +175,7 @@
       "technologies": [
         {
           "id": "skill-insight",
-          "name": "skill-insight",
+          "name": "Skill-insight",
           "description": "多维评测、执行追溯、归因分析",
           "scores": [0.85, 0.80, 0.75, 0.70],
           "status": "active"
@@ -218,7 +218,7 @@
       "technologies": [
         {
           "id": "skill-insight-optimizer",
-          "name": "skill-insight Optimizer",
+          "name": "Skill-insight Optimizer",
           "description": "基于归因结果的自动修复",
           "scores": [0.70, 0.75, 0.60, 0.55],
           "status": "active"

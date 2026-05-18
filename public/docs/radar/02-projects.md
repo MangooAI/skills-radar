@@ -47,7 +47,7 @@
 | **Progressive Disclosure** | Anthropic | 渐进式披露，分阶段加载 Skill 内容 | - |
 | **SkVM** | 学术 | 给 Skills 做个编译器，一次编写，到处运行 | - |
 | **渐进式加载** | 框架特性 | 元数据→指令→资源三阶段加载 | - |
-| **执行流图** | skill-insight | 可视化 Skill 执行路径追踪 | - |
+| **执行流图** | Skill-insight | 可视化 Skill 执行路径追踪 | - |
 | **Permission Sandboxing** | 安全研究 | Skill 执行时的安全沙箱隔离 | - |
 | **Skill Pipeline** | 学术 | 多 Skill 协同的并行调度 | - |
 
@@ -57,7 +57,7 @@
 
 | 项目/论文 | 来源 | 核心技术 | 链接 |
 |---------|------|---------|------|
-| **skill-insight** | openEuler | 多维评测、执行追溯、归因分析 | [AtomGit](https://atomgit.com/openeuler/witty-skill-insight) |
+| **Skill-insight** | openEuler | 多维评测、执行追溯、归因分析 | [AtomGit](https://atomgit.com/openeuler/witty-skill-insight) |
 | **SkillsBench** | 学术 | 衡量智能体技能在多样化任务中的表现的基准测试 | - |
 | **SkillProbe** | 学术 | 用"魔法"打败"魔法"——用 Skill 审计 Skills | - |
 | **Cross-Evaluation** | 学术 | 多 Skill、多模型、多任务横向对比 | - |
@@ -119,7 +119,7 @@ Skill 管理     ██████░░░░░░  5 个项目
 
 | 项目 | 平台 | 核心技术 |
 |------|------|---------|
-| skill-insight | AtomGit | 多维评测、执行追踪、归因分析 |
+| Skill-insight | AtomGit | 多维评测、执行追踪、归因分析 |
 | SKILLRL | GitHub | 技能强化学习 |
 
 ### 4.3 工业实现

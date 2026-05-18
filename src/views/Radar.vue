@@ -218,20 +218,35 @@
         <!-- Selected Category Timeline -->
         <div v-if="currentCategoryTimeline" class="relative">
           <!-- Category Header -->
-          <div class="flex items-center gap-4 mb-6 p-4 rounded-xl ml-10" :style="{ backgroundColor: currentCategoryTimeline.color + '10' }">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" :style="{ backgroundColor: currentCategoryTimeline.color + '25' }">
-              <svg class="w-6 h-6" :style="{ color: currentCategoryTimeline.color }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
+          <div class="flex flex-col gap-4 mb-6 p-4 rounded-xl ml-10" :style="{ backgroundColor: currentCategoryTimeline.color + '10' }">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" :style="{ backgroundColor: currentCategoryTimeline.color + '25' }">
+                <svg class="w-6 h-6" :style="{ color: currentCategoryTimeline.color }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg">{{ currentCategoryTimeline.label }} · {{ currentCategoryTimeline.label_en }}</h3>
+                <p class="text-sm text-slate-500">技术演进路径 · {{ currentCategoryTimeline.events?.length || 0 }} 个里程碑</p>
+              </div>
             </div>
-            <div>
-              <h3 class="font-bold text-slate-800 text-lg">{{ currentCategoryTimeline.label }} · {{ currentCategoryTimeline.label_en }}</h3>
-              <p class="text-sm text-slate-500">技术演进路径 · {{ currentCategoryTimeline.events?.length || 0 }} 个里程碑</p>
+            <!-- Evolution Stages -->
+            <div v-if="currentCategoryTimeline.evolutionStages?.length" class="flex items-center gap-2 ml-16">
+              <span class="text-xs text-slate-500">演进阶段：</span>
+              <div class="flex items-center gap-1">
+                <template v-for="(stage, idx) in currentCategoryTimeline.evolutionStages" :key="stage">
+                  <span class="px-2 py-1 rounded-md text-xs font-medium"
+                    :style="{ backgroundColor: currentCategoryTimeline.color + '20', color: currentCategoryTimeline.color }">
+                    {{ stage }}
+                  </span>
+                  <span v-if="idx < currentCategoryTimeline.evolutionStages.length - 1" class="text-slate-400">→</span>
+                </template>
+              </div>
             </div>
           </div>
 
           <!-- Timeline vertical line -->
-          <div class="absolute left-3 top-[90px] w-0.5 rounded-full" :style="{ backgroundColor: currentCategoryTimeline.color + '50', height: 'calc(100% - 100px)' }"></div>
+          <div class="absolute left-3 top-[130px] w-0.5 rounded-full" :style="{ backgroundColor: currentCategoryTimeline.color + '50', height: 'calc(100% - 140px)' }"></div>
 
           <!-- Events -->
           <div class="space-y-5 ml-10">
@@ -431,32 +446,33 @@ const overallTimelineEvents = [
     title: 'Skill 时代',
     description: 'Anthropic Claude Skills 发布开创第三代能力扩展。一句话生成 Skill，生态爆发式增长达 11.8 万个。自然语言定义 Skill，非技术人员可上手。',
     milestone: '生态爆发',
-    technologies: ['skill-insight', 'SkillRouter', 'Skill Creator 2.0', 'Graph of Skills']
+    technologies: ['Skill-insight', 'SkillRouter', 'Skill Creator 2.0', 'Graph of Skills']
   },
   {
     year: '2026',
     color: '#F59E0B',
     iconType: 'rocket',
     title: 'Skill 技术深化',
-    description: 'Skill 自进化研究火热，标准化进程加速。企业级 SkillForge 实现自主进化，skill-insight 多维评测体系成熟。',
+    description: 'Skill 自进化研究火热，标准化进程加速。企业级 SkillForge 实现自主进化，Skill-insight 多维评测体系成熟。',
     milestone: '深化演进',
     technologies: ['SKILLRL', 'Memento-Skills', 'SkillForge']
   }
 ]
 
-// 分类演进时间线 - 静态数据
+// 分类演进时间线 - 静态数据（来源：04-timeline.md）
 const categoryTimelineData = [
   {
     id: 'generation',
     label: 'Skill 生成',
     label_en: 'Generation',
     color: '#FF6B6B',
+    evolutionStages: ['文档解析', '语义聚合', '自生成'],
     events: [
-      { year: '2025.03', phase: '轨迹提取', description: 'Trace2Skill：从执行轨迹中自动提取可复用技能', technologies: ['Trace2Skill'] },
-      { year: '2025.06', phase: '双粒度', description: 'D2Skill：双粒度动态技能库，驱动策略-技能协同进化', technologies: ['D2Skill'] },
-      { year: '2025.12', phase: '人机协作', description: 'Skill Creator 2.0：人机协作持续优化，Agent 能加载专业技能', technologies: ['Skill Creator 2.0'] },
-      { year: '2026.01', phase: '自进化', description: 'Memento-Skills：让 Agent 自主设计 Skill，实现自我进化', technologies: ['Memento-Skills'] },
-      { year: '2026.01', phase: '强化学习', description: 'SKILLRL：通过技能的强化学习促进 Agent 自进化', technologies: ['SKILLRL'] }
+      { year: '2025.12', phase: '人机协作', description: 'Skill Creator：一句话生成 Skill，人机协作持续优化', technologies: ['Skill Creator 2.0'] },
+      { year: '2026.02', phase: '强化学习', description: 'SKILLRL：通过技能的强化学习促进 Agent 自进化', technologies: ['SKILLRL'] },
+      { year: '2026.03', phase: '轨迹提取', description: 'Trace2Skill：从执行轨迹中自动提取可复用技能', technologies: ['Trace2Skill'] },
+      { year: '2026.03', phase: '双粒度', description: 'D2Skill：双粒度动态技能库，驱动策略-技能协同进化', technologies: ['D2Skill'] },
+      { year: '2026.03', phase: '自进化', description: 'Memento-Skills：让 Agent 自主设计 Skill，实现自我进化', technologies: ['Memento-Skills'] }
     ]
   },
   {
@@ -464,11 +480,12 @@ const categoryTimelineData = [
     label: 'Skill 召回',
     label_en: 'Recall/Routing',
     color: '#4ECDC4',
+    evolutionStages: ['粗粒度路由', '技能感知路由', '结构感知检索'],
     events: [
-      { year: '2025.02', phase: '路由突破', description: 'SkillRouter：破解大规模 Skills 选择难题的新范式', technologies: ['SkillRouter'] },
-      { year: '2025.08', phase: '策略优化', description: 'SkillOrchestra：基于技能的 Agent 路由策略，提升 22.5%', technologies: ['SkillOrchestra'] },
-      { year: '2025.09', phase: '生态编排', description: 'AgentSkillOS：生态级规模下技能的组织、编排与基准测试', technologies: ['AgentSkillOS'] },
-      { year: '2025.11', phase: '结构检索', description: 'Graph of Skills：千级规模 Skill 库的结构感知检索方案', technologies: ['Graph of Skills'] }
+      { year: '2026.02', phase: '策略优化', description: 'SkillOrchestra：基于技能的 Agent 路由策略，提升 22.5%', technologies: ['SkillOrchestra'] },
+      { year: '2026.03', phase: '生态编排', description: 'AgentSkillOS：生态级规模下技能的组织、编排与基准测试', technologies: ['AgentSkillOS'] },
+      { year: '2026.03', phase: '路由突破', description: 'SkillRouter：破解大规模 Skills 选择难题的新范式', technologies: ['SkillRouter'] },
+      { year: '2026.04', phase: '结构检索', description: 'Graph of Skills：千级规模 Skill 库的结构感知检索方案', technologies: ['Graph of Skills'] }
     ]
   },
   {
@@ -476,10 +493,11 @@ const categoryTimelineData = [
     label: 'Skill 执行',
     label_en: 'Execution',
     color: '#45B7D1',
+    evolutionStages: ['全量加载', '渐进式披露', '执行流图'],
     events: [
-      { year: '2025.01', phase: 'Token 控制', description: 'Progressive Disclosure：渐进式披露，分阶段加载控制 Token 消耗', technologies: ['渐进式披露'] },
-      { year: '2025.09', phase: '执行追踪', description: 'skill-insight 执行追踪：可视化 Skill 执行路径追踪', technologies: ['skill-insight'] },
-      { year: '2025.10', phase: '跨平台', description: 'SkVM：给 Skills 做编译器，一次编写到处运行', technologies: ['SkVM'] }
+      { year: '2025.10', phase: 'Token 控制', description: 'Progressive Disclosure：渐进式披露，分阶段加载控制 Token 消耗', technologies: ['渐进式披露'] },
+      { year: '2026.02', phase: '执行追踪', description: 'Skill-insight 执行追踪：可视化 Skill 执行路径追踪', technologies: ['Skill-insight'] },
+      { year: '2026.04', phase: '跨平台', description: 'SkVM：给 Skills 做编译器，一次编写到处运行', technologies: ['SkVM'] }
     ]
   },
   {
@@ -487,11 +505,11 @@ const categoryTimelineData = [
     label: 'Skill 评测',
     label_en: 'Evaluation',
     color: '#96CEB4',
+    evolutionStages: ['结果评测', '多维评测', '执行追溯', '智能归因'],
     events: [
-      { year: '2025.05', phase: '基准测试', description: 'SkillsBench：衡量智能体技能在多样化任务中的表现', technologies: ['SkillsBench'] },
-      { year: '2025.07', phase: '安全审计', description: 'SkillProbe：用 Skill 审计 Skills 安全漏洞', technologies: ['SkillProbe'] },
-      { year: '2025.09', phase: '多维评测', description: 'skill-insight：多维评测、执行追溯、归因分析能力落地', technologies: ['skill-insight'] },
-      { year: '2026.04', phase: '评测成熟', description: 'skill-insight 成熟：多维评测体系完整，支持 OpenCode/Claude Code', technologies: ['skill-insight'] }
+      { year: '2026.02', phase: '多维评测', description: 'Skill-insight：多维评测、执行追溯、归因分析能力落地', technologies: ['Skill-insight'] },
+      { year: '2026.02', phase: '基准测试', description: 'SkillsBench：衡量智能体技能在多样化任务中的表现', technologies: ['SkillsBench'] },
+      { year: '2026.03', phase: '安全审计', description: 'SkillProbe：用 Skill 审计 Skills 安全漏洞', technologies: ['SkillProbe'] }
     ]
   },
   {
@@ -499,10 +517,12 @@ const categoryTimelineData = [
     label: 'Skill 优化',
     label_en: 'Optimization',
     color: '#DDA0DD',
+    evolutionStages: ['迭代优化', '自优化', '递归进化'],
     events: [
-      { year: '2025.11', phase: '迭代闭环', description: 'Iterative Optimizer：多次评测-优化-再评测闭环', technologies: ['Iterative Optimizer'] },
-      { year: '2026.01', phase: '自优化', description: 'SKILLRL、Memento-Skills 等自进化论文发表', technologies: ['SKILLRL', 'Memento-Skills'] },
-      { year: '2026.03', phase: '企业进化', description: 'SkillForge：让企业级 Agent Skills 实现自主进化', technologies: ['SkillForge'] }
+      { year: '2025.12', phase: '迭代闭环', description: 'Iterative Optimizer：多次评测-优化-再评测闭环', technologies: ['Iterative Optimizer'] },
+      { year: '2026.02', phase: '强化学习', description: 'SKILLRL：通过技能的强化学习促进 Agent 自进化', technologies: ['SKILLRL'] },
+      { year: '2026.02', phase: '归因优化', description: 'Skill-insight：基于归因结果的自动修复与优化', technologies: ['Skill-insight'] },
+      { year: '2026.04', phase: '企业进化', description: 'SkillForge：让企业级 Agent Skills 实现自主进化', technologies: ['SkillForge'] }
     ]
   },
   {
@@ -510,10 +530,11 @@ const categoryTimelineData = [
     label: 'Skill 管理',
     label_en: 'Management',
     color: '#B8B8B8',
+    evolutionStages: ['版本管理', '生命周期管理', '标准化'],
     events: [
-      { year: '2025.01', phase: '标准诞生', description: 'Skills 标准诞生：跨平台的 Skill 格式与协议标准', technologies: ['Agent Skills 标准'] },
-      { year: '2025.09', phase: '生命周期', description: 'AgentSkillOS：生态级技能的组织、编排与生命周期管理', technologies: ['AgentSkillOS'] },
-      { year: '2026', phase: '权限研究', description: 'RBAC Permission：基于角色的 Skill 权限管控（研究中）', technologies: ['RBAC Permission'] }
+      { year: '2025.10', phase: '标准诞生', description: 'Skills 标准诞生：跨平台的 Skill 格式与协议标准', technologies: ['Agent Skills 标准'] },
+      { year: '2026.03', phase: '生命周期', description: 'AgentSkillOS：生态级技能的组织、编排与生命周期管理', technologies: ['AgentSkillOS'] },
+      { year: '研究中', phase: '权限管控', description: 'RBAC Permission：基于角色的 Skill 权限管控', technologies: ['RBAC Permission'] }
     ]
   }
 ]

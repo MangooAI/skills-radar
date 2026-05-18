@@ -123,6 +123,6 @@ Anthropic 提出的跨平台 Skill 格式与协议标准。
 
 ## 六、学习资源
 
-- [skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)
+- [Skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)
 - [告别Skill'盲盒'！](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】09-告别Skill'盲盒'！Skill-insight三招让Agent精准可迭代.md)
 - [浙江大学 Graph of Skills](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】21-Graph%20of%20Skills：千级规模Skill库的结构感知检索方案，成功率提升43.6%.md)

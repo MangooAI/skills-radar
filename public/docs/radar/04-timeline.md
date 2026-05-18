@@ -80,7 +80,7 @@
 | 2026.01 | Skill 自进化研究火热 | SKILLRL、Memento-Skills 等论文发表 |
 | 2026.02 | 标准化进程加速 | 跨平台 Skill 可移植性成为焦点 |
 | 2026.03 | 企业级 SkillForge | 让企业级 Agent Skills 实现自主进化 |
-| 2026.04 | skill-insight 成熟 | 多维评测体系完整，支持 OpenCode/Claude Code |
+| 2026.04 | Skill-insight 成熟 | 多维评测体系完整，支持 OpenCode/Claude Code |
 
 ---
 
@@ -95,11 +95,11 @@
  │              ├─ 语义聚合 ───────────┤
  │              ├─ 自生成 ────────────┤
  │              │                     │
- │    Trace2Skill (2025.03)           │
- │    D2Skill (2025.06)               │
- │    Memento-Skills (2026.01)        │
- │    SKILLRL (2026.01)               │
- │    Skill Creator 2.0 (2025.12)     │
+ │    Skill Creator 1.0 (2025.12)     │
+ │    SKILLRL (2026.02)               │
+ │    Trace2Skill (2026.03)           │
+ │    D2Skill (2026.03)               │
+ │    Memento-Skills (2026.03)        │
 ```
 
 ### 3.2 Skill 召回技术演进
@@ -111,10 +111,10 @@
  │              ├─ 技能感知路由 ───────┤
  │              ├─ 结构感知检索 ───────┤
  │              │                     │
- │    SkillRouter (2025.02)           │
- │    SkillOrchestra (2025.08)        │
- │    Graph of Skills (2025.11)       │
- │    AgentSkillOS (2025.09)          │
+ │    SkillOrchestra (2026.02)        │
+ │    AgentSkillOS (2026.03)          │
+ │    SkillRouter (2026.03)           │
+ │    Graph of Skills (2026.04)       │
 ```
 
 ### 3.3 Skill 执行技术演进
@@ -123,12 +123,12 @@
 2024            2025                  2026
  │              │                     │
  ├─ 全量加载 ────┼──────────────────────┤
- │              ├─ 渐进式披露 ────────┤
- │              ├─ 执行流图 ─────────┤
- │              │                     │
- │    Progressive Disclosure (2025.01)│
- │    SkVM (2025.10)                 │
- │    skill-insight 执行追踪 (2025.09)│
+ │              ├─ 渐进式披露 ─────────┤
+ │              ├─ 执行流图 ───────────┤
+ │              │                      │
+ │    Progressive Disclosure (2025.10) │
+ │    Skill-insight执行追踪 (2026.2)   │
+ │    SkVM (2026.04)                   │
 ```
 
 ### 3.4 Skill 评测技术演进
@@ -141,9 +141,9 @@
  │              ├─ 执行追溯 ───────────┤
  │              ├─ 智能归因 ───────────┤
  │              │                     │
- │    SkillsBench (2025.05)           │
- │    SkillProbe (2025.07)           │
- │    skill-insight (2025.09)        │
+ │    Skill-insight (2026.02)         │
+ │    SkillsBench (2026.02)           │
+ │    SkillProbe (2026.03)            │
 ```
 
 ### 3.5 Skill 优化技术演进
@@ -155,9 +155,10 @@
  │              ├─ 自优化 ────────────┤
  │              ├─ 递归进化 ─────────┤
  │              │                     │
- │    Iterative Optimizer (2025.11)  │
- │    SkillForge (2026.03)           │
- │    SKILLRL (2026.01)              │
+ │    Iterative Optimizer (2025.12)  │
+ │    SKILLRL (2026.02)              │
+ │    Skill-insight (2026.02)        │
+ │    SkillForge (2026.04)           │
 ```
 
 ### 3.6 Skill 管理技术演进
@@ -169,9 +170,9 @@
  │              ├─ 生命周期管理 ───────┤
  │              ├─ 标准化 ────────────┤
  │              │                     │
- │    AgentSkillOS (2025.09)         │
- │    Skills 标准 (2025.01)          │
- │    RBAC Permission (研究中)       │
+ │    Skills 标准 (2025.10)        │
+ │    AgentSkillOS (2026.03)       │
+ │    RBAC Permission (研究中)      │
 ```
 
 ---
@@ -200,4 +201,3 @@
 
 - [Agent Skills洞察与实践 - tech-blog 专栏](https://zhuanlan.zhihu.com/p/2028505867184612884)
 - [witty-skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)
-- [SKILLRL GitHub](https://github.com/aiming-lab/SkillRL)

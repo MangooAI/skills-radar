@@ -86,7 +86,7 @@
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-slate-800 text-base mb-2">{{ principle.title }}</h3>
-                  <p class="text-sm text-slate-600 leading-relaxed">{{ principle.desc }}</p>
+                  <p class="text-sm text-slate-600 leading-relaxed whitespace-pre-line">{{ principle.desc }}</p>
                 </div>
               </div>
             </div>
@@ -360,19 +360,47 @@ function parseMarkdownContent(markdown) {
   if (principlesSection) {
     const lines = principlesSection[1].trim().split('\n')
     let currentPrinciple = null
+    let collectingSubItems = false
     lines.forEach(line => {
-      const titleMatch = line.match(/- \*\*(.+?)\*\*[:：]\s*(.+)/)
-      if (titleMatch) {
+      // 匹配带编号和加粗标题的行（有描述在同一行）
+      const numberedWithTitleDesc = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]\s*(.+)/)
+      if (numberedWithTitleDesc) {
         if (currentPrinciple) content.principles.push(currentPrinciple)
-        currentPrinciple = { title: titleMatch[1], desc: titleMatch[2].trim() }
-      } else if (currentPrinciple && line.trim() && !line.startsWith('-')) {
+        currentPrinciple = { title: numberedWithTitleDesc[1], desc: numberedWithTitleDesc[2].trim() }
+        collectingSubItems = false
+        return
+      }
+
+      // 匹配带编号和加粗标题的行（描述在下一行，以冒号结尾）
+      const numberedWithTitleOnly = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]?\s*$/)
+      if (numberedWithTitleOnly) {
+        if (currentPrinciple) content.principles.push(currentPrinciple)
+        currentPrinciple = { title: numberedWithTitleOnly[1], desc: '' }
+        collectingSubItems = true
+        return
+      }
+
+      // 匹配子项目列表（以 - 开头）
+      if (collectingSubItems && line.match(/^\s*-\s*(.+)/)) {
+        const subItem = line.match(/^\s*-\s*(.+)/)
+        if (currentPrinciple) {
+          currentPrinciple.desc += (currentPrinciple.desc ? '\n' : '') + subItem[1].trim()
+        }
+        return
+      }
+
+      // 匹配普通列表项（带编号）
+      const numberedOnly = line.match(/^\d+\.\s*(.+)/)
+      if (numberedOnly) {
+        if (currentPrinciple) content.principles.push(currentPrinciple)
+        content.principles.push({ title: `步骤 ${content.principles.length + 1}`, desc: numberedOnly[1].trim() })
+        collectingSubItems = false
+        return
+      }
+
+      // 其他行
+      if (currentPrinciple && line.trim() && !line.startsWith('-') && !collectingSubItems) {
         currentPrinciple.desc += ' ' + line.trim()
-      } else if (line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]\s*(.+)/)) {
-        const m = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]\s*(.+)/)
-        content.principles.push({ title: m[1], desc: m[2].trim() })
-      } else if (line.match(/^\d+\.\s*(.+)/)) {
-        const m = line.match(/^\d+\.\s*(.+)/)
-        content.principles.push({ title: `步骤 ${content.principles.length + 1}`, desc: m[1].trim() })
       }
     })
     if (currentPrinciple) content.principles.push(currentPrinciple)

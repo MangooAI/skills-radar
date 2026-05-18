@@ -68,7 +68,7 @@
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
           <div class="text-center md:text-left">
             <p class="text-sm text-slate-600">
-              基于 <a href="https://atomgit.com/openeuler/witty-skill-insight" target="_blank" class="text-teal-600 hover:underline">skill-insight</a> 全生命周期管理方法论
+              基于 <a href="https://atomgit.com/openeuler/witty-skill-insight" target="_blank" class="text-teal-600 hover:underline">Skill-insight</a> 全生命周期管理方法论
             </p>
             <p class="text-xs text-slate-400 mt-1">MIT License | Skills Radar</p>
           </div>

@@ -88,7 +88,7 @@ Anthropic 提出的 Skill 核心架构，已被广泛采用。
 
 **适用场景**：需要跨多个 Agent 框架复用的 Skill
 
-### 3.3 执行流图（skill-insight）
+### 3.3 执行流图（Skill-insight）
 
 可视化 Skill 执行路径追踪。
 
@@ -117,4 +117,4 @@ Anthropic 提出的 Skill 核心架构，已被广泛采用。
 
 - [SkVM：给Skills做个编译器](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】16-SkVM：给Skills做个编译器，一次编写，到处运行.md)
 - [Progressive Disclosure](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】01-Agent%20Skills的定义，发展与未来.md)
-- [skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)
+- [Skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)

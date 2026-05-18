@@ -81,11 +81,11 @@
 ## 相关技术
 
 - SkVM：Skills 编译器
-- skill-insight：多维评测
+- Skill-insight：多维评测
 
 ---
 
 ## 参考资料
 
-- [SkillReducer 论文](https://arxiv.org/pdf/2603.29919)
-- [Agent Skills洞察与实践 - SkillReducer原文](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】15-SkillReducer：为Skills瘦身40%，破解Token低效难题.md)
+- [论文](https://arxiv.org/pdf/2603.29919)
+- [详解](https://zhuanlan.zhihu.com/p/2023452876459053941)

@@ -490,26 +490,26 @@ function getResources(id) {
     recall: [
       { type: 'paper', title: 'SkillRouter 论文', description: '破解大规模 Skills 选择难题', url: 'https://arxiv.org/abs/2403.04782' },
       { type: 'paper', title: 'Graph of Skills 论文', description: '千级规模 Skill 库检索', url: '#' },
-      { type: 'website', title: 'skill-insight 项目', description: 'openEuler 多维评测平台', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
+      { type: 'website', title: 'Skill-insight 项目', description: 'openEuler 多维评测平台', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
     ],
     execution: [
       { type: 'paper', title: 'SkVM 论文', description: '给 Skills 做编译器', url: '#' },
-      { type: 'website', title: 'skill-insight 项目', description: '执行流图可视化追踪', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
+      { type: 'website', title: 'Skill-insight 项目', description: '执行流图可视化追踪', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
     ],
     evaluation: [
-      { type: 'website', title: 'skill-insight 项目', description: 'openEuler 多维评测平台', url: 'https://atomgit.com/openeuler/witty-skill-insight' },
+      { type: 'website', title: 'Skill-insight 项目', description: 'openEuler 多维评测平台', url: 'https://atomgit.com/openeuler/witty-skill-insight' },
       { type: 'paper', title: 'SkillsBench 论文', description: '智能体技能基准测试', url: '#' },
       { type: 'paper', title: 'SkillProbe 论文', description: '用 Skill 审计 Skills 安全漏洞', url: '#' }
     ],
     optimization: [
       { type: 'paper', title: 'SkillForge 论文', description: '企业级 Skills 自主进化', url: '#' },
       { type: 'paper', title: 'SkillReducer 论文', description: '为 Skills 瘦身 40%', url: '#' },
-      { type: 'website', title: 'skill-insight Optimizer', description: '归因结果自动修复', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
+      { type: 'website', title: 'Skill-insight Optimizer', description: '归因结果自动修复', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
     ],
     management: [
       { type: 'paper', title: 'Agent Skills 标准规范', description: '跨平台 Skill 格式标准', url: '#' },
       { type: 'paper', title: 'AgentSkillOS 论文', description: '生态级技能组织与编排', url: '#' },
-      { type: 'website', title: 'skill-insight 项目', description: 'Skill 全生命周期管理', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
+      { type: 'website', title: 'Skill-insight 项目', description: 'Skill 全生命周期管理', url: 'https://atomgit.com/openeuler/witty-skill-insight' }
     ]
   }
   return resources[id] || []

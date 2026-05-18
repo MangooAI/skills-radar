@@ -87,6 +87,6 @@ Graph of Skills (GoS) 通过构建**Skill 依赖图**的方式，一次性返回
 
 ## 参考资料
 
-- [Graph of Skills 论文](https://arxiv.org/pdf/2604.05333)
-- [Graph of Skills 代码](https://github.com/davidliuk/graph-of-skills)
-- [Agent Skills洞察与实践 - Graph of Skills原文](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】21-Graph%20of%20Skills：千级规模Skill库的结构感知检索方案，成功率提升43.6%.md)
+- [论文](https://arxiv.org/pdf/2604.05333)
+- [代码](https://github.com/davidliuk/graph-of-skills)
+- [详解](https://zhuanlan.zhihu.com/p/2028146364282880663)

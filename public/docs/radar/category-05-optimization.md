@@ -59,7 +59,7 @@
 
 ## 三、代表技术与项目
 
-### 3.1 skill-insight Optimizer
+### 3.1 Skill-insight Optimizer
 
 基于归因结果的自动修复能力。
 
@@ -111,7 +111,7 @@
 
 ## 五、学习资源
 
-- [skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)
+- [Skill-insight 项目](https://atomgit.com/openeuler/witty-skill-insight)
 - [如何实现Skills的自进化](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】08-如何实现Skills的自进化.md)
 - [SkillForge：让企业级Agent Skills实现自主进化](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】19-SkillForge：让企业级Agent%20Skills实现自主进化.md)
 - [SkillReducer：为Skills瘦身](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】15-SkillReducer：为Skills瘦身40%，破解Token低效难题.md)

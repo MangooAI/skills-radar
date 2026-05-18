@@ -81,6 +81,6 @@ SkillX 将 Agent"做过什么"的执行轨迹转化为"怎么做"的标准化技
 
 ## 参考资料
 
-- [SkillX 论文](https://arxiv.org/pdf/2604.04804)
-- [SkillX 代码](https://github.com/zjunlp/SkillX)
-- [Agent Skills洞察与实践 - SkillX原文](../tech-blog/Agent%20Skills洞察与实践/【Agent%20Skills洞察与实践】17-SkillX：为Agent打造自动化构建、可复用的Skill库.md)
+- [论文](https://arxiv.org/pdf/2604.04804)
+- [代码](https://github.com/zjunlp/SkillX)
+- [详解](https://zhuanlan.zhihu.com/p/2025670255108797209)

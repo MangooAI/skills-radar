@@ -10,7 +10,7 @@ title: Skills 技术分类体系
 
 ## 一、概述
 
-Skills 技术分类体系基于 [skill-insight](https://atomgit.com/openeuler/witty-skill-insight) 提出的 Skill 全生命周期管理方法论，将围绕 Agent Skills 的技术分为六大阶段：
+Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/witty-skill-insight) 提出的 Skill 全生命周期管理方法论，将围绕 Agent Skills 的技术分为六大阶段：
 
 | 阶段 | 英文 | 核心问题 |
 |------|------|---------|
@@ -27,7 +27,7 @@ Skills 技术分类体系基于 [skill-insight](https://atomgit.com/openeuler/wi
 
 | 阶段 | 成熟度 | 综合评分 | 代表技术 |
 |------|--------|---------|---------|
-| Skill 评测 | 🟢 成熟期 | 0.73 | skill-insight、SkillsBench |
+| Skill 评测 | 🟢 成熟期 | 0.73 | Skill-insight、SkillsBench |
 | Skill 召回 | 🟢 成熟期 | 0.66 | SkillRouter、Graph of Skills |
 | Skill 执行 | 🟡 成长期 | 0.54 | Progressive Disclosure、SkVM |
 | Skill 优化 | 🟡 成长期 | 0.53 | SkillForge、Iterative Optimizer |
@@ -76,7 +76,7 @@ Skills 技术分类体系基于 [skill-insight](https://atomgit.com/openeuler/wi
 - 状态管控：执行过程中的状态保持与恢复
 - 权限隔离：Skill 执行时的安全沙箱
 
-**代表项目**：Progressive Disclosure、SkVM、skill-insight 执行追踪、Permission Sandboxing
+**代表项目**：Progressive Disclosure、SkVM、Skill-insight 执行追踪、Permission Sandboxing
 
 [查看完整技术文档 →](./category-03-execution.md)
 
@@ -90,7 +90,7 @@ Skills 技术分类体系基于 [skill-insight](https://atomgit.com/openeuler/wi
 - 归因分析：区分 Skill 设计问题与模型能力问题
 - 安全审计：检测 Skill 中的安全漏洞
 
-**代表项目**：skill-insight、SkillsBench、SkillProbe、agent-skills-eval、Cross-Evaluation
+**代表项目**：Skill-insight、SkillsBench、SkillProbe、agent-skills-eval、Cross-Evaluation
 
 [查看完整技术文档 →](./category-04-evaluation.md)
 
@@ -104,7 +104,7 @@ Skills 技术分类体系基于 [skill-insight](https://atomgit.com/openeuler/wi
 - 效果提升：针对性优化缺失步骤、冗余流程
 - 动态适配：根据模型能力动态调整 Skill 策略
 
-**代表项目**：skill-insight Optimizer、SkillForge、Iterative Optimizer、SkillReducer、D2Skill
+**代表项目**：Skill-insight Optimizer、SkillForge、Iterative Optimizer、SkillReducer、D2Skill
 
 [查看完整技术文档 →](./category-05-optimization.md)
 
