@@ -2,7 +2,9 @@
 
 > 追踪 Skills 技术，让 Agent 能力进化有迹可循
 
-基于 [skills-radar-web](https://github.com/wldandan/skills-radar) 项目的静态重构版本，可直接部署到 GitHub Pages。
+项目的静态重构版本，可直接部署到 GitHub Pages。
+
+访问链接：https://mangooai.github.io/skills-radar/
 
 ## 特性
 
@@ -37,7 +39,6 @@ npm run preview
 ## 数据来源
 
 - 数据文件: `public/data/radar-data.json`
-- 文档来源: https://github.com/wldandan/skills-radar
 
 ## 项目结构
 
