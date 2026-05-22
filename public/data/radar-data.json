@@ -8,7 +8,7 @@
     {
       "key": "maturity",
       "label": "技术成熟度",
-      "weight": 0.30,
+      "weight": 0.3,
       "description": "概念验证到大规模应用的演进程度"
     },
     {
@@ -26,7 +26,7 @@
     {
       "key": "ecosystem",
       "label": "生态活跃度",
-      "weight": 0.20,
+      "weight": 0.2,
       "description": "社区贡献者数量、更新频率"
     }
   ],
@@ -41,42 +41,84 @@
           "id": "trace2skill",
           "name": "Trace2Skill",
           "description": "从执行轨迹中自动提取可复用技能",
-          "scores": [0.55, 0.70, 0.40, 0.45],
+          "scores": [
+            0.55,
+            0.7,
+            0.4,
+            0.45
+          ],
           "status": "active"
         },
         {
           "id": "d2skill",
           "name": "D2Skill",
           "description": "双粒度动态技能库，驱动策略-技能协同进化",
-          "scores": [0.50, 0.75, 0.35, 0.40],
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.4
+          ],
           "status": "active"
         },
         {
           "id": "skillx",
           "name": "SkillX",
           "description": "为Agent打造自动化构建、可复用的Skill库",
-          "scores": [0.45, 0.65, 0.30, 0.35],
+          "scores": [
+            0.45,
+            0.65,
+            0.3,
+            0.35
+          ],
           "status": "active"
         },
         {
           "id": "memento",
           "name": "Memento-Skills",
           "description": "让Agent自主设计Skill，实现自我进化",
-          "scores": [0.40, 0.90, 0.25, 0.30],
+          "scores": [
+            0.4,
+            0.9,
+            0.25,
+            0.3
+          ],
           "status": "research"
         },
         {
           "id": "skillrl",
           "name": "SKILLRL",
           "description": "通过技能的强化学习促进Agent自进化",
-          "scores": [0.45, 0.80, 0.30, 0.40],
+          "scores": [
+            0.45,
+            0.8,
+            0.3,
+            0.4
+          ],
           "status": "active"
         },
         {
           "id": "skill-creator",
           "name": "Skill Creator 2.0",
           "description": "Anthropic人机协作持续优化，使Agent能加载专业技能",
-          "scores": [0.60, 0.55, 0.65, 0.70],
+          "scores": [
+            0.6,
+            0.55,
+            0.65,
+            0.7
+          ],
+          "status": "active"
+        },
+        {
+          "id": "skillsynth",
+          "name": "SkillSynth",
+          "description": "基于技能图谱的终端Agent训练数据自动合成框架",
+          "scores": [
+            0.55,
+            0.8,
+            0.4,
+            0.4
+          ],
           "status": "active"
         }
       ]
@@ -91,35 +133,60 @@
           "id": "skill-router",
           "name": "SkillRouter",
           "description": "破解大规模Skills选择难题的新范式",
-          "scores": [0.80, 0.55, 0.75, 0.60],
+          "scores": [
+            0.8,
+            0.55,
+            0.75,
+            0.6
+          ],
           "status": "active"
         },
         {
           "id": "skillorchestra",
           "name": "SkillOrchestra",
           "description": "基于技能的Agent路由策略，提升22.5%",
-          "scores": [0.75, 0.65, 0.70, 0.55],
+          "scores": [
+            0.75,
+            0.65,
+            0.7,
+            0.55
+          ],
           "status": "active"
         },
         {
           "id": "graph-of-skills",
           "name": "Graph of Skills",
           "description": "千级规模Skill库的结构感知检索方案",
-          "scores": [0.70, 0.60, 0.65, 0.50],
+          "scores": [
+            0.7,
+            0.6,
+            0.65,
+            0.5
+          ],
           "status": "active"
         },
         {
           "id": "agentskillos",
           "name": "AgentSkillOS",
           "description": "生态级规模下技能的组织、编排与基准测试",
-          "scores": [0.65, 0.55, 0.60, 0.65],
+          "scores": [
+            0.65,
+            0.55,
+            0.6,
+            0.65
+          ],
           "status": "active"
         },
         {
           "id": "skillnet",
           "name": "SkillNet",
           "description": "创建、评估与连接AI技能",
-          "scores": [0.60, 0.50, 0.55, 0.45],
+          "scores": [
+            0.6,
+            0.5,
+            0.55,
+            0.45
+          ],
           "status": "active"
         }
       ]
@@ -134,35 +201,72 @@
           "id": "progressive-disclosure",
           "name": "渐进式披露",
           "description": "分阶段加载Skill内容，控制Token消耗",
-          "scores": [0.75, 0.70, 0.80, 0.65],
+          "scores": [
+            0.75,
+            0.7,
+            0.8,
+            0.65
+          ],
           "status": "active"
         },
         {
           "id": "skvm",
           "name": "SkVM",
           "description": "给Skills做个编译器，一次编写，到处运行",
-          "scores": [0.50, 0.80, 0.35, 0.30],
+          "scores": [
+            0.5,
+            0.8,
+            0.35,
+            0.3
+          ],
           "status": "research"
         },
         {
           "id": "execution-trace",
           "name": "执行流图",
           "description": "可视化Skill执行路径追踪",
-          "scores": [0.65, 0.60, 0.55, 0.50],
+          "scores": [
+            0.65,
+            0.6,
+            0.55,
+            0.5
+          ],
           "status": "active"
         },
         {
           "id": "sandbox",
           "name": "Permission Sandboxing",
           "description": "Skill执行时的安全沙箱隔离",
-          "scores": [0.55, 0.65, 0.50, 0.40],
+          "scores": [
+            0.55,
+            0.65,
+            0.5,
+            0.4
+          ],
           "status": "active"
         },
         {
           "id": "skill-pipeline",
           "name": "Skill Pipeline",
           "description": "多Skill协同的并行调度",
-          "scores": [0.45, 0.55, 0.40, 0.35],
+          "scores": [
+            0.45,
+            0.55,
+            0.4,
+            0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "fileasstate",
+          "name": "File-as-State",
+          "description": "基于文件系统的轻量级Agent自动化方案，用文件状态替代重型框架",
+          "scores": [
+            0.35,
+            0.5,
+            0.3,
+            0.35
+          ],
           "status": "research"
         }
       ]
@@ -177,35 +281,60 @@
           "id": "skill-insight",
           "name": "Skill-insight",
           "description": "多维评测、执行追溯、归因分析",
-          "scores": [0.85, 0.80, 0.75, 0.70],
+          "scores": [
+            0.85,
+            0.8,
+            0.75,
+            0.7
+          ],
           "status": "active"
         },
         {
           "id": "skillsbench",
           "name": "SkillsBench",
           "description": "衡量智能体技能在多样化任务中的表现的基准测试",
-          "scores": [0.70, 0.65, 0.60, 0.55],
+          "scores": [
+            0.7,
+            0.65,
+            0.6,
+            0.55
+          ],
           "status": "active"
         },
         {
           "id": "skillprobe",
           "name": "SkillProbe",
           "description": "用Skill审计Skills安全漏洞",
-          "scores": [0.65, 0.70, 0.55, 0.50],
+          "scores": [
+            0.65,
+            0.7,
+            0.55,
+            0.5
+          ],
           "status": "active"
         },
         {
           "id": "cross-eval",
           "name": "Cross-Evaluation",
           "description": "多Skill、多模型、多任务横向对比",
-          "scores": [0.60, 0.55, 0.50, 0.45],
+          "scores": [
+            0.6,
+            0.55,
+            0.5,
+            0.45
+          ],
           "status": "active"
         },
         {
           "id": "agent-skills-eval",
           "name": "agent-skills-eval",
           "description": "Agent Skills评测框架，with_skill vs without_skill对比测试",
-          "scores": [0.65, 0.70, 0.50, 0.60],
+          "scores": [
+            0.65,
+            0.7,
+            0.5,
+            0.6
+          ],
           "status": "active"
         }
       ]
@@ -220,35 +349,60 @@
           "id": "skill-insight-optimizer",
           "name": "Skill-insight Optimizer",
           "description": "基于归因结果的自动修复",
-          "scores": [0.70, 0.75, 0.60, 0.55],
+          "scores": [
+            0.7,
+            0.75,
+            0.6,
+            0.55
+          ],
           "status": "active"
         },
         {
           "id": "skillforge",
           "name": "SkillForge",
           "description": "让企业级Agent Skills实现自主进化",
-          "scores": [0.55, 0.80, 0.40, 0.35],
+          "scores": [
+            0.55,
+            0.8,
+            0.4,
+            0.35
+          ],
           "status": "research"
         },
         {
           "id": "iterative-optimizer",
           "name": "Iterative Optimizer",
           "description": "多次评测-优化-再评测闭环",
-          "scores": [0.65, 0.60, 0.55, 0.50],
+          "scores": [
+            0.65,
+            0.6,
+            0.55,
+            0.5
+          ],
           "status": "active"
         },
         {
           "id": "skill-reducer",
           "name": "SkillReducer",
           "description": "为Skills瘦身40%，破解Token低效难题",
-          "scores": [0.50, 0.65, 0.45, 0.40],
+          "scores": [
+            0.5,
+            0.65,
+            0.45,
+            0.4
+          ],
           "status": "research"
         },
         {
           "id": "d2skill-opt",
           "name": "D2Skill",
           "description": "根据模型能力动态调整Skill策略",
-          "scores": [0.50, 0.75, 0.35, 0.40],
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.4
+          ],
           "status": "active"
         }
       ]
@@ -263,35 +417,60 @@
           "id": "agentskillos-mgmt",
           "name": "AgentSkillOS",
           "description": "生态级技能的组织、编排与生命周期管理",
-          "scores": [0.45, 0.50, 0.40, 0.50],
+          "scores": [
+            0.45,
+            0.5,
+            0.4,
+            0.5
+          ],
           "status": "active"
         },
         {
           "id": "skillnet-mgmt",
           "name": "SkillNet",
           "description": "创建、评估与连接AI技能",
-          "scores": [0.40, 0.45, 0.35, 0.40],
+          "scores": [
+            0.4,
+            0.45,
+            0.35,
+            0.4
+          ],
           "status": "active"
         },
         {
           "id": "skills-standard",
           "name": "Agent Skills 标准",
           "description": "跨平台的Skill格式与协议标准",
-          "scores": [0.55, 0.60, 0.65, 0.70],
+          "scores": [
+            0.55,
+            0.6,
+            0.65,
+            0.7
+          ],
           "status": "active"
         },
         {
           "id": "rbac",
           "name": "RBAC Permission",
           "description": "基于角色的Skill权限管控",
-          "scores": [0.35, 0.40, 0.30, 0.30],
+          "scores": [
+            0.35,
+            0.4,
+            0.3,
+            0.3
+          ],
           "status": "research"
         },
         {
           "id": "git-versioning",
           "name": "Git-based Versioning",
           "description": "基于Git的Skill版本控制",
-          "scores": [0.60, 0.35, 0.55, 0.60],
+          "scores": [
+            0.6,
+            0.35,
+            0.55,
+            0.6
+          ],
           "status": "active"
         }
       ]
@@ -302,43 +481,43 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.52,
+      "overallScore": 0.51,
       "status": "🟡 成长期"
     },
     {
       "id": "recall",
       "label": "Skill 召回",
       "maturityLevel": "mature",
-      "overallScore": 0.66,
+      "overallScore": 0.62,
       "status": "🟢 成熟期"
     },
     {
       "id": "execution",
       "label": "Skill 执行",
       "maturityLevel": "growing",
-      "overallScore": 0.54,
+      "overallScore": 0.53,
       "status": "🟡 成长期"
     },
     {
       "id": "evaluation",
       "label": "Skill 评测",
       "maturityLevel": "mature",
-      "overallScore": 0.73,
+      "overallScore": 0.63,
       "status": "🟢 成熟期"
     },
     {
       "id": "optimization",
       "label": "Skill 优化",
       "maturityLevel": "growing",
-      "overallScore": 0.53,
+      "overallScore": 0.56,
       "status": "🟡 成长期"
     },
     {
       "id": "management",
       "label": "Skill 管理",
-      "maturityLevel": "exploring",
-      "overallScore": 0.39,
-      "status": "🔴 探索期"
+      "maturityLevel": "growing",
+      "overallScore": 0.47,
+      "status": "🟡 成长期"
     }
   ]
 }
