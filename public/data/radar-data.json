@@ -120,6 +120,18 @@
             0.4
           ],
           "status": "active"
+        },
+        {
+          "id": "adareasoner",
+          "name": "AdaReasoner",
+          "description": "将工具使用作为通用推理Skill学习的多模态模型家族，7B模型平均提升24.9%并超越GPT-5",
+          "scores": [
+            0.55,
+            0.75,
+            0.4,
+            0.4
+          ],
+          "status": "active"
         }
       ]
     },
@@ -481,7 +493,7 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.51,
+      "overallScore": 0.52,
       "status": "🟡 成长期"
     },
     {
