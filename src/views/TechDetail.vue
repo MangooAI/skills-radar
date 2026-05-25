@@ -290,6 +290,7 @@ const techDocMapping = {
   'skillrl': 'tech-skillrl',
   'skill-creator': 'tech-skillcreator',
   'skillsynth': 'tech-skillsynth',
+  'adareasoner': 'tech-adareasoner',
   'skill-router': 'tech-skillrouter',
   'skillorchestra': 'tech-skillorchestra',
   'graph-of-skills': 'tech-graph-of-skills',
