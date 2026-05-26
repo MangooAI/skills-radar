@@ -63,6 +63,12 @@
         <!-- 一句话描述 -->
         <section v-if="techContent?.summary" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
           <p class="text-slate-700 leading-relaxed text-lg" v-html="parseInlineMarkdown(techContent.summary)"></p>
+          <!-- 一句话描述部分的overview图片 -->
+          <img v-if="techContent?.summaryImage"
+            :src="imagePath(techContent.summaryImage)"
+            :alt="tech.name + ' overview'"
+            class="w-full rounded-xl shadow-lg mt-4 cursor-zoom-in hover:opacity-90 transition-opacity"
+            @click="openEnlargedImage(techContent.summaryImage)" />
         </section>
 
         <!-- Core Implementation Section -->
@@ -97,7 +103,8 @@
             <img v-for="img in techContent.images" :key="img.filename"
               :src="imagePath(img.filename)"
               :alt="img.alt"
-              class="w-full rounded-xl shadow-lg" />
+              class="w-full rounded-xl shadow-lg cursor-zoom-in hover:opacity-90 transition-opacity"
+              @click="openEnlargedImage(img.filename)" />
           </div>
         </section>
 
@@ -265,6 +272,21 @@
       <h2 class="text-lg font-medium text-slate-800 mb-2">未找到该技术</h2>
       <router-link to="/" class="text-teal-600 hover:text-teal-700 font-medium">返回首页</router-link>
     </main>
+
+    <!-- 图片放大模态框 -->
+    <div v-if="enlargedImage"
+      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center cursor-zoom-out"
+      @click="closeEnlargedImage">
+      <img :src="enlargedImage"
+        class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-zoom-out"
+        @click="closeEnlargedImage" />
+      <button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+        @click="closeEnlargedImage">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -290,6 +312,16 @@ function imagePath(filename) {
   return `${basePath}/docs/radar/images/${filename}`
 }
 
+// 打开图片放大
+function openEnlargedImage(filename) {
+  enlargedImage.value = imagePath(filename)
+}
+
+// 关闭图片放大
+function closeEnlargedImage() {
+  enlargedImage.value = null
+}
+
 const route = useRoute()
 const router = useRouter()
 const store = useRadarStore()
@@ -297,6 +329,7 @@ const store = useRadarStore()
 const tech = ref(null)
 const loading = ref(true)
 const techContent = ref(null)
+const enlargedImage = ref(null)  // 放大显示的图片URL
 
 const dimensions = [
   { key: 'maturity', label: '技术成熟度', weight: 0.30 },
@@ -315,11 +348,17 @@ const techDocMapping = {
   'skill-creator': 'tech-skillcreator',
   'skillsynth': 'tech-skillsynth',
   'adareasoner': 'tech-adareasoner',
+  'skillgen': 'tech-skillgen',
   'skill-router': 'tech-skillrouter',
   'skillorchestra': 'tech-skillorchestra',
   'graph-of-skills': 'tech-graph-of-skills',
   'agentskillos': 'tech-agentskillos',
   'skillnet': 'tech-skillnet',
+  'grasp': 'tech-grasp',
+  'ssl': 'tech-ssl',
+  'goskills': 'tech-goskills',
+  'skillgraph': 'tech-skillgraph',
+  'skillrae': 'tech-skillrae',
   'progressive-disclosure': 'tech-progressive-disclosure',
   'skvm': 'tech-skvm',
   'execution-trace': 'tech-execution-trace',
@@ -331,16 +370,21 @@ const techDocMapping = {
   'skillprobe': 'tech-skillprobe',
   'cross-eval': 'tech-cross-eval',
   'agent-skills-eval': 'tech-agent-skills-eval',
+  'skillflow': 'tech-skillflow',
   'skill-insight-optimizer': 'tech-skillinsight-optimizer',
   'skillforge': 'tech-skillforge',
   'iterative-optimizer': 'tech-iterative-optimizer',
   'skill-reducer': 'tech-skillreducer',
   'd2skill-opt': 'tech-d2skill',
+  'dual-mcts': 'tech-mcts',
+  'skillclaw': 'tech-skillclaw',
   'agentskillos-mgmt': 'tech-agentskillos-mgmt',
-  'skillnet-mgmt': 'tech-skillnet-mgmt',
+  'skillnet-mgmt': 'tech-skillnet',
   'skills-standard': 'tech-skills-standard',
   'rbac': 'tech-rbac',
-  'git-versioning': 'tech-git-versioning'
+  'git-versioning': 'tech-git-versioning',
+  'skillos': 'tech-skillos',
+  'slim': 'tech-slim'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
@@ -363,6 +407,7 @@ const categoryLink = computed(() => `/category/${tech.value?.categoryId}`)
 function parseMarkdownContent(markdown) {
   const content = {
     summary: '',
+    summaryImage: '',  // 一句话描述部分的overview图片
     principles: [],
     coreImplementationHtml: '',  // 核心实现的完整HTML（包含图片）
     images: [],  // 提取的图片列表
@@ -381,12 +426,22 @@ function parseMarkdownContent(markdown) {
   // 提取一句话描述（新格式：## 一句话描述 章节）
   const summarySection = normalizedMarkdown.match(/## 一句话描述\s*\n([\s\S]*?)(?=\n---|\n## )/)
   if (summarySection) {
-    // 提取第一段文本，忽略来源、链接等元信息
+    // 提取第一段文本和overview图片
     const lines = summarySection[1].trim().split('\n')
     let summaryText = ''
     for (const line of lines) {
+      // 检查是否有overview图片（格式：![](images/xxx_overview.png)）
+      const imgMatch = line.match(/!\[.*\]\(images\/(.+_overview\.png)\)/)
+      if (imgMatch) {
+        content.summaryImage = imgMatch[1]
+        continue  // 继续处理，不中断
+      }
+      // 遇到其他图片、来源、链接等元信息则跳过
+      if (line.match(/!\[.*\]\(images\/.*\.png\)/) && !line.includes('_overview')) {
+        continue  // 跳过非overview图片
+      }
       if (line.startsWith('**来源**:') || line.startsWith('**链接**:') || line.startsWith('- ') || line.trim() === '') {
-        break
+        continue  // 跳过元信息行
       }
       summaryText += line.trim() + ' '
     }
