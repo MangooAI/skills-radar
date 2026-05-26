@@ -278,8 +278,8 @@
       class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center cursor-zoom-out"
       @click="closeEnlargedImage">
       <img :src="enlargedImage"
-        class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-        @click.stop />
+        class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-zoom-out"
+        @click="closeEnlargedImage" />
       <button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
         @click="closeEnlargedImage">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
