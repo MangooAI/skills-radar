@@ -398,18 +398,22 @@ function parseMarkdownContent(markdown) {
   // 提取一句话描述（新格式：## 一句话描述 章节）
   const summarySection = normalizedMarkdown.match(/## 一句话描述\s*\n([\s\S]*?)(?=\n---|\n## )/)
   if (summarySection) {
-    // 提取第一段文本，忽略来源、链接等元信息
+    // 提取第一段文本和overview图片
     const lines = summarySection[1].trim().split('\n')
     let summaryText = ''
     for (const line of lines) {
-      // 检查是否有overview图片
+      // 检查是否有overview图片（格式：![](images/xxx_overview.png)）
       const imgMatch = line.match(/!\[.*\]\(images\/(.+_overview\.png)\)/)
       if (imgMatch) {
         content.summaryImage = imgMatch[1]
-        break
+        continue  // 继续处理，不中断
       }
-      if (line.startsWith('**来源**:') || line.startsWith('**链接**:') || line.startsWith('- ') || line.trim() === '' || line.match(/!\[.*\]/)) {
-        break
+      // 遇到其他图片、来源、链接等元信息则跳过
+      if (line.match(/!\[.*\]\(images\/.*\.png\)/) && !line.includes('_overview')) {
+        continue  // 跳过非overview图片
+      }
+      if (line.startsWith('**来源**:') || line.startsWith('**链接**:') || line.startsWith('- ') || line.trim() === '') {
+        continue  // 跳过元信息行
       }
       summaryText += line.trim() + ' '
     }
