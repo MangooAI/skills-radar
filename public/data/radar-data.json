@@ -228,7 +228,7 @@
         {
           "id": "ssl",
           "name": "SSL",
-          "description": "Self-supervised Learning for Skill Retrieval",
+          "description": "三层表示法解耦调度、结构、逻辑信号，提升技能发现与风险评估效果",
           "scores": [
             0.5,
             0.7,
