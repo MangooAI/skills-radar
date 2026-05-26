@@ -67,7 +67,8 @@
           <img v-if="techContent?.summaryImage"
             :src="imagePath(techContent.summaryImage)"
             :alt="tech.name + ' overview'"
-            class="w-full rounded-xl shadow-lg mt-4" />
+            class="w-full rounded-xl shadow-lg mt-4 cursor-zoom-in hover:opacity-90 transition-opacity"
+            @click="openEnlargedImage(techContent.summaryImage)" />
         </section>
 
         <!-- Core Implementation Section -->
@@ -102,7 +103,8 @@
             <img v-for="img in techContent.images" :key="img.filename"
               :src="imagePath(img.filename)"
               :alt="img.alt"
-              class="w-full rounded-xl shadow-lg" />
+              class="w-full rounded-xl shadow-lg cursor-zoom-in hover:opacity-90 transition-opacity"
+              @click="openEnlargedImage(img.filename)" />
           </div>
         </section>
 
@@ -270,6 +272,21 @@
       <h2 class="text-lg font-medium text-slate-800 mb-2">未找到该技术</h2>
       <router-link to="/" class="text-teal-600 hover:text-teal-700 font-medium">返回首页</router-link>
     </main>
+
+    <!-- 图片放大模态框 -->
+    <div v-if="enlargedImage"
+      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center cursor-zoom-out"
+      @click="closeEnlargedImage">
+      <img :src="enlargedImage"
+        class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+        @click.stop />
+      <button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+        @click="closeEnlargedImage">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -295,6 +312,16 @@ function imagePath(filename) {
   return `${basePath}/docs/radar/images/${filename}`
 }
 
+// 打开图片放大
+function openEnlargedImage(filename) {
+  enlargedImage.value = imagePath(filename)
+}
+
+// 关闭图片放大
+function closeEnlargedImage() {
+  enlargedImage.value = null
+}
+
 const route = useRoute()
 const router = useRouter()
 const store = useRadarStore()
@@ -302,6 +329,7 @@ const store = useRadarStore()
 const tech = ref(null)
 const loading = ref(true)
 const techContent = ref(null)
+const enlargedImage = ref(null)  // 放大显示的图片URL
 
 const dimensions = [
   { key: 'maturity', label: '技术成熟度', weight: 0.30 },
