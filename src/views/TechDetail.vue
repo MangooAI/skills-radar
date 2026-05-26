@@ -95,7 +95,7 @@
           <!-- 图片展示 -->
           <div v-if="techContent?.images?.length" class="mt-6 space-y-4">
             <img v-for="img in techContent.images" :key="img.filename"
-              :src="`/docs/radar/images/${img.filename}`"
+              :src="imagePath(img.filename)"
               :alt="img.alt"
               class="w-full rounded-xl shadow-lg" />
           </div>
@@ -282,6 +282,12 @@ function parseInlineMarkdown(text) {
   const tokens = lexer.inlineTokens(text)
   const parser = new marked.Parser()
   return parser.parseInline(tokens)
+}
+
+// 获取图片路径（考虑 GitHub Pages base 路径）
+function imagePath(filename) {
+  const basePath = import.meta.env.DEV ? '' : '/skills-radar'
+  return `${basePath}/docs/radar/images/${filename}`
 }
 
 const route = useRoute()
