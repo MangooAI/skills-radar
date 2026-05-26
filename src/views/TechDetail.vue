@@ -62,10 +62,10 @@
 
         <!-- 一句话描述 -->
         <section v-if="techContent?.summary" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
-          <p class="text-slate-700 leading-relaxed text-lg">{{ techContent.summary }}</p>
+          <p class="text-slate-700 leading-relaxed text-lg" v-html="parseInlineMarkdown(techContent.summary)"></p>
         </section>
 
-        <!-- Core Principles Section -->
+        <!-- Core Implementation Section -->
         <section v-if="techContent?.principles?.length" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
@@ -73,7 +73,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.95-.083-1.85-.548-2.547l-.707-.707z" />
               </svg>
             </div>
-            <h2 class="text-xl font-bold text-slate-900">核心原理</h2>
+            <h2 class="text-xl font-bold text-slate-900">核心实现</h2>
           </div>
 
           <div class="space-y-4">
@@ -86,10 +86,18 @@
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-slate-800 text-base mb-2">{{ principle.title }}</h3>
-                  <p class="text-sm text-slate-600 leading-relaxed whitespace-pre-line">{{ principle.desc }}</p>
+                  <p class="text-sm text-slate-600 leading-relaxed whitespace-pre-line" v-html="parseInlineMarkdown(principle.desc)"></p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- 图片展示 -->
+          <div v-if="techContent?.images?.length" class="mt-6 space-y-4">
+            <img v-for="img in techContent.images" :key="img.filename"
+              :src="`/docs/radar/images/${img.filename}`"
+              :alt="img.alt"
+              class="w-full rounded-xl shadow-lg" />
           </div>
         </section>
 
@@ -114,7 +122,7 @@
               </div>
               <div>
                 <span class="font-semibold text-slate-800 text-sm">{{ innovation.title }}</span>
-                <p class="text-sm text-slate-600 mt-1">{{ innovation.desc }}</p>
+                <p class="text-sm text-slate-600 mt-1" v-html="parseInlineMarkdown(innovation.desc)"></p>
               </div>
             </div>
           </div>
@@ -139,7 +147,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span class="text-sm font-medium text-slate-700">{{ capability }}</span>
+              <span class="text-sm font-medium text-slate-700" v-html="parseInlineMarkdown(capability)"></span>
             </div>
           </div>
         </section>
@@ -161,7 +169,7 @@
               <div class="w-6 h-6 rounded-full flex items-center justify-center bg-blue-500 text-white text-xs font-bold">
                 {{ idx + 1 }}
               </div>
-              <span class="text-sm font-medium text-slate-700">{{ scenario }}</span>
+              <span class="text-sm font-medium text-slate-700" v-html="parseInlineMarkdown(scenario)"></span>
             </div>
           </div>
         </section>
@@ -183,7 +191,7 @@
               <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span class="text-sm text-slate-700 leading-relaxed">{{ limitation }}</span>
+              <span class="text-sm text-slate-700 leading-relaxed" v-html="parseInlineMarkdown(limitation)"></span>
             </div>
           </div>
         </section>
@@ -266,6 +274,16 @@ import { useRoute, useRouter } from 'vue-router'
 import { useRadarStore } from '../stores/radar'
 import { marked } from 'marked'
 
+// 解析内联 Markdown（加粗、斜体等），不解析块级元素
+function parseInlineMarkdown(text) {
+  if (!text) return ''
+  // 使用 marked 的内联解析器
+  const lexer = new marked.Lexer()
+  const tokens = lexer.inlineTokens(text)
+  const parser = new marked.Parser()
+  return parser.parseInline(tokens)
+}
+
 const route = useRoute()
 const router = useRouter()
 const store = useRadarStore()
@@ -311,7 +329,7 @@ const techDocMapping = {
   'skillforge': 'tech-skillforge',
   'iterative-optimizer': 'tech-iterative-optimizer',
   'skill-reducer': 'tech-skillreducer',
-  'd2skill-opt': 'tech-d2skill-opt',
+  'd2skill-opt': 'tech-d2skill',
   'agentskillos-mgmt': 'tech-agentskillos-mgmt',
   'skillnet-mgmt': 'tech-skillnet-mgmt',
   'skills-standard': 'tech-skills-standard',
@@ -340,6 +358,8 @@ function parseMarkdownContent(markdown) {
   const content = {
     summary: '',
     principles: [],
+    coreImplementationHtml: '',  // 核心实现的完整HTML（包含图片）
+    images: [],  // 提取的图片列表
     innovations: [],
     capabilities: [],
     scenarios: [],
@@ -349,39 +369,129 @@ function parseMarkdownContent(markdown) {
 
   if (!markdown) return content
 
-  // 提取一句话描述
-  const summaryMatch = markdown.match(/\*\*一句话描述\*\*:\s*(.+)/)
-  if (summaryMatch) {
-    content.summary = summaryMatch[1].trim()
+  // 统一换行符，处理 Windows CRLF
+  const normalizedMarkdown = markdown.replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+
+  // 提取一句话描述（新格式：## 一句话描述 章节）
+  const summarySection = normalizedMarkdown.match(/## 一句话描述\s*\n([\s\S]*?)(?=\n---|\n## )/)
+  if (summarySection) {
+    // 提取第一段文本，忽略来源、链接等元信息
+    const lines = summarySection[1].trim().split('\n')
+    let summaryText = ''
+    for (const line of lines) {
+      if (line.startsWith('**来源**:') || line.startsWith('**链接**:') || line.startsWith('- ') || line.trim() === '') {
+        break
+      }
+      summaryText += line.trim() + ' '
+    }
+    content.summary = summaryText.trim()
   }
 
-  // 提取核心原理
-  const principlesSection = markdown.match(/### 核心原理\s*\n([\s\S]*?)(?=### 核心创新|---|## 技术细节)/)
-  if (principlesSection) {
-    const lines = principlesSection[1].trim().split('\n')
+  // 兼容旧格式：**一句话描述**: xxx
+  if (!content.summary) {
+    const summaryMatch = normalizedMarkdown.match(/\*\*一句话描述\*\*[：:]\s*(.+)/)
+    if (summaryMatch) {
+      content.summary = summaryMatch[1].trim()
+    }
+  }
+
+  // 提取核心实现（新格式：## 核心实现）并转换为HTML
+  const implSection = normalizedMarkdown.match(/## 核心实现\s*\n([\s\S]*?)(?=\n---|\n## 主要能力|\n## 局限性)/)
+  if (implSection) {
+    // 提取图片信息并修正路径
+    const imgMatches = implSection[1].matchAll(/!\[([^\]]*)\]\(images\/([^)]+)\)/g)
+    for (const match of imgMatches) {
+      content.images.push({
+        alt: match[1],
+        filename: match[2]
+      })
+    }
+
+    // 使用 marked 将核心实现内容转换为 HTML
+    let htmlContent = marked.parse(implSection[1].trim())
+    // 修正图片路径：images/xxx.png -> /docs/radar/images/xxx.png
+    htmlContent = htmlContent.replace(/src="images\/([^"]+)"/g, 'src="/docs/radar/images/$1"')
+    content.coreImplementationHtml = htmlContent
+
+    // 同时解析出 principles 用于显示
+    const lines = implSection[1].trim().split('\n')
     let currentPrinciple = null
-    let collectingSubItems = false
+    let collectingNumberedItems = false  // 正在收集编号列表项
+
     lines.forEach(line => {
-      // 匹配带编号和加粗标题的行（有描述在同一行）
-      const numberedWithTitleDesc = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]\s*(.+)/)
-      if (numberedWithTitleDesc) {
+      // 跳过图片行
+      if (line.match(/!\[.*\]\(.*\)/)) return
+
+      // 匹配 **1. 标题** 格式
+      const boldNumberedMatch = line.match(/^\*\*(\d+)\.\s*(.+?)\*\*\s*[:：]?\s*(.*)/)
+      if (boldNumberedMatch) {
         if (currentPrinciple) content.principles.push(currentPrinciple)
-        currentPrinciple = { title: numberedWithTitleDesc[1], desc: numberedWithTitleDesc[2].trim() }
-        collectingSubItems = false
+        const desc = boldNumberedMatch[3].trim()
+        currentPrinciple = { title: boldNumberedMatch[2], desc: desc }
+        collectingNumberedItems = false
         return
       }
 
-      // 匹配带编号和加粗标题的行（描述在下一行，以冒号结尾）
-      const numberedWithTitleOnly = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]?\s*$/)
-      if (numberedWithTitleOnly) {
+      // 匹配 **阶段 1：标题** 格式或 **阶段1：标题** 格式
+      const stageNumberedMatch = line.match(/^\*\*阶段\s*(\d+)[：:]\s*(.+?)\*\*\s*[:：]?\s*(.*)/)
+      if (stageNumberedMatch) {
         if (currentPrinciple) content.principles.push(currentPrinciple)
-        currentPrinciple = { title: numberedWithTitleOnly[1], desc: '' }
-        collectingSubItems = true
+        const desc = stageNumberedMatch[3].trim()
+        currentPrinciple = { title: `阶段 ${stageNumberedMatch[1]}：${stageNumberedMatch[2]}`, desc: desc }
+        collectingNumberedItems = false
+        return
+      }
+
+      // 匹配纯加粗标题行：**标题**：描述（无编号，如 D2Skill）
+      const pureBoldTitleMatch = line.match(/^\*\*(.+?)\*\*[：:]\s*(.+)$/)
+      if (pureBoldTitleMatch && !line.match(/^\*\*阶段/) && !line.match(/^\*\*\d+\./)) {
+        if (currentPrinciple) content.principles.push(currentPrinciple)
+        currentPrinciple = { title: pureBoldTitleMatch[1], desc: pureBoldTitleMatch[2].trim() }
+        collectingNumberedItems = false
+        return
+      }
+
+      // 匹配纯加粗标题行（后面没有冒号，描述在下一行）：**标题**
+      const pureBoldTitleOnlyMatch = line.match(/^\*\*(.+?)\*\*\s*$/)
+      if (pureBoldTitleOnlyMatch && !line.match(/^\*\*阶段/) && !line.match(/^\*\*\d+\./)) {
+        if (currentPrinciple) content.principles.push(currentPrinciple)
+        currentPrinciple = { title: pureBoldTitleOnlyMatch[1], desc: '' }
+        collectingNumberedItems = true  // 后面可能有编号列表或普通列表
+        return
+      }
+
+      // 匹配旧格式：1. **标题**: 描述
+      const numberedWithTitleDesc = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]\s*(.+)/)
+      if (numberedWithTitleDesc) {
+        if (collectingNumberedItems && currentPrinciple) {
+          // 当前正在收集某个纯加粗标题下的编号列表项，保留加粗格式
+          currentPrinciple.desc += (currentPrinciple.desc ? '\n' : '') + '**' + numberedWithTitleDesc[1].trim() + '**：' + numberedWithTitleDesc[2].trim()
+        } else {
+          // 独立的编号项，创建新的 principle
+          if (currentPrinciple) content.principles.push(currentPrinciple)
+          currentPrinciple = { title: numberedWithTitleDesc[1], desc: numberedWithTitleDesc[2].trim() }
+          collectingNumberedItems = false
+        }
+        return
+      }
+
+      // 匹配普通编号行（无加粗标题）
+      const numberedOnly = line.match(/^\d+\.\s+(.+)/)
+      if (numberedOnly && !line.includes('**')) {
+        if (collectingNumberedItems && currentPrinciple) {
+          // 当前正在收集某个标题下的编号列表项
+          currentPrinciple.desc += (currentPrinciple.desc ? '\n' : '') + numberedOnly[1].trim()
+        } else {
+          // 独立的编号项，创建新的 principle
+          if (currentPrinciple) content.principles.push(currentPrinciple)
+          currentPrinciple = { title: `步骤 ${content.principles.length + 1}`, desc: numberedOnly[1].trim() }
+          collectingNumberedItems = false
+        }
         return
       }
 
       // 匹配子项目列表（以 - 开头）
-      if (collectingSubItems && line.match(/^\s*-\s*(.+)/)) {
+      if (line.match(/^\s*-\s*(.+)/)) {
         const subItem = line.match(/^\s*-\s*(.+)/)
         if (currentPrinciple) {
           currentPrinciple.desc += (currentPrinciple.desc ? '\n' : '') + subItem[1].trim()
@@ -389,25 +499,65 @@ function parseMarkdownContent(markdown) {
         return
       }
 
-      // 匹配普通列表项（带编号）
-      const numberedOnly = line.match(/^\d+\.\s*(.+)/)
-      if (numberedOnly) {
-        if (currentPrinciple) content.principles.push(currentPrinciple)
-        content.principles.push({ title: `步骤 ${content.principles.length + 1}`, desc: numberedOnly[1].trim() })
-        collectingSubItems = false
-        return
-      }
-
-      // 其他行
-      if (currentPrinciple && line.trim() && !line.startsWith('-') && !collectingSubItems) {
-        currentPrinciple.desc += ' ' + line.trim()
+      // 其他行作为当前原理的补充描述
+      if (currentPrinciple && line.trim()) {
+        currentPrinciple.desc += (currentPrinciple.desc ? ' ' : '') + line.trim()
+        collectingNumberedItems = false
       }
     })
     if (currentPrinciple) content.principles.push(currentPrinciple)
   }
 
-  // 提取核心创新
-  const innovationsSection = markdown.match(/### 核心创新\s*\n([\s\S]*?)(?=---|## 技术细节|###)/)
+  // 兼容旧格式：### 核心原理
+  if (content.principles.length === 0) {
+    const principlesSection = normalizedMarkdown.match(/### 核心原理\s*\n([\s\S]*?)(?=### 核心创新|---|## 技术细节)/)
+    if (principlesSection) {
+      const lines = principlesSection[1].trim().split('\n')
+      let currentPrinciple = null
+      let collectingSubItems = false
+      lines.forEach(line => {
+        const numberedWithTitleDesc = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]\s*(.+)/)
+        if (numberedWithTitleDesc) {
+          if (currentPrinciple) content.principles.push(currentPrinciple)
+          currentPrinciple = { title: numberedWithTitleDesc[1], desc: numberedWithTitleDesc[2].trim() }
+          collectingSubItems = false
+          return
+        }
+
+        const numberedWithTitleOnly = line.match(/^\d+\.\s*\*\*(.+?)\*\*[:：]?\s*$/)
+        if (numberedWithTitleOnly) {
+          if (currentPrinciple) content.principles.push(currentPrinciple)
+          currentPrinciple = { title: numberedWithTitleOnly[1], desc: '' }
+          collectingSubItems = true
+          return
+        }
+
+        if (collectingSubItems && line.match(/^\s*-\s*(.+)/)) {
+          const subItem = line.match(/^\s*-\s*(.+)/)
+          if (currentPrinciple) {
+            currentPrinciple.desc += (currentPrinciple.desc ? '\n' : '') + subItem[1].trim()
+          }
+          return
+        }
+
+        const numberedOnly = line.match(/^\d+\.\s*(.+)/)
+        if (numberedOnly) {
+          if (currentPrinciple) content.principles.push(currentPrinciple)
+          content.principles.push({ title: `步骤 ${content.principles.length + 1}`, desc: numberedOnly[1].trim() })
+          collectingSubItems = false
+          return
+        }
+
+        if (currentPrinciple && line.trim() && !line.startsWith('-') && !collectingSubItems) {
+          currentPrinciple.desc += ' ' + line.trim()
+        }
+      })
+      if (currentPrinciple) content.principles.push(currentPrinciple)
+    }
+  }
+
+  // 提取核心创新（旧格式）
+  const innovationsSection = normalizedMarkdown.match(/### 核心创新\s*\n([\s\S]*?)(?=---|## 技术细节|###)/)
   if (innovationsSection) {
     const lines = innovationsSection[1].trim().split('\n')
     lines.forEach(line => {
@@ -418,11 +568,18 @@ function parseMarkdownContent(markdown) {
     })
   }
 
-  // 提取主要能力
-  const capabilitiesSection = markdown.match(/### 主要能力\s*\n([\s\S]*?)(?=### 适用场景|### 局限性|---)/)
+  // 提取主要能力（新格式：## 主要能力）
+  let capabilitiesSection = normalizedMarkdown.match(/## 主要能力\s*\n([\s\S]*?)(?=\n---|\n## 局限性|\n## 成熟度)/)
+  // 兼容旧格式
+  if (!capabilitiesSection) {
+    capabilitiesSection = normalizedMarkdown.match(/### 主要能力\s*\n([\s\S]*?)(?=### 适用场景|### 局限性|---)/)
+  }
   if (capabilitiesSection) {
     const lines = capabilitiesSection[1].trim().split('\n')
     lines.forEach(line => {
+      // 跳过图片行和空行
+      if (line.match(/!\[.*\]\(.*\)/) || line.trim() === '') return
+
       const match = line.match(/- \*\*(.+?)\*\*[:：]\s*(.+)/)
       if (match) {
         content.capabilities.push(`${match[1]}：${match[2].trim()}`)
@@ -433,8 +590,8 @@ function parseMarkdownContent(markdown) {
     })
   }
 
-  // 提取适用场景
-  const scenariosSection = markdown.match(/### 适用场景\s*\n([\s\S]*?)(?=### 局限性|---)/)
+  // 提取适用场景（旧格式）
+  const scenariosSection = normalizedMarkdown.match(/### 适用场景\s*\n([\s\S]*?)(?=### 局限性|---)/)
   if (scenariosSection) {
     const lines = scenariosSection[1].trim().split('\n')
     lines.forEach(line => {
@@ -445,8 +602,12 @@ function parseMarkdownContent(markdown) {
     })
   }
 
-  // 提取局限性
-  const limitationsSection = markdown.match(/### 局限性\s*\n([\s\S]*?)(?=---|##)/)
+  // 提取局限性（新格式：## 局限性）
+  let limitationsSection = normalizedMarkdown.match(/## 局限性\s*\n([\s\S]*?)(?=\n---|\n## 成熟度)/)
+  // 兼容旧格式
+  if (!limitationsSection) {
+    limitationsSection = normalizedMarkdown.match(/### 局限性\s*\n([\s\S]*?)(?=---|##)/)
+  }
   if (limitationsSection) {
     const lines = limitationsSection[1].trim().split('\n')
     lines.forEach(line => {
@@ -458,7 +619,7 @@ function parseMarkdownContent(markdown) {
   }
 
   // 提取参考资料
-  const referencesSection = markdown.match(/## 参考资料\s*\n([\s\S]*?)$/)
+  const referencesSection = normalizedMarkdown.match(/## 参考资料\s*\n([\s\S]*?)$/)
   if (referencesSection) {
     const lines = referencesSection[1].trim().split('\n')
     lines.forEach(line => {
@@ -506,3 +667,53 @@ function getStatusClass(status) {
   }
 }
 </script>
+
+<style scoped>
+/* 核心实现内容样式 */
+.core-implementation-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.core-implementation-content strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.core-implementation-content ol,
+.core-implementation-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.core-implementation-content ol li,
+.core-implementation-content ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.core-implementation-content ol li::marker {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.core-implementation-content ul li::marker {
+  color: #7c3aed;
+}
+
+.core-implementation-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.core-implementation-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+</style>
