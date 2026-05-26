@@ -4,60 +4,53 @@
 
 ---
 
-## 基本信息
+## 一句话描述
 
-**一句话描述**: 基于文件系统的轻量级Agent自动化架构，用文件状态替代数据库和消息队列，实现可恢复的多步任务执行，运维成本比重型框架低10倍。
+File-as-State 将 Unix **"一切皆文件"** 哲学用于 Agent 基础设施，以**文件系统替代数据库和消息队列**管理状态，实现**多步任务可恢复执行**。**AGFS** 将存储、数据库、消息队列等**异构后端统一为文件接口**，Agent 通信、记忆、调度皆通过标准文件操作完成。
 
 **来源**:
-- 技术文章/行业实践
+- 技术文章/行业实践：腾讯云开发者社区、CSDN
 - 发布年份：2026年
 
 **链接**:
 - 详解：https://cloud.tencent.com/developer/article/2669589
-- AGFS理念：https://blog.csdn.net/weixin_43749777/article/details/156836191
+- AGFS 理念：https://blog.csdn.net/weixin_43749777/article/details/156836191
 
 ---
 
-## 核心技术
+## 核心实现
 
-### 核心原理
+File-as-State 由两个互补层面构成：
 
-File-as-State 采用**四层纯文件系统架构**，核心逻辑是将Unix"一切皆文件"哲学应用于Agent基础设施，所有状态管理通过文件系统完成，无需数据库、消息队列或容器编排：
+**1. 四层文件系统执行架构**
 
-1. **编译层（TaskCompiler）**：将自然语言任务转换为标准化任务包，解析为可执行的步骤定义
-2. **编排层（DAGOrchestrator）**：将任务包解析为DAG有向无环图，按依赖关系调度执行顺序
-3. **执行层（AgentRunner）**：调用Agent执行单步任务，将结果写入状态文件
-4. **状态层（File System）**：每步执行结果以文件形式持久化，天然支持断点恢复
+- **编译层（TaskCompiler）**：将自然语言任务转换为标准化 YAML 任务包，解析为可执行的步骤定义
+- **编排层（DAGOrchestrator）**：将任务包解析为 DAG 有向无环图，按依赖关系调度执行，支持循环与分支
+- **执行层（AgentRunner）**：调用 Agent 执行单步任务，将结果写入状态文件
+- **状态层（File System）**：每步执行结果以文件形式持久化，天然支持断点恢复
 
-### 核心创新
+**2. AGFS 聚合文件系统**
 
-- **文件即状态**：所有中间状态、执行结果、调度信息均通过文件系统管理，任何能读写文件的Agent都能直接接入
-- **零重型框架**：不依赖LangGraph、Temporal等重型编排框架，Shell脚本+cron即可实现生产级调度
-- **天然可恢复**：基于文件的状态持久化，任务中断后从状态文件恢复，无需额外检查点机制
+AGFS将异构后端统一为文件系统接口，开发者可用 Rust、C 或任意语言编写新的文件系统实现，编译为 **WebAssembly** 后动态挂载。多 Agent 可通过 QueueFS 分发任务、S3FS 收集结果、标准 `grep` 等工具过滤——无需额外应用层。
+
+核心模式凝练为一行管道：`cat context.txt | llm > output.txt && exec action.sh`——LLM 能理解、人类能理解，秒级即可验证。
 
 ---
 
-## 技术细节
+## 主要能力
 
-### 主要能力
+- 文件即状态：所有中间状态、执行结果、调度信息均通过文件持久化，任务中断后从状态文件恢复，无需额外检查点机制
+- 零重型框架依赖：不依赖 LangGraph、Temporal 等编排框架，Shell 脚本 + cron 即可实现生产级调度，任何能读写文件的 Agent 均可直接接入
+- 异构后端统一文件接口：通过 AGFS 将数据库、消息队列、对象存储、流式数据等统一为文件系统，Agent 间通信和协作通过标准文件操作完成
 
-- 支持Claude Code、Codex、OpenClaw等Agent直接接入，无需SDK适配
-- 基于文件锁的并发控制，多Agent安全协同
-- Shell脚本+cron即可实现生产级任务调度
-- 运维成本比重型框架低10倍
+---
 
-### 适用场景
-
-- CI/CD流水线中的Agent编排
-- 长时间运行的可恢复任务（如大规模代码重构、数据迁移）
-- 不需要分布式计算的单机Agent自动化
-- 已有文件系统基础设施的团队快速接入
-
-### 局限性
+## 局限性
 
 - 不适合需要强一致性的分布式多节点场景
-- 文件系统I/O性能瓶颈在高并发下可能显现
-- 尚无开源实现，仅有技术文章描述
+- 文件系统 I/O 性能瓶颈在高并发下可能显现
+- 尚无开源实现，仅有技术文章描述（AGFS 亦处于早期阶段，正在寻求贡献者）
+- 传统文件系统缺乏结构化数据支持和原生消息传递能力，AGFS 需要为每种后端单独实现
 - 缺乏成熟的状态版本管理和回滚机制
 
 ---
@@ -69,22 +62,13 @@ File-as-State 采用**四层纯文件系统架构**，核心逻辑是将Unix"一
 | 技术成熟度 | 0.35 | 仅有技术文章+概念验证，尚无开源实现 |
 | 创新性 | 0.50 | 文件系统做状态管理并非全新，但四层架构的系统化方案有实用价值 |
 | 落地程度 | 0.30 | 未发现实际产品或开源框架 |
-| 生态活跃度 | 0.35 | AGFS社区有讨论，独立项目尚未成型 |
+| 生态活跃度 | 0.35 | AGFS 社区有讨论，独立项目尚未成型 |
 
 **综合评分**: 0.38
 
 ---
 
-## 相关技术
-
-- SkVM：Skill编译器 vs File-as-State：执行状态管理器，可在不同层面互补
-- Skill Pipeline：并行调度 vs File-as-State：文件系统轻量调度
-- Permission Sandboxing：安全隔离 vs File-as-State：状态持久化
-- AGFS：File System as Meta Tool理念的延伸
-
----
-
 ## 参考资料
 
-- [2026生产级AI Agent自动化](https://cloud.tencent.com/developer/article/2669589)
-- [File System as Meta Tool: AI Agent基础设施新思路](https://blog.csdn.net/weixin_43749777/article/details/156836191)
+- [2026 生产级 AI Agent 自动化](https://cloud.tencent.com/developer/article/2669589)
+- [File System as Meta Tool: AI Agent 基础设施新思路](https://blog.csdn.net/weixin_43749777/article/details/156836191)
