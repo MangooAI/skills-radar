@@ -132,6 +132,18 @@
             0.4
           ],
           "status": "active"
+        },
+        {
+          "id": "skillgen",
+          "name": "SKILLGEN",
+          "description": "自动化Skill生成框架",
+          "scores": [
+            0.45,
+            0.7,
+            0.35,
+            0.4
+          ],
+          "status": "active"
         }
       ]
     },
@@ -200,6 +212,66 @@
             0.45
           ],
           "status": "active"
+        },
+        {
+          "id": "grasp",
+          "name": "GraSP",
+          "description": "基于图结构的Skill检索方案",
+          "scores": [
+            0.55,
+            0.65,
+            0.45,
+            0.4
+          ],
+          "status": "active"
+        },
+        {
+          "id": "ssl",
+          "name": "SSL",
+          "description": "Self-supervised Learning for Skill Retrieval",
+          "scores": [
+            0.5,
+            0.7,
+            0.4,
+            0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "goskills",
+          "name": "GOSKILLS",
+          "description": "大规模Skill库的高效检索框架",
+          "scores": [
+            0.6,
+            0.55,
+            0.5,
+            0.45
+          ],
+          "status": "active"
+        },
+        {
+          "id": "skillgraph",
+          "name": "SKILLGRAPH",
+          "description": "基于知识图谱的Skill组织与检索",
+          "scores": [
+            0.55,
+            0.6,
+            0.45,
+            0.4
+          ],
+          "status": "active"
+        },
+        {
+          "id": "skillrae",
+          "name": "SkillRAE",
+          "description": "Skill检索与执行的统一框架",
+          "scores": [
+            0.5,
+            0.65,
+            0.4,
+            0.35
+          ],
+          "status": "research"
         }
       ]
     },
@@ -348,6 +420,18 @@
             0.6
           ],
           "status": "active"
+        },
+        {
+          "id": "skillflow",
+          "name": "SKILLFLOW",
+          "description": "Skill评测流程自动化框架",
+          "scores": [
+            0.55,
+            0.65,
+            0.45,
+            0.5
+          ],
+          "status": "active"
         }
       ]
     },
@@ -412,6 +496,30 @@
           "scores": [
             0.5,
             0.75,
+            0.35,
+            0.4
+          ],
+          "status": "active"
+        },
+        {
+          "id": "dual-mcts",
+          "name": "双层MCTS",
+          "description": "双层蒙特卡洛树搜索实现Skill自进化",
+          "scores": [
+            0.4,
+            0.75,
+            0.3,
+            0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillclaw",
+          "name": "SkillClaw",
+          "description": "Skill自动优化与学习框架",
+          "scores": [
+            0.45,
+            0.7,
             0.35,
             0.4
           ],
@@ -484,6 +592,30 @@
             0.6
           ],
           "status": "active"
+        },
+        {
+          "id": "skillos",
+          "name": "SkillOS",
+          "description": "Skill操作系统，统一管理Skill生命周期",
+          "scores": [
+            0.5,
+            0.55,
+            0.45,
+            0.5
+          ],
+          "status": "active"
+        },
+        {
+          "id": "slim",
+          "name": "SLIM",
+          "description": "轻量级Skill管理框架",
+          "scores": [
+            0.45,
+            0.6,
+            0.4,
+            0.35
+          ],
+          "status": "research"
         }
       ]
     }
