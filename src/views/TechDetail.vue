@@ -63,6 +63,11 @@
         <!-- 一句话描述 -->
         <section v-if="techContent?.summary" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
           <p class="text-slate-700 leading-relaxed text-lg" v-html="parseInlineMarkdown(techContent.summary)"></p>
+          <!-- 一句话描述部分的overview图片 -->
+          <img v-if="techContent?.summaryImage"
+            :src="imagePath(techContent.summaryImage)"
+            :alt="tech.name + ' overview'"
+            class="w-full rounded-xl shadow-lg mt-4" />
         </section>
 
         <!-- Core Implementation Section -->
@@ -374,6 +379,7 @@ const categoryLink = computed(() => `/category/${tech.value?.categoryId}`)
 function parseMarkdownContent(markdown) {
   const content = {
     summary: '',
+    summaryImage: '',  // 一句话描述部分的overview图片
     principles: [],
     coreImplementationHtml: '',  // 核心实现的完整HTML（包含图片）
     images: [],  // 提取的图片列表
@@ -396,7 +402,13 @@ function parseMarkdownContent(markdown) {
     const lines = summarySection[1].trim().split('\n')
     let summaryText = ''
     for (const line of lines) {
-      if (line.startsWith('**来源**:') || line.startsWith('**链接**:') || line.startsWith('- ') || line.trim() === '') {
+      // 检查是否有overview图片
+      const imgMatch = line.match(/!\[.*\]\(images\/(.+_overview\.png)\)/)
+      if (imgMatch) {
+        content.summaryImage = imgMatch[1]
+        break
+      }
+      if (line.startsWith('**来源**:') || line.startsWith('**链接**:') || line.startsWith('- ') || line.trim() === '' || line.match(/!\[.*\]/)) {
         break
       }
       summaryText += line.trim() + ' '
