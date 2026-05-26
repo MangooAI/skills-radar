@@ -204,12 +204,12 @@
         {
           "id": "skillnet",
           "name": "SkillNet",
-          "description": "创建、评估与连接AI技能",
+          "description": "创建、评估与连接AI技能，已收录60万+技能",
           "scores": [
-            0.60,
+            0.65,
             0.50,
-            0.55,
-            0.45
+            0.60,
+            0.55
           ],
           "status": "active"
         },
@@ -548,12 +548,12 @@
         {
           "id": "skillnet-mgmt",
           "name": "SkillNet",
-          "description": "创建、评估与连接AI技能",
+          "description": "创建、评估与连接AI技能，已收录60万+技能",
           "scores": [
-            0.60,
+            0.65,
             0.50,
-            0.55,
-            0.45
+            0.60,
+            0.55
           ],
           "status": "active"
         },
