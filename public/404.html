@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>Skills Radar</title>
+    <script>
+      // GitHub Pages SPA 路由处理
+      // 将 404 重定向到 index.html 并保留路径信息
+      var pathSegmentsToKeep = 1; // /skills-radar/ 需要保留一个路径段
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, 'and') : '')
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
