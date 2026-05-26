@@ -343,7 +343,7 @@ const techDocMapping = {
   'iterative-optimizer': 'tech-iterative-optimizer',
   'skill-reducer': 'tech-skillreducer',
   'd2skill-opt': 'tech-d2skill',
-  'dual-mcts': 'tech-dual-mcts',
+  'dual-mcts': 'tech-mcts',
   'skillclaw': 'tech-skillclaw',
   'agentskillos-mgmt': 'tech-agentskillos-mgmt',
   'skillnet-mgmt': 'tech-skillnet-mgmt',
