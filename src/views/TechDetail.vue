@@ -351,7 +351,7 @@ const techDocMapping = {
   'dual-mcts': 'tech-mcts',
   'skillclaw': 'tech-skillclaw',
   'agentskillos-mgmt': 'tech-agentskillos-mgmt',
-  'skillnet-mgmt': 'tech-skillnet-mgmt',
+  'skillnet-mgmt': 'tech-skillnet',
   'skills-standard': 'tech-skills-standard',
   'rbac': 'tech-rbac',
   'git-versioning': 'tech-git-versioning',
