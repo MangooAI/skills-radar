@@ -384,7 +384,10 @@ const techDocMapping = {
   'rbac': 'tech-rbac',
   'git-versioning': 'tech-git-versioning',
   'skillos': 'tech-skillos',
-  'slim': 'tech-slim'
+  'slim': 'tech-slim',
+  'skillevolver': 'tech-skillevolver',
+  'embodiskill': 'tech-embodiskill',
+  'autoskill': 'tech-autoskill'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
