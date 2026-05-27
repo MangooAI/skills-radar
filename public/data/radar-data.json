@@ -144,6 +144,18 @@
             0.4
           ],
           "status": "active"
+        },
+        {
+          "id": "skillevolver",
+          "name": "SkillEvolver",
+          "description": "元技能驱动的在线学习框架，CLI-Agent 自主生成可复用领域技能，SkillsBench 56.8% 超越人类 43.6%",
+          "scores": [
+            0.5,
+            0.8,
+            0.4,
+            0.35
+          ],
+          "status": "research"
         }
       ]
     },
@@ -207,8 +219,8 @@
           "description": "创建、评估与连接AI技能，已收录60万+技能",
           "scores": [
             0.65,
-            0.50,
-            0.60,
+            0.5,
+            0.6,
             0.55
           ],
           "status": "active"
@@ -524,6 +536,30 @@
             0.4
           ],
           "status": "active"
+        },
+        {
+          "id": "embodiskill",
+          "name": "EmbodiSkill",
+          "description": "技能感知反思机制+双层技能结构，实现具身 Agent 技能靶向修订，ALFWorld 93.28% 超 GPT-5.2",
+          "scores": [
+            0.5,
+            0.8,
+            0.35,
+            0.3
+          ],
+          "status": "research"
+        },
+        {
+          "id": "autoskill",
+          "name": "AutoSkill",
+          "description": "双循环耦合架构实现技能增强响应生成与技能进化，SKILL.md 版本化自治，编程技能历经 34 轮迭代",
+          "scores": [
+            0.55,
+            0.65,
+            0.4,
+            0.35
+          ],
+          "status": "active"
         }
       ]
     },
@@ -551,8 +587,8 @@
           "description": "创建、评估与连接AI技能，已收录60万+技能",
           "scores": [
             0.65,
-            0.50,
-            0.60,
+            0.5,
+            0.6,
             0.55
           ],
           "status": "active"
@@ -625,15 +661,15 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.52,
+      "overallScore": 0.51,
       "status": "🟡 成长期"
     },
     {
       "id": "recall",
       "label": "Skill 召回",
-      "maturityLevel": "mature",
-      "overallScore": 0.62,
-      "status": "🟢 成熟期"
+      "maturityLevel": "growing",
+      "overallScore": 0.57,
+      "status": "🟡 成长期"
     },
     {
       "id": "execution",
@@ -646,21 +682,21 @@
       "id": "evaluation",
       "label": "Skill 评测",
       "maturityLevel": "mature",
-      "overallScore": 0.63,
+      "overallScore": 0.62,
       "status": "🟢 成熟期"
     },
     {
       "id": "optimization",
       "label": "Skill 优化",
       "maturityLevel": "growing",
-      "overallScore": 0.56,
+      "overallScore": 0.52,
       "status": "🟡 成长期"
     },
     {
       "id": "management",
       "label": "Skill 管理",
       "maturityLevel": "growing",
-      "overallScore": 0.47,
+      "overallScore": 0.5,
       "status": "🟡 成长期"
     }
   ]
