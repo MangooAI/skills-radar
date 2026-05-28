@@ -156,6 +156,18 @@
             0.35
           ],
           "status": "research"
+        },
+        {
+          "id": "muse-autoskill-gen",
+          "name": "MUSE-Autoskill",
+          "description": "Skill五阶段生命周期框架，Skill级记忆(.memory.md)累积经验，SkillsBench 68.40% SOTA，自生成Skill达87.94%",
+          "scores": [
+            0.55,
+            0.8,
+            0.45,
+            0.4
+          ],
+          "status": "research"
         }
       ]
     },
@@ -662,6 +674,18 @@
             0.6,
             0.4,
             0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "muse-autoskill-mgmt",
+          "name": "MUSE-Autoskill",
+          "description": "Skill五阶段生命周期框架，Skill级记忆(.memory.md)累积经验，SkillsBench 68.40% SOTA，自生成Skill达87.94%",
+          "scores": [
+            0.55,
+            0.8,
+            0.45,
+            0.4
           ],
           "status": "research"
         }
