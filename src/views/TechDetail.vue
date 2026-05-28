@@ -388,7 +388,9 @@ const techDocMapping = {
   'skillevolver': 'tech-skillevolver',
   'embodiskill': 'tech-embodiskill',
   'autoskill': 'tech-autoskill',
-  'skillopt': 'tech-skillopt'
+  'skillopt': 'tech-skillopt',
+  'muse-autoskill-gen': 'tech-muse-autoskill',
+  'muse-autoskill-mgmt': 'tech-muse-autoskill'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
