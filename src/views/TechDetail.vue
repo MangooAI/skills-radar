@@ -387,7 +387,8 @@ const techDocMapping = {
   'slim': 'tech-slim',
   'skillevolver': 'tech-skillevolver',
   'embodiskill': 'tech-embodiskill',
-  'autoskill': 'tech-autoskill'
+  'autoskill': 'tech-autoskill',
+  'skillopt': 'tech-skillopt'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
