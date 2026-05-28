@@ -560,6 +560,18 @@
             0.35
           ],
           "status": "active"
+        },
+        {
+          "id": "skillopt",
+          "name": "SkillOpt",
+          "description": "将 Skill 文档视为可训练权重，深度学习训练循环自动优化 Skill，52 组合全最优，平均 +23.5 分",
+          "scores": [
+            0.7,
+            0.85,
+            0.55,
+            0.45
+          ],
+          "status": "active"
         }
       ]
     },
@@ -689,7 +701,7 @@
       "id": "optimization",
       "label": "Skill 优化",
       "maturityLevel": "growing",
-      "overallScore": 0.52,
+      "overallScore": 0.54,
       "status": "🟡 成长期"
     },
     {
