@@ -156,6 +156,18 @@
             0.35
           ],
           "status": "research"
+        },
+        {
+          "id": "muse-autoskill",
+          "name": "MUSE-Autoskill",
+          "description": "五阶段技能生命周期框架，自生成技能87.94%超人类68.40%，跨Agent零损耗迁移",
+          "scores": [
+            0.65,
+            0.8,
+            0.6,
+            0.4
+          ],
+          "status": "active"
         }
       ]
     },
@@ -664,6 +676,18 @@
             0.35
           ],
           "status": "research"
+        },
+        {
+          "id": "skillos-rl",
+          "name": "SkillOS-RL",
+          "description": "RL训练Skill Curator自动管理Skill编写/修改/删除，首个将Skill管理形式化为RL问题的系统性方案",
+          "scores": [
+            0.45,
+            0.8,
+            0.35,
+            0.7
+          ],
+          "status": "research"
         }
       ]
     }
@@ -673,7 +697,7 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.51,
+      "overallScore": 0.52,
       "status": "🟡 成长期"
     },
     {
@@ -708,7 +732,7 @@
       "id": "management",
       "label": "Skill 管理",
       "maturityLevel": "growing",
-      "overallScore": 0.5,
+      "overallScore": 0.51,
       "status": "🟡 成长期"
     }
   ]
