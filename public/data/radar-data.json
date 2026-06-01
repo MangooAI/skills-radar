@@ -456,6 +456,18 @@
             0.5
           ],
           "status": "active"
+        },
+        {
+          "id": "skilllens",
+          "name": "SkillLens",
+          "description": "Skill生命周期三阶段评测框架，EE/TE双指标揭示25%负迁移现象",
+          "scores": [
+            0.5,
+            0.85,
+            0.35,
+            0.65
+          ],
+          "status": "research"
         }
       ]
     },
@@ -697,7 +709,7 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.51,
+      "overallScore": 0.52,
       "status": "🟡 成长期"
     },
     {
@@ -718,7 +730,7 @@
       "id": "evaluation",
       "label": "Skill 评测",
       "maturityLevel": "mature",
-      "overallScore": 0.62,
+      "overallScore": 0.61,
       "status": "🟢 成熟期"
     },
     {
