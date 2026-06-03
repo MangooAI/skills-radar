@@ -608,6 +608,18 @@
             0.45
           ],
           "status": "active"
+        },
+        {
+          "id": "darwin-skill",
+          "name": "Darwin-Skill",
+          "description": "开源Skill自主优化系统，9维评分+HITL三层守关+git ratchet棘轮，v2.0吸收SkillLens+SkillOpt",
+          "scores": [
+            0.6,
+            0.55,
+            0.7,
+            0.45
+          ],
+          "status": "open-source"
         }
       ]
     },
