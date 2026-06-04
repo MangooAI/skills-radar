@@ -168,6 +168,18 @@
             0.4
           ],
           "status": "research"
+        },
+        {
+          "id": "reskill",
+          "name": "RESKILL",
+          "description": "将技能生成嵌入GRPO强化学习训练循环，零额外采样开销实现技能自生成、自评测、自进化",
+          "scores": [
+            0.45,
+            0.7,
+            0.35,
+            0.3
+          ],
+          "status": "research"
         }
       ]
     },
@@ -320,6 +332,30 @@
             0.55
           ],
           "status": "academic"
+        },
+        {
+          "id": "skilldag",
+          "name": "SkillDAG",
+          "description": "五类有向边建模技能关系图，Agent执行中可查图、展开邻居、发现新关系并写回图里，检索从语义匹配升级为结构感知图推理",
+          "scores": [
+            0.4,
+            0.65,
+            0.35,
+            0.3
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillpyramid",
+          "name": "SKILLPYRAMID",
+          "description": "向下原子提取+向上抽象归纳，将平铺技能库重构为可组合、可演化的层级金字塔",
+          "scores": [
+            0.35,
+            0.6,
+            0.25,
+            0.25
+          ],
+          "status": "research"
         }
       ]
     },
@@ -733,6 +769,18 @@
             0.55,
             0.8,
             0.45,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "codeskill",
+          "name": "CODESKILL",
+          "description": "将技能管理建模为可学习的RL策略，GRPO+混合奖励从coding轨迹中提取双粒度程序性技能，三大SWE benchmark平均提升9.69点",
+          "scores": [
+            0.5,
+            0.7,
+            0.4,
             0.4
           ],
           "status": "research"
