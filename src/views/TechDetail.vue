@@ -394,7 +394,11 @@ const techDocMapping = {
   'skilllens': 'tech-skilllens',
   'skillsvote': 'tech-skillsvote',
   'darwin-skill': 'tech-darwin-skill',
-  'skill-rag': 'tech-skill-rag'
+  'skill-rag': 'tech-skill-rag',
+  'codeskill': 'tech-codeskill',
+  'reskill': 'tech-reskill',
+  'skilldag': 'tech-skilldag',
+  'skillpyramid': 'tech-skillpyramid'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
