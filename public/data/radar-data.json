@@ -308,6 +308,18 @@
             0.35
           ],
           "status": "open-source"
+        },
+        {
+          "id": "skill-rag",
+          "name": "Skill-RAG (SRA)",
+          "description": "清华SRA范式，RAG检索知识→SRA检索可执行技能，SRA-Bench首个技能检索增强基准",
+          "scores": [
+            0.6,
+            0.65,
+            0.55,
+            0.55
+          ],
+          "status": "academic"
         }
       ]
     },

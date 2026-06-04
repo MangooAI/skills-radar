@@ -393,7 +393,8 @@ const techDocMapping = {
   'muse-autoskill-mgmt': 'tech-muse-autoskill',
   'skilllens': 'tech-skilllens',
   'skillsvote': 'tech-skillsvote',
-  'darwin-skill': 'tech-darwin-skill'
+  'darwin-skill': 'tech-darwin-skill',
+  'skill-rag': 'tech-skill-rag'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
