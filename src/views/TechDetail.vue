@@ -398,7 +398,23 @@ const techDocMapping = {
   'codeskill': 'tech-codeskill',
   'reskill': 'tech-reskill',
   'skilldag': 'tech-skilldag',
-  'skillpyramid': 'tech-skillpyramid'
+  'skillpyramid': 'tech-skillpyramid',
+  'skill1': 'tech-skill1',
+  'sap': 'tech-sap',
+  'skillsinjector': 'tech-skillsinjector',
+  'optskills': 'tech-optskills',
+  'mindskill': 'tech-mindskill',
+  'skillmaster': 'tech-skillmaster',
+  'skillbrew': 'tech-skillbrew',
+  'skillmas': 'tech-skillmas',
+  'skillgrad': 'tech-skillgrad',
+  'skillc': 'tech-skillc',
+  'hisme': 'tech-hisme',
+  'skill0.5': 'tech-skill0.5',
+  'skillsmith': 'tech-skillsmith',
+  'skillsafetybench': 'tech-skillsafetybench',
+  'skillgenbench': 'tech-skillgenbench',
+  'skillevolbench': 'tech-skillevolbench'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))

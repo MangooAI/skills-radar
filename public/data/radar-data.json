@@ -180,6 +180,30 @@
             0.3
           ],
           "status": "research"
+        },
+        {
+          "id": "optskills",
+          "name": "OPTSKILLS",
+          "description": "按问题原型组织经验，DBSCAN聚类+并行探索蒸馏构建技能库，NLCO数据集OOD泛化提升10个百分点",
+          "scores": [
+            0.45,
+            0.7,
+            0.35,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "mindskill",
+          "name": "MIND-Skill",
+          "description": "首个技能生成闭环质量保证框架，归纳-演绎双智能体+三重文本损失联合优化，将技能质量从主观判断变为可测量可优化的过程",
+          "scores": [
+            0.45,
+            0.75,
+            0.3,
+            0.45
+          ],
+          "status": "research"
         }
       ]
     },
@@ -356,6 +380,42 @@
             0.25
           ],
           "status": "research"
+        },
+        {
+          "id": "skill1",
+          "name": "Skill1",
+          "description": "将技能选择、利用、蒸馏三阶段并入同一RL策略，仅用任务结果信号驱动协同进化，低频趋势+高频变化拆解单一奖励",
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "sap",
+          "name": "Skill-as-Pseudocode",
+          "description": "将技能文档从自然语言散文自动转换为带类型伪代码合约+具体动作模板，四重确定性校验剪断散文到动作的死循环",
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsinjector",
+          "name": "SkillsInjector",
+          "description": "用训练好的打分器替代语义匹配做技能选择，自适应预算替代固定Top-K，Set-Aware Renderer重写多技能描述以区分边界",
+          "scores": [
+            0.45,
+            0.7,
+            0.3,
+            0.35
+          ],
+          "status": "research"
         }
       ]
     },
@@ -434,6 +494,18 @@
             0.5,
             0.3,
             0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsmith",
+          "name": "SkillSmith",
+          "description": "将编译原理引入技能管理，技能编译成带边界合约的运行时接口，Token减少57%、解决时间缩短50%",
+          "scores": [
+            0.55,
+            0.75,
+            0.4,
+            0.4
           ],
           "status": "research"
         }
@@ -525,6 +597,42 @@
             0.6,
             0.85,
             0.4,
+            0.55
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsafetybench",
+          "name": "SkillSafetyBench",
+          "description": "首个系统性评估技能介导攻击面的基准，6风险域30安全类别155对抗案例，揭示主流CLI Agent对技能文档攻击缺乏防御",
+          "scores": [
+            0.5,
+            0.7,
+            0.4,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillgenbench",
+          "name": "SkillGenBench",
+          "description": "首个将技能生成从端到端评测中剥离的标准化基准，187任务2种模式2类知识源5种方法6种Backbone",
+          "scores": [
+            0.55,
+            0.7,
+            0.45,
+            0.5
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillevolbench",
+          "name": "SkillEvolBench",
+          "description": "系统化评测Agent能否将执行经验变成可复用程序知识，180任务6环境10模型3平台",
+          "scores": [
+            0.55,
+            0.7,
+            0.45,
             0.55
           ],
           "status": "research"
@@ -668,6 +776,66 @@
             0.45
           ],
           "status": "open-source"
+        },
+        {
+          "id": "skillmas",
+          "name": "SkillMAS",
+          "description": "识别并解决多Agent系统中技能进化与组织结构的适应解耦，效用学习+证据门控驱动双线协同进化",
+          "scores": [
+            0.45,
+            0.7,
+            0.3,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillgrad",
+          "name": "SkillGrad",
+          "description": "将梯度下降四核心概念用文本机制逐一模拟，让技能优化有方向有记忆有信号分解，平均超最强训练基线6.7个百分点",
+          "scores": [
+            0.5,
+            0.8,
+            0.35,
+            0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillc",
+          "name": "SKILLC",
+          "description": "将技能内化升级为信用分配问题，CSCA让Agent知道不带技能也能成功比靠技能成功更值得学，ALFWorld超SKILL0 5.5个百分点",
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.35
+          ],
+          "status": "research"
+        },
+        {
+          "id": "hisme",
+          "name": "HiSME",
+          "description": "双层技能进化：第一层技能在进化，第二层进化策略在元学习，技能管家本身也不会停滞",
+          "scores": [
+            0.5,
+            0.8,
+            0.35,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skill0.5",
+          "name": "Skill0.5",
+          "description": "打破全外化vs全内化困局，通用技能内化打底+任务特定技能外挂调用，ALFWorld OOD超最强基线13.2个百分点",
+          "scores": [
+            0.55,
+            0.8,
+            0.4,
+            0.35
+          ],
+          "status": "research"
         }
       ]
     },
@@ -782,6 +950,30 @@
             0.7,
             0.4,
             0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillmaster",
+          "name": "SKILLMASTER",
+          "description": "将技能管理教给Agent自己而非外部系统，DualAdv-GRPO分离执行和管理优势，7B模型ALFWorld达98.7%超越所有闭源大模型",
+          "scores": [
+            0.55,
+            0.75,
+            0.4,
+            0.5
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillbrew",
+          "name": "SkillBrew",
+          "description": "将技能库管理升级为全局多目标优化，效用硬约束+多样性+覆盖率求帕累托前沿，leave-one-out反事实找出该删该改该留的",
+          "scores": [
+            0.45,
+            0.75,
+            0.3,
+            0.45
           ],
           "status": "research"
         }
