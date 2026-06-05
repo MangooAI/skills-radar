@@ -76,3 +76,4 @@ Agent 发现新关系后通过两步动作写回图：**propose-edge** 预览提
 
 - [SkillDAG 论文](https://arxiv.org/pdf/2606.03056)
 - [SkillDAG 代码仓库](https://github.com/Ericbai06/SkillDAG)
+- [详细解析](https://zhuanlan.zhihu.com/p/2045562414347949707)
