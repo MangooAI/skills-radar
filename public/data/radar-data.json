@@ -228,14 +228,14 @@
         {
           "id": "skillorchestra",
           "name": "SkillOrchestra",
-          "description": "基于技能的Agent路由策略，提升22.5%",
+          "description": "基于技能手册的Agent编排框架，自动挖掘技能并建立Agent能力画像，解决路由坍塌问题，训练成本降低700倍且支持跨orchestrator迁移",
           "scores": [
-            0.75,
-            0.65,
-            0.7,
-            0.55
+            0.6,
+            0.8,
+            0.5,
+            0.5
           ],
-          "status": "active"
+          "status": "research"
         },
         {
           "id": "graph-of-skills",
@@ -252,14 +252,14 @@
         {
           "id": "agentskillos",
           "name": "AgentSkillOS",
-          "description": "生态级规模下技能的组织、编排与基准测试",
+          "description": "首个Agent技能生态管理框架，用能力树组织28万+技能，DAG编排实现多技能协同执行",
           "scores": [
-            0.65,
             0.55,
-            0.6,
-            0.65
+            0.75,
+            0.45,
+            0.5
           ],
-          "status": "active"
+          "status": "research"
         },
         {
           "id": "skillnet",
@@ -428,12 +428,12 @@
         {
           "id": "progressive-disclosure",
           "name": "渐进式披露",
-          "description": "分阶段加载Skill内容，控制Token消耗",
+          "description": "Anthropic模块化AI能力扩展系统，文件夹结构封装知识，渐进式披露实现按需加载，将通用Claude转化为专业智体",
           "scores": [
             0.75,
-            0.7,
-            0.8,
-            0.65
+            0.85,
+            0.65,
+            0.7
           ],
           "status": "active"
         },
@@ -568,14 +568,14 @@
         {
           "id": "agent-skills-eval",
           "name": "agent-skills-eval",
-          "description": "Agent Skills评测框架，with_skill vs without_skill对比测试",
+          "description": "Agent技能测试运行器，A/B对比+LLM自动裁判量化技能增益，生成可视化HTML报告",
           "scores": [
-            0.65,
+            0.55,
             0.7,
-            0.5,
-            0.6
+            0.45,
+            0.5
           ],
-          "status": "active"
+          "status": "open-source"
         },
         {
           "id": "skillflow",
@@ -648,14 +648,14 @@
         {
           "id": "skill-insight-optimizer",
           "name": "Skill-insight Optimizer",
-          "description": "基于归因结果的自动修复",
+          "description": "基于执行过程数据驱动的Skill自优化工具，动静态结合自动定位修补缺陷，支持交互式确认与版本回溯",
           "scores": [
-            0.7,
+            0.85,
+            0.8,
             0.75,
-            0.6,
-            0.55
+            0.7
           ],
-          "status": "active"
+          "status": "open-source"
         },
         {
           "id": "skillforge",

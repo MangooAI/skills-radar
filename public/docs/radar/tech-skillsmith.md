@@ -21,7 +21,13 @@
 
 **1. 源码形态分类：四类技能分别降级**
 
-编译前先判断技能的"源码形态"：**workflow 型**（有序步骤、明确控制流）编译为带依赖关系的步骤级工作流图；**dispatcher 型**（打包脚本和 API 描述）编译为类型化可调用算子；**reference 型**（表格和示例为主）索引化按需检索；**insufficient 型**（内容模糊）不编译、退回使用原始文档。分类基于结构性特征（标题层级、有序列表、代码块等）并由 LLM 最终判定，保守优先级：workflow > dispatcher > reference > insufficient。
+编译前先判断技能的"源码形态"：
+- **workflow 型**（有序步骤、明确控制流）编译为带依赖关系的步骤级工作流图；
+- **dispatcher 型**（打包脚本和 API 描述）编译为类型化可调用算子；
+- **reference 型**（表格和示例为主）索引化按需检索；
+- **insufficient 型**（内容模糊）不编译、退回使用原始文档。
+
+分类基于结构性特征（标题层级、有序列表、代码块等）并由 LLM 最终判定，保守优先级：workflow > dispatcher > reference > insufficient。
 
 **2. 边界合约：编译产物的声明式 ABI**
 

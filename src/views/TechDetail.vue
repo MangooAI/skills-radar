@@ -72,7 +72,7 @@
         </section>
 
         <!-- Core Implementation Section -->
-        <section v-if="techContent?.principles?.length" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
+        <section v-if="techContent?.principles?.length || techContent?.coreImplementationHtml" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +82,11 @@
             <h2 class="text-xl font-bold text-slate-900">核心实现</h2>
           </div>
 
-          <div class="space-y-4">
+          <!-- 使用完整HTML渲染（支持表格等复杂Markdown） -->
+          <div v-if="techContent?.coreImplementationHtml" class="core-implementation-content" v-html="techContent.coreImplementationHtml" @click="handleContentClick"></div>
+
+          <!-- 原有的结构化展示（当没有完整HTML时使用） -->
+          <div v-else class="space-y-4">
             <div v-for="(principle, idx) in techContent.principles" :key="idx"
               class="group p-5 rounded-xl border border-slate-200 hover:border-violet-200 hover:bg-violet-50/30 transition-all">
               <div class="flex items-start gap-4">
@@ -96,15 +100,15 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- 图片展示 -->
-          <div v-if="techContent?.images?.length" class="mt-6 space-y-4">
-            <img v-for="img in techContent.images" :key="img.filename"
-              :src="imagePath(img.filename)"
-              :alt="img.alt"
-              class="w-full rounded-xl shadow-lg cursor-zoom-in hover:opacity-90 transition-opacity"
-              @click="openEnlargedImage(img.filename)" />
+            <!-- 图片展示（仅在不使用完整HTML渲染时显示） -->
+            <div v-if="techContent?.images?.length" class="mt-6 space-y-4">
+              <img v-for="img in techContent.images" :key="img.filename"
+                :src="imagePath(img.filename)"
+                :alt="img.alt"
+                class="w-full rounded-xl shadow-lg cursor-zoom-in hover:opacity-90 transition-opacity"
+                @click="openEnlargedImage(img.filename)" />
+            </div>
           </div>
         </section>
 
@@ -295,10 +299,86 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useRadarStore } from '../stores/radar'
 import { marked } from 'marked'
+import katex from 'katex'
+import 'katex/dist/katex.min.css'
+
+// 渲染 LaTeX 数学公式（用于已解析的 HTML 内容）
+function renderLatexInHtml(html) {
+  if (!html) return ''
+
+  // 处理块级公式 $$...$$
+  html = html.replace(/\$\$([^$]+)\$\$/g, (match, formula) => {
+    try {
+      let decoded = formula.trim()
+      decoded = decoded.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+      return katex.renderToString(decoded, {
+        displayMode: true,
+        throwOnError: false,
+        output: 'html'
+      })
+    } catch (e) {
+      console.log('KaTeX error:', e)
+      return match
+    }
+  })
+
+  // 处理行内公式 $...$
+  html = html.replace(/\$([^$\n]+?)\$/g, (match, formula) => {
+    try {
+      let decoded = formula.trim()
+      decoded = decoded.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+      return katex.renderToString(decoded, {
+        displayMode: false,
+        throwOnError: false,
+        output: 'html'
+      })
+    } catch (e) {
+      console.log('KaTeX error:', e)
+      return match
+    }
+  })
+
+  return html
+}
+
+// 渲染 LaTeX 数学公式（用于原始 Markdown 文本）
+function renderLatex(text) {
+  if (!text) return ''
+
+  // 处理块级公式 $$...$$
+  text = text.replace(/\$\$([^$]+)\$\$/g, (match, formula) => {
+    try {
+      return katex.renderToString(formula.trim(), {
+        displayMode: true,
+        throwOnError: false,
+        output: 'html'
+      })
+    } catch (e) {
+      return match
+    }
+  })
+
+  // 处理行内公式 $...$
+  text = text.replace(/\$([^$\n]+?)\$/g, (match, formula) => {
+    try {
+      return katex.renderToString(formula.trim(), {
+        displayMode: false,
+        throwOnError: false,
+        output: 'html'
+      })
+    } catch (e) {
+      return match
+    }
+  })
+
+  return text
+}
 
 // 解析内联 Markdown（加粗、斜体等），不解析块级元素
 function parseInlineMarkdown(text) {
   if (!text) return ''
+  // 先渲染 LaTeX 公式
+  text = renderLatex(text)
   // 使用 marked 的内联解析器
   const lexer = new marked.Lexer()
   const tokens = lexer.inlineTokens(text)
@@ -320,6 +400,19 @@ function openEnlargedImage(filename) {
 // 关闭图片放大
 function closeEnlargedImage() {
   enlargedImage.value = null
+}
+
+// 处理核心实现区域的图片点击（事件委托）
+function handleContentClick(event) {
+  // 检查点击的是否是图片
+  if (event.target.tagName === 'IMG') {
+    const imgSrc = event.target.getAttribute('src')
+    // 提取图片文件名，格式如 /docs/radar/images/xxx.png
+    const filenameMatch = imgSrc.match(/\/docs\/radar\/images\/(.+)$/)
+    if (filenameMatch) {
+      openEnlargedImage(filenameMatch[1])
+    }
+  }
 }
 
 const route = useRoute()
@@ -500,8 +593,13 @@ function parseMarkdownContent(markdown) {
 
     // 使用 marked 将核心实现内容转换为 HTML
     let htmlContent = marked.parse(implSection[1].trim())
-    // 修正图片路径：images/xxx.png -> /docs/radar/images/xxx.png
+
+    // 修正图片路径
     htmlContent = htmlContent.replace(/src="images\/([^"]+)"/g, 'src="/docs/radar/images/$1"')
+
+    // 渲染 LaTeX 公式（处理 HTML 实体）
+    htmlContent = renderLatexInHtml(htmlContent)
+
     content.coreImplementationHtml = htmlContent
 
     // 同时解析出 principles 用于显示
@@ -760,51 +858,176 @@ function getStatusClass(status) {
 </script>
 
 <style scoped>
-/* 核心实现内容样式 */
-.core-implementation-content p {
+/* 核心实现内容样式 - 使用 :deep() 穿透 v-html */
+.core-implementation-content :deep(p) {
   margin-bottom: 1rem;
   line-height: 1.7;
 }
 
-.core-implementation-content strong {
+.core-implementation-content :deep(strong) {
   color: #1e293b;
   font-weight: 600;
 }
 
-.core-implementation-content ol,
-.core-implementation-content ul {
+/* 有序列表样式 - 使用层级隔离的计数器 */
+.core-implementation-content :deep(ol) {
   margin: 1rem 0;
-  padding-left: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: level1;
 }
 
-.core-implementation-content ol li,
-.core-implementation-content ul li {
+/* 嵌套 ol 使用不同的 counter */
+.core-implementation-content :deep(ol ol) {
+  counter-reset: level2;
+  margin-top: 0.5rem;
+}
+
+.core-implementation-content :deep(ol ol ol) {
+  counter-reset: level3;
+}
+
+/* 第一层 li - 使用 level1 counter */
+.core-implementation-content :deep(ol > li) {
   margin-bottom: 0.75rem;
   line-height: 1.6;
+  position: relative;
+  padding-left: 2rem;
+  counter-increment: level1;
 }
 
-.core-implementation-content ol li::marker {
-  color: #7c3aed;
+.core-implementation-content :deep(ol > li::before) {
+  content: counter(level1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  font-size: 0.75rem;
   font-weight: 600;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.core-implementation-content ul li::marker {
-  color: #7c3aed;
+/* 第二层嵌套 li - 使用 level2 counter */
+.core-implementation-content :deep(ol ol > li) {
+  margin-bottom: 0.5rem;
+  padding-left: 2.5rem;
+  counter-increment: level2;
 }
 
-.core-implementation-content img {
+.core-implementation-content :deep(ol ol > li::before) {
+  content: counter(level2);
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.625rem;
+}
+
+/* 无序列表样式 */
+.core-implementation-content :deep(ul) {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.core-implementation-content :deep(ul li) {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.core-implementation-content :deep(ul li::before) {
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+}
+
+/* 嵌套无序列表样式 */
+.core-implementation-content :deep(ul ul),
+.core-implementation-content :deep(ol ul),
+.core-implementation-content :deep(ul ol),
+.core-implementation-content :deep(ol ol) {
+  margin: 0.5rem 0;
+}
+
+.core-implementation-content :deep(ul ul li),
+.core-implementation-content :deep(ol ul li) {
+  padding-left: 2rem;
+}
+
+.core-implementation-content :deep(ul ul li::before) {
+  width: 0.375rem;
+  height: 0.375rem;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.core-implementation-content :deep(img) {
   max-width: 100%;
   height: auto;
   border-radius: 0.75rem;
   margin: 1.5rem 0;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  cursor: zoom-in;
+  transition: opacity 0.2s ease;
 }
 
-.core-implementation-content h4 {
+.core-implementation-content :deep(img:hover) {
+  opacity: 0.9;
+}
+
+.core-implementation-content :deep(h4) {
   font-size: 1rem;
   font-weight: 600;
   color: #334155;
   margin-top: 1.25rem;
   margin-bottom: 0.75rem;
+}
+
+/* Markdown 表格样式 */
+.core-implementation-content :deep(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.core-implementation-content :deep(table thead) {
+  background-color: #e2e8f0;
+}
+
+.core-implementation-content :deep(table th) {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.core-implementation-content :deep(table td) {
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.core-implementation-content :deep(table tbody tr:hover) {
+  background-color: #f1f5f9;
+}
+
+.core-implementation-content :deep(table tbody tr:nth-child(even)) {
+  background-color: #f8fafc;
 }
 </style>
