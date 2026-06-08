@@ -594,8 +594,9 @@ function parseMarkdownContent(markdown) {
     // 使用 marked 将核心实现内容转换为 HTML
     let htmlContent = marked.parse(implSection[1].trim())
 
-    // 修正图片路径
-    htmlContent = htmlContent.replace(/src="images\/([^"]+)"/g, 'src="/docs/radar/images/$1"')
+    // 修正图片路径（考虑 GitHub Pages base 路径）
+    const basePath = import.meta.env.DEV ? '' : '/skills-radar'
+    htmlContent = htmlContent.replace(/src="images\/([^"]+)"/g, `src="${basePath}/docs/radar/images/$1"`)
 
     // 渲染 LaTeX 公式（处理 HTML 实体）
     htmlContent = renderLatexInHtml(htmlContent)
