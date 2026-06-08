@@ -39,10 +39,10 @@
 
 **5. 四步闭环流程**
 
-- **Rollout（前向传播）**：目标模型携带当前技能文档执行一批任务，收集成功/失败轨迹作为训练信号，模型参数冻结不动。
-- **Reflection（梯度计算）**：优化器模型分析失败轨迹的共性问题，提炼改进方向，生成结构化编辑建议——两个模型分工（target model 执行，optimizer model 观察分析，同一级别的优化器也可恢复强优化器 56%-74% 的增益）。
-- **Edit（权重更新）**：对技能文档做 add/delete/replace 三种结构化编辑。
-- **Validation Gating（检查点保存）**：修改后在验证集评估，分数不涨则不接受。
+1. **Rollout（前向传播）**：目标模型携带当前技能文档执行一批任务，收集成功/失败轨迹作为训练信号，模型参数冻结不动。
+2. **Reflection（梯度计算）**：优化器模型分析失败轨迹的共性问题，提炼改进方向，生成结构化编辑建议——两个模型分工（target model 执行，optimizer model 观察分析，同一级别的优化器也可恢复强优化器 56%-74% 的增益）。
+3. **Edit（权重更新）**：对技能文档做 add/delete/replace 三种结构化编辑。
+4. **Validation Gating（检查点保存）**：修改后在验证集评估，分数不涨则不接受。
 
 ![alt text](images/skillopt_architecture_overview.png)
 
