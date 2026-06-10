@@ -416,6 +416,18 @@
             0.35
           ],
           "status": "research"
+        },
+        {
+          "id": "skill-not-doc",
+          "name": "Skill Is Not Document (R3)",
+          "description": "Skill检索≠文档检索，R3-Skill双语基准+两阶段检索器，拒绝信号变兼容性训练资源",
+          "scores": [
+            0.7,
+            0.75,
+            0.65,
+            0.6
+          ],
+          "status": "academic"
         }
       ]
     },
@@ -836,6 +848,18 @@
             0.35
           ],
           "status": "research"
+        },
+        {
+          "id": "skill-remember",
+          "name": "What Should a Skill Remember?",
+          "description": "Skill重写反直觉发现：短Skill更贵，成本感知重写框架，质量-成本Pareto最优",
+          "scores": [
+            0.65,
+            0.7,
+            0.55,
+            0.55
+          ],
+          "status": "academic"
         }
       ]
     },
@@ -985,14 +1009,14 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.52,
+      "overallScore": 0.51,
       "status": "🟡 成长期"
     },
     {
       "id": "recall",
       "label": "Skill 召回",
       "maturityLevel": "growing",
-      "overallScore": 0.57,
+      "overallScore": 0.54,
       "status": "🟡 成长期"
     },
     {
@@ -1005,9 +1029,9 @@
     {
       "id": "evaluation",
       "label": "Skill 评测",
-      "maturityLevel": "mature",
-      "overallScore": 0.61,
-      "status": "🟢 成熟期"
+      "maturityLevel": "growing",
+      "overallScore": 0.59,
+      "status": "🟡 成长期"
     },
     {
       "id": "optimization",
@@ -1020,7 +1044,7 @@
       "id": "management",
       "label": "Skill 管理",
       "maturityLevel": "growing",
-      "overallScore": 0.5,
+      "overallScore": 0.51,
       "status": "🟡 成长期"
     }
   ]

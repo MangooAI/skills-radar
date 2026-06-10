@@ -507,7 +507,9 @@ const techDocMapping = {
   'skillsmith': 'tech-skillsmith',
   'skillsafetybench': 'tech-skillsafetybench',
   'skillgenbench': 'tech-skillgenbench',
-  'skillevolbench': 'tech-skillevolbench'
+  'skillevolbench': 'tech-skillevolbench',
+  'skill-not-doc': 'tech-skill-not-doc',
+  'skill-remember': 'tech-skill-remember'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))
