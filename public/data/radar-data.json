@@ -428,6 +428,18 @@
             0.6
           ],
           "status": "academic"
+        },
+        {
+          "id": "xskill",
+          "name": "XSkill",
+          "description": "双流知识架构（Skill库+Experience库）协同进化，视觉接地轨迹提炼，零参数持续学习，ICML 2026",
+          "scores": [
+            0.75,
+            0.8,
+            0.55,
+            0.5
+          ],
+          "status": "active"
         }
       ]
     },
@@ -1016,7 +1028,7 @@
       "id": "recall",
       "label": "Skill 召回",
       "maturityLevel": "growing",
-      "overallScore": 0.54,
+      "overallScore": 0.55,
       "status": "🟡 成长期"
     },
     {
