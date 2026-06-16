@@ -534,7 +534,13 @@ const techDocMapping = {
   'malskillbench': 'tech-malskillbench',
   'rsa': 'tech-rsa',
   'skill-rm': 'tech-skill-rm',
-  'eval-skill': 'tech-eval-skill'
+  'eval-skill': 'tech-eval-skill',
+  'openclaw-skill': 'tech-openclaw-skill',
+  'skillchain': 'tech-skillchain',
+  'skillaudit': 'tech-skillaudit',
+  'skillcat': 'tech-skillcat',
+  'scr': 'tech-scr',
+  'skillvetbench': 'tech-skillvetbench'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))

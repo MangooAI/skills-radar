@@ -253,6 +253,20 @@
           "description": "工作流规范重构替代文本摘要，Skill-IR四层中间表示，行为重放一致性+10.5%",
           "scores": [0.55, 0.55, 0.40, 0.50],
           "status": "research"
+        },
+        {
+          "id": "openclaw-skill",
+          "name": "OpenClaw-Skill",
+          "description": "CSTS集体技能树搜索+CSRL集体技能强化学习，9B小模型逼近闭源竞争力",
+          "scores": [0.55, 0.60, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "skillchain",
+          "name": "SkillChain",
+          "description": "首个生产部署电商AI助手技能自进化框架，三阶段闭环+单调质量保证，线上A/B验证增益显著",
+          "scores": [0.75, 0.65, 0.70, 0.65],
+          "status": "active"
         }
       ]
     },
@@ -751,6 +765,13 @@
           "description": "离线进化可复用评估技能替代在线rubric，RewardBench 2三底座最多+18.51pp",
           "scores": [0.55, 0.55, 0.45, 0.50],
           "status": "research"
+        },
+        {
+          "id": "skillvetbench",
+          "name": "SkillVetBench",
+          "description": "SARS五维Agentic风险评分+HF排行榜，零假阴性零假阳性，VirusTotal漏检67%",
+          "scores": [0.65, 0.65, 0.55, 0.60],
+          "status": "active"
         }
       ]
     },
@@ -1012,6 +1033,20 @@
           "description": "持久化决策历史继承完整决策链，GAIA用公共Web访问比深度搜索Agent高15.8pp",
           "scores": [0.55, 0.55, 0.40, 0.45],
           "status": "research"
+        },
+        {
+          "id": "skillaudit",
+          "name": "SKILLAUDIT",
+          "description": "无ground-truth配对轨迹审计自进化，PACE 12评估器四维行为对比，SkillsBench +33.0pp",
+          "scores": [0.60, 0.65, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "skillcat",
+          "name": "SkillCAT",
+          "description": "CCE因果分叉提取+AAE回放验证+TTE拓扑编译，SpreadsheetBench +25.83pp",
+          "scores": [0.60, 0.60, 0.45, 0.50],
+          "status": "research"
         }
       ]
     },
@@ -1179,6 +1214,13 @@
           "name": "RSA",
           "description": "运行时行为审计替代静态分析，准确率90.0%，自进化攻击下持续检出19-20/20",
           "scores": [0.55, 0.60, 0.40, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "scr",
+          "name": "SCR",
+          "description": "技能组合路径级安全盲区形式化，SCR-Bench三风险机制，信任传递使攻击率从1.10%飙至83.89%",
+          "scores": [0.60, 0.60, 0.45, 0.50],
           "status": "research"
         }
       ]
