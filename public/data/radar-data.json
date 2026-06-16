@@ -204,6 +204,55 @@
             0.45
           ],
           "status": "research"
+        },
+        {
+          "id": "skillcomposer",
+          "name": "SkillComposer",
+          "description": "Create/Merge/Improve三操作驱动技能持续进化，Delta Pass Rate拒绝采样自动化质控",
+          "scores": [0.65, 0.65, 0.55, 0.65],
+          "status": "active"
+        },
+        {
+          "id": "anything2skill",
+          "name": "ANYTHING2SKILL",
+          "description": "异构知识编译为结构化技能，与RAG双通道检索，qsv 98.85%成功率",
+          "scores": [0.65, 0.65, 0.55, 0.65],
+          "status": "active"
+        },
+        {
+          "id": "colleague-skill",
+          "name": "COLLEAGUE.SKILL",
+          "description": "双轨蒸馏隐性经验为可安装技能包，兼容AgentSkills标准，GitHub 18.5k star",
+          "scores": [0.70, 0.65, 0.60, 0.70],
+          "status": "open-source"
+        },
+        {
+          "id": "mmg2skill",
+          "name": "MMG2Skill",
+          "description": "多模态人类教程自动转SKILL.md，闭环精炼反馈修正，跨底座宏平均+12.8~25.3pp",
+          "scores": [0.55, 0.60, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "sapo",
+          "name": "SAPO",
+          "description": "强模型生成技能边际效用近零，预算分劈A/B验证+策略自生成替代外部LLM调用",
+          "scores": [0.55, 0.60, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "evods",
+          "name": "EvoDS",
+          "description": "数据科学Agent自主合成验证入库复用技能+自适应上下文压缩，超最强基线28.9%",
+          "scores": [0.60, 0.60, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "w2s",
+          "name": "W2S",
+          "description": "工作流规范重构替代文本摘要，Skill-IR四层中间表示，行为重放一致性+10.5%",
+          "scores": [0.55, 0.55, 0.40, 0.50],
+          "status": "research"
         }
       ]
     },
@@ -418,9 +467,9 @@
           "status": "research"
         },
         {
-          "id": "skill-not-doc",
-          "name": "Skill Is Not Document (R3)",
-          "description": "Skill检索≠文档检索，R3-Skill双语基准+两阶段检索器，拒绝信号变兼容性训练资源",
+          "id": "r3-skill",
+          "name": "R3-Skill",
+          "description": "Skill检索≠文档检索，首个查询条件化的Skill路由基准，两阶段检索器，拒绝信号变兼容性训练资源",
           "scores": [
             0.7,
             0.75,
@@ -440,6 +489,20 @@
             0.5
           ],
           "status": "active"
+        },
+        {
+          "id": "skilljuror",
+          "name": "SkillJuror",
+          "description": "技能组织方式独立实验变量，82任务1230试验，结构影响行为但pass/fail指标不敏感",
+          "scores": [0.55, 0.55, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "skillpager",
+          "name": "SkillPager",
+          "description": "技能内检索六种语义类型+全局MMR选择，节省47% prompt token，充分性接近全文注入",
+          "scores": [0.50, 0.55, 0.40, 0.45],
+          "status": "research"
         }
       ]
     },
@@ -531,6 +594,20 @@
             0.4,
             0.4
           ],
+          "status": "research"
+        },
+        {
+          "id": "aip",
+          "name": "AIP",
+          "description": "技能重构为有向执行图+Schema校验YAML规范，按图执行按节点调试按类型审计",
+          "scores": [0.45, 0.50, 0.35, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "notes2skills",
+          "name": "Notes2Skills",
+          "description": "确定性标签拆分事实/判断/建议，防止不确定性漂白和指令丢失两种致命错误",
+          "scores": [0.55, 0.55, 0.40, 0.50],
           "status": "research"
         }
       ]
@@ -659,6 +736,20 @@
             0.45,
             0.55
           ],
+          "status": "research"
+        },
+        {
+          "id": "skill-rm",
+          "name": "Skill-RM",
+          "description": "奖励建模变可复用可审计评估技能，每项分数背后有具体资源和结构化证据记录",
+          "scores": [0.55, 0.60, 0.40, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "eval-skill",
+          "name": "Eval-Skill",
+          "description": "离线进化可复用评估技能替代在线rubric，RewardBench 2三底座最多+18.51pp",
+          "scores": [0.55, 0.55, 0.45, 0.50],
           "status": "research"
         }
       ]
@@ -862,9 +953,9 @@
           "status": "research"
         },
         {
-          "id": "skill-remember",
-          "name": "What Should a Skill Remember?",
-          "description": "Skill重写反直觉发现：短Skill更贵，成本感知重写框架，质量-成本Pareto最优",
+          "id": "skill-ee",
+          "name": "SkillEE",
+          "description": "成本感知的Skill重写框架，保留操作锚点降低下游执行成本，跨模型迁移平均减少14.7%",
           "scores": [
             0.65,
             0.7,
@@ -872,6 +963,55 @@
             0.55
           ],
           "status": "academic"
+        },
+        {
+          "id": "skillaxe",
+          "name": "SKILLAXE",
+          "description": "完全无监督技能自改进框架，四维度自动诊断缺陷，SkillsBench相对提升28%",
+          "scores": [0.55, 0.60, 0.40, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "selskill",
+          "name": "SelSkill",
+          "description": "技能调用独立优化目标，双粒度偏好学习，ALFWorld +10.9pp，策略可跨领域零样本迁移",
+          "scores": [0.55, 0.60, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "masa",
+          "name": "MASA",
+          "description": "模型条件化分层技能进化搜索+轻量改写器，打破一套技能适配所有模型假设",
+          "scores": [0.60, 0.60, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "skilladaptor",
+          "name": "SkillAdaptor",
+          "description": "归因-修改-审核三步闭环，定位首个故障步骤精确修订，免训练可插拔接入Agent框架",
+          "scores": [0.55, 0.60, 0.40, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "federatedskill",
+          "name": "FederatedSkill",
+          "description": "联邦学习隐私保护搬进技能进化，语义patch+POMDP个性化更新，成功率最高+44.4%",
+          "scores": [0.55, 0.55, 0.40, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "openskill",
+          "name": "OpenSkill",
+          "description": "开放世界自进化，无参考答案自己搜知识建验证锚点，比封闭基线高8.9pp",
+          "scores": [0.55, 0.55, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "skillhone",
+          "name": "SkillHone",
+          "description": "持久化决策历史继承完整决策链，GAIA用公共Web访问比深度搜索Agent高15.8pp",
+          "scores": [0.55, 0.55, 0.40, 0.45],
+          "status": "research"
         }
       ]
     },
@@ -1011,6 +1151,34 @@
             0.3,
             0.45
           ],
+          "status": "research"
+        },
+        {
+          "id": "skillreact",
+          "name": "SkillReact",
+          "description": "揭示技能组合风险盲区，21万对组合22.25%触发禁止模式，18.2%确认真实风险",
+          "scores": [0.55, 0.55, 0.35, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "skillguard",
+          "name": "SkillGuard",
+          "description": "Android权限模型搬进技能生态，JSON DSL声明能力+运行时策略检查+用户交互授权",
+          "scores": [0.55, 0.55, 0.40, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "malskillbench",
+          "name": "MalSkillBench",
+          "description": "首个恶意技能基准3944技能108攻击单元，现有提示注入检测全线崩塌",
+          "scores": [0.55, 0.55, 0.40, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "rsa",
+          "name": "RSA",
+          "description": "运行时行为审计替代静态分析，准确率90.0%，自进化攻击下持续检出19-20/20",
+          "scores": [0.55, 0.60, 0.40, 0.50],
           "status": "research"
         }
       ]
