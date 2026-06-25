@@ -54,7 +54,15 @@ const techDocMapping = {
   'skillsbench': 'tech-skillsbench',
   'skillprobe': 'tech-skillprobe',
   'skillforge': 'tech-skillforge',
-  'skill-reducer': 'tech-skillreducer'
+  'skill-reducer': 'tech-skillreducer',
+  'visualskill': 'tech-visualskill',
+  'skillweaver': 'tech-skillweaver',
+  'skillaudit-assessment': 'tech-skillaudit-assessment',
+  'skill-coverage': 'tech-skill-coverage',
+  'tessl-skill-evaluation': 'tech-tessl-skill-evaluation',
+  'skillwiki': 'tech-skillwiki',
+  'locate-and-judge': 'tech-locate-and-judge',
+  'skillspector': 'tech-skillspector'
 }
 
 // 可用的技术文档列表
@@ -62,7 +70,9 @@ const availableTechDocs = [
   'tech-trace2skill', 'tech-d2skill', 'tech-skillx', 'tech-memento-skills',
   'tech-skillrl', 'tech-skillrouter', 'tech-graph-of-skills', 'tech-skvm',
   'tech-skillinsight', 'tech-skillsbench', 'tech-skillprobe', 'tech-skillforge',
-  'tech-skillreducer'
+  'tech-skillreducer', 'tech-visualskill', 'tech-skillweaver',
+  'tech-skillaudit-assessment', 'tech-skill-coverage', 'tech-tessl-skill-evaluation',
+  'tech-skillwiki', 'tech-locate-and-judge', 'tech-skillspector'
 ]
 
 async function fetchMarkdown() {

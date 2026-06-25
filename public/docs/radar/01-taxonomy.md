@@ -27,12 +27,12 @@ Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/wi
 
 | 阶段 | 成熟度 | 综合评分 | 代表技术 |
 |------|--------|---------|---------|
-| Skill 评测 | 🟢 成熟期 | 0.73 | Skill-insight、SkillsBench |
-| Skill 召回 | 🟢 成熟期 | 0.66 | SkillRouter、Graph of Skills |
-| Skill 执行 | 🟡 成长期 | 0.54 | Progressive Disclosure、SkVM |
-| Skill 优化 | 🟡 成长期 | 0.53 | SkillForge、Iterative Optimizer |
-| Skill 生成 | 🟡 成长期 | 0.52 | Trace2Skill、Skill Creator 2.0 |
-| Skill 管理 | 🔴 探索期 | 0.39 | AgentSkillOS、Skills 标准 |
+| Skill 评测 | 🟢 成熟期 | 0.58 | Skill-insight、SkillsBench、SkillAudit |
+| Skill 召回 | 🟡 成长期 | 0.54 | SkillRouter、Graph of Skills、SkillWeaver |
+| Skill 优化 | 🟡 成长期 | 0.54 | SkillForge、Iterative Optimizer、Skill-MAS |
+| Skill 生成 | 🟡 成长期 | 0.54 | Trace2Skill、Skill Creator 2.0、VisualSkill |
+| Skill 执行 | 🟡 成长期 | 0.52 | Progressive Disclosure、SkVM |
+| Skill 管理 | 🟡 成长期 | 0.52 | AgentSkillOS、SkillWiki、SkillSpector |
 
 ---
 
@@ -48,7 +48,7 @@ Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/wi
 - 渐进式生成：从自然语言描述逐步生成结构化 Skill
 - 自生成：Agent 基于执行经验自主生成新 Skill
 
-**代表项目**：Trace2Skill、D2Skill、SkillX、Memento-Skills、SKILLRL、Skill Creator 2.0
+**代表项目**：Trace2Skill、D2Skill、SkillX、Memento-Skills、SKILLRL、Skill Creator 2.0、VisualSkill
 
 [查看完整技术文档 →](./category-01-generation.md)
 
@@ -62,7 +62,7 @@ Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/wi
 - 路由策略：大规模 Skill 库下的选择策略
 - 结构感知检索：利用 Skill 元数据提升检索精度
 
-**代表项目**：SkillRouter、SkillOrchestra、Graph of Skills、AgentSkillOS、SkillNet
+**代表项目**：SkillRouter、SkillOrchestra、Graph of Skills、AgentSkillOS、SkillNet、SkillWeaver
 
 [查看完整技术文档 →](./category-02-recall.md)
 
@@ -90,7 +90,7 @@ Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/wi
 - 归因分析：区分 Skill 设计问题与模型能力问题
 - 安全审计：检测 Skill 中的安全漏洞
 
-**代表项目**：Skill-insight、SkillsBench、SkillProbe、agent-skills-eval、Cross-Evaluation
+**代表项目**：Skill-insight、SkillsBench、SkillProbe、agent-skills-eval、Cross-Evaluation、SkillAudit、Skill Coverage、Tessl Skill Evaluation
 
 [查看完整技术文档 →](./category-04-evaluation.md)
 
@@ -104,7 +104,7 @@ Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/wi
 - 效果提升：针对性优化缺失步骤、冗余流程
 - 动态适配：根据模型能力动态调整 Skill 策略
 
-**代表项目**：Skill-insight Optimizer、SkillForge、Iterative Optimizer、SkillReducer、D2Skill
+**代表项目**：Skill-insight Optimizer、SkillForge、Iterative Optimizer、SkillReducer、D2Skill、Skill-MAS
 
 [查看完整技术文档 →](./category-05-optimization.md)
 
@@ -118,7 +118,7 @@ Skills 技术分类体系基于 [Skill-insight](https://atomgit.com/openeuler/wi
 - 权限管控：Skill 的访问权限与操作权限
 - 生态治理：解决版本混乱、重复开发问题
 
-**代表项目**：AgentSkillOS、SkillNet、Skills 标准、RBAC Permission、Git-based Versioning
+**代表项目**：AgentSkillOS、SkillNet、Skills 标准、RBAC Permission、Git-based Versioning、SkillWiki、Locate-and-Judge、SkillSpector
 
 [查看完整技术文档 →](./category-06-management.md)
 

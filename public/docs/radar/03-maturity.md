@@ -92,61 +92,61 @@
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.50 | 有 Trace2Skill、D2Skill 等成熟开源项目 |
-| 创新性 | 0.70 | 自生成是前沿方向，Memento-Skills 等开创性工作 |
-| 落地程度 | 0.40 | Anthropic Skill Creator 2.0 发布，但自生成尚未普及 |
-| 生态活跃度 | 0.45 | 学术研究活跃，工业落地刚开始 |
-| **综合评分** | **0.52** | **🟡 成长期** |
+| 技术成熟度 | 0.54 | 有 Trace2Skill、D2Skill、VisualSkill 等项目 |
+| 创新性 | 0.70 | 自生成是前沿方向，VisualSkill 多模态技能是开创性工作 |
+| 落地程度 | 0.43 | Anthropic Skill Creator 2.0 发布，但自生成尚未普及 |
+| 生态活跃度 | 0.47 | 学术研究活跃，工业落地刚开始 |
+| **综合评分** | **0.54** | **🟡 成长期** |
 
 ### 5.2 Skill 召回
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.75 | SkillRouter、Graph of Skills 等成熟方案 |
-| 创新性 | 0.55 | 基于强化学习的路由已有成熟方案 |
-| 落地程度 | 0.70 | 多个框架已采用 Skill 召回机制 |
-| 生态活跃度 | 0.60 | AgentSkillOS 等项目持续维护 |
-| **综合评分** | **0.66** | **🟢 成熟期** |
+| 技术成熟度 | 0.57 | SkillRouter、Graph of Skills、SkillWeaver 等方案 |
+| 创新性 | 0.66 | SkillWeaver 组合式路由+分解反馈回路创新显著 |
+| 落地程度 | 0.47 | 多个框架已采用 Skill 召回机制 |
+| 生态活跃度 | 0.44 | AgentSkillOS 等项目持续维护 |
+| **综合评分** | **0.54** | **🟡 成长期** |
 
 ### 5.3 Skill 执行
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.55 | 渐进式披露广泛采用，执行追踪正在完善 |
-| 创新性 | 0.65 | SkVM 等编译器方案具有创新性 |
-| 落地程度 | 0.50 | 主流框架支持渐进式加载 |
-| 生态活跃度 | 0.40 | 执行追踪相关项目较少 |
-| **综合评分** | **0.54** | **🟡 成长期** |
+| 技术成熟度 | 0.53 | 渐进式披露广泛采用，执行追踪正在完善 |
+| 创新性 | 0.64 | SkVM 等编译器方案具有创新性 |
+| 落地程度 | 0.43 | 主流框架支持渐进式加载 |
+| 生态活跃度 | 0.44 | 执行追踪相关项目较少 |
+| **综合评分** | **0.52** | **🟡 成长期** |
 
 ### 5.4 Skill 评测
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.80 | Skill-insight 已实现完整评测体系 |
-| 创新性 | 0.75 | 多维评测、归因分析具有原创性 |
-| 落地程度 | 0.70 | OpenCode、Claude Code 等已接入 |
-| 生态活跃度 | 0.65 | openEuler 社区持续维护 |
-| **综合评分** | **0.73** | **🟢 成熟期** |
+| 技术成熟度 | 0.61 | Skill-insight、SkillAudit、Tessl 等已实现完整评测体系 |
+| 创新性 | 0.68 | SkillAudit基线对比归因、Skill Coverage测试充分性度量具有原创性 |
+| 落地程度 | 0.49 | 多个评测框架已落地，Skill Coverage尚依赖人工审计 |
+| 生态活跃度 | 0.53 | openEuler 社区持续维护，SkillAudit/Tessl代码已开源 |
+| **综合评分** | **0.58** | **🟡 成长期** |
 
 ### 5.5 Skill 优化
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.50 | 迭代优化成熟，自优化是前沿方向 |
-| 创新性 | 0.75 | 自优化、递归进化具有开创性 |
-| 落地程度 | 0.40 | SkillForge 等项目研究中 |
-| 生态活跃度 | 0.45 | 相关研究活跃但工业落地少 |
-| **综合评分** | **0.53** | **🟡 成长期** |
+| 技术成熟度 | 0.56 | SkillOpt、SkillForge、Skill-MAS 等项目 |
+| 创新性 | 0.69 | Skill-MAS Meta-Skill进化、自优化、递归进化具有开创性 |
+| 落地程度 | 0.43 | SkillForge 等项目研究中，Skill-MAS依赖ground-truth标签 |
+| 生态活跃度 | 0.44 | 相关研究活跃但工业落地少 |
+| **综合评分** | **0.54** | **🟡 成长期** |
 
 ### 5.6 Skill 管理
 
 | 指标 | 评分 | 说明 |
 |------|------|------|
-| 技术成熟度 | 0.35 | 标准化进程加速中，治理体系待完善 |
-| 创新性 | 0.50 | 生命周期管理已有初步框架 |
-| 落地程度 | 0.30 | 大规模 Skill 库管理仍是挑战 |
-| 生态活跃度 | 0.40 | AgentSkillOS 等项目在发展中 |
-| **综合评分** | **0.39** | **🔴 探索期** |
+| 技术成熟度 | 0.53 | SkillWiki治理闭环、SkillSpector安全扫描、SkillNet收录60万+技能 |
+| 创新性 | 0.60 | SkillWiki知识层解耦、Locate-and-Judge注意力检测是原创范式 |
+| 落地程度 | 0.44 | SkillSpector NVIDIA开源生产级，但大规模管理仍是挑战 |
+| 生态活跃度 | 0.49 | SkillSpector 10.5k Stars，SkillWiki代码开源 |
+| **综合评分** | **0.52** | **🟡 成长期** |
 
 ---
 
@@ -154,12 +154,12 @@
 
 | 阶段 | 成熟度等级 | 综合评分 | 核心代表 |
 |------|-----------|----------|---------|
-| Skill 生成 | 🟡 成长期 | 0.52 | Trace2Skill、Skill Creator 2.0 |
-| Skill 召回 | 🟢 成熟期 | 0.66 | SkillRouter、Graph of Skills |
-| Skill 执行 | 🟡 成长期 | 0.54 | Progressive Disclosure、SkVM |
-| Skill 评测 | 🟢 成熟期 | 0.73 | Skill-insight、SkillsBench |
-| Skill 优化 | 🟡 成长期 | 0.53 | SkillForge、Iterative Optimizer |
-| Skill 管理 | 🔴 探索期 | 0.39 | AgentSkillOS、Skills 标准 |
+| Skill 生成 | 🟡 成长期 | 0.54 | Trace2Skill、Skill Creator 2.0、VisualSkill |
+| Skill 召回 | 🟡 成长期 | 0.54 | SkillRouter、Graph of Skills、SkillWeaver |
+| Skill 执行 | 🟡 成长期 | 0.52 | Progressive Disclosure、SkVM |
+| Skill 评测 | 🟡 成长期 | 0.58 | Skill-insight、SkillsBench、SkillAudit |
+| Skill 优化 | 🟡 成长期 | 0.54 | SkillForge、Skill-MAS、SkillOpt |
+| Skill 管理 | 🟡 成长期 | 0.52 | SkillWiki、SkillSpector、AgentSkillOS |
 
 ---
 

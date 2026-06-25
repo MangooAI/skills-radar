@@ -6,15 +6,7 @@
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <router-link to="/" class="flex items-center gap-3 group">
-            <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:shadow-teal-500/40 transition-shadow">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-lg font-bold text-slate-900 group-hover:text-teal-600 transition-colors">Skills Radar</span>
-              <span class="text-xs text-slate-500 hidden sm:block">技术收录与演进地图</span>
-            </div>
+            <img :src="logoPath" alt="Skills Radar" class="h-20 w-auto" />
           </router-link>
 
           <!-- Desktop Navigation -->
@@ -67,6 +59,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
           <div class="text-center md:text-left">
+            <img :src="logoPath" alt="Skills Radar" class="h-14 mb-3" />
             <p class="text-sm text-slate-600">
               基于 <a href="https://atomgit.com/openeuler/witty-skill-insight" target="_blank" class="text-teal-600 hover:underline">Skill-insight</a> 全生命周期管理方法论
             </p>
@@ -91,4 +84,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 const $route = useRoute()
+
+const basePath = import.meta.env.DEV ? '' : '/skills-radar'
+const logoPath = `${basePath}/skill-radar-logo.svg`
 </script>
