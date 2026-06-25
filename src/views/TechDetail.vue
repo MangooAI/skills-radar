@@ -540,7 +540,16 @@ const techDocMapping = {
   'skillaudit': 'tech-skillaudit',
   'skillcat': 'tech-skillcat',
   'scr': 'tech-scr',
-  'skillvetbench': 'tech-skillvetbench'
+  'skillvetbench': 'tech-skillvetbench',
+  'visualskill': 'tech-visualskill',
+  'skillweaver': 'tech-skillweaver',
+  'skillaudit-assessment': 'tech-skillaudit-assessment',
+  'skill-coverage': 'tech-skill-coverage',
+  'tessl-skill-evaluation': 'tech-tessl-skill-evaluation',
+  'skill-mas-opt': 'tech-skill-mas',
+  'skillwiki': 'tech-skillwiki',
+  'locate-and-judge': 'tech-locate-and-judge',
+  'skillspector': 'tech-skillspector'
 }
 
 const overallScore = computed(() => store.getOverallScore(tech.value || {}))

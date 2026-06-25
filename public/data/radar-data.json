@@ -267,6 +267,13 @@
           "description": "首个生产部署电商AI助手技能自进化框架，三阶段闭环+单调质量保证，线上A/B验证增益显著",
           "scores": [0.75, 0.65, 0.70, 0.65],
           "status": "active"
+        },
+        {
+          "id": "visualskill",
+          "name": "VisualSkill",
+          "description": "CUA多模态技能框架，保留截图而非改写为文字，MCP on-demand加载，Stage 2比纯文字版高8.3pp",
+          "scores": [0.55, 0.80, 0.40, 0.45],
+          "status": "research"
         }
       ]
     },
@@ -516,6 +523,13 @@
           "name": "SkillPager",
           "description": "技能内检索六种语义类型+全局MMR选择，节省47% prompt token，充分性接近全文注入",
           "scores": [0.50, 0.55, 0.40, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "skillweaver",
+          "name": "SkillWeaver",
+          "description": "组合式技能路由（SAD），拆解-检索-编排三段式框架，分解而非检索是瓶颈，上下文消耗降低99.9%",
+          "scores": [0.55, 0.75, 0.45, 0.40],
           "status": "research"
         }
       ]
@@ -771,6 +785,27 @@
           "name": "SkillVetBench",
           "description": "SARS五维Agentic风险评分+HF排行榜，零假阴性零假阳性，VirusTotal漏检67%",
           "scores": [0.65, 0.65, 0.55, 0.60],
+          "status": "active"
+        },
+        {
+          "id": "skillaudit-assessment",
+          "name": "SkillAudit",
+          "description": "以技能为中心的评估审计框架，基线对比剥离backbone影响，PRG归因+静态动态双层安全检测",
+          "scores": [0.65, 0.70, 0.55, 0.60],
+          "status": "active"
+        },
+        {
+          "id": "skill-coverage",
+          "name": "Skill Coverage",
+          "description": "借鉴代码覆盖率度量技能测试充分性，SBC分母+双门覆盖判定，人类一致率93.71%",
+          "scores": [0.55, 0.70, 0.40, 0.40],
+          "status": "research"
+        },
+        {
+          "id": "tessl-skill-evaluation",
+          "name": "Tessl Skill Evaluation",
+          "description": "配对对比量化技能边际贡献，双维度（完成度+遵循度）评分，技能+便宜模型逼近旗舰模型成本1/3",
+          "scores": [0.65, 0.70, 0.55, 0.55],
           "status": "active"
         }
       ]
@@ -1047,6 +1082,13 @@
           "description": "CCE因果分叉提取+AAE回放验证+TTE拓扑编译，SpreadsheetBench +25.83pp",
           "scores": [0.60, 0.60, 0.45, 0.50],
           "status": "research"
+        },
+        {
+          "id": "skill-mas-opt",
+          "name": "Skill-MAS",
+          "description": "进化式Meta-Skill驱动的自动多智能体系统，多轨迹采样+选择性反思闭环，不修改模型参数",
+          "scores": [0.55, 0.80, 0.40, 0.45],
+          "status": "research"
         }
       ]
     },
@@ -1222,6 +1264,27 @@
           "description": "技能组合路径级安全盲区形式化，SCR-Bench三风险机制，信任传递使攻击率从1.10%飙至83.89%",
           "scores": [0.60, 0.60, 0.45, 0.50],
           "status": "research"
+        },
+        {
+          "id": "skillwiki",
+          "name": "SkillWiki",
+          "description": "将技能管理从算法优化定义为基础设施问题，S0-S7完整生命周期+Git风格审计治理闭环",
+          "scores": [0.50, 0.65, 0.35, 0.40],
+          "status": "research"
+        },
+        {
+          "id": "locate-and-judge",
+          "name": "Locate-and-Judge",
+          "description": "注意力信号定位恶意片段+零样本判定，三个市场全量扫描131个恶意技能，precision 83%",
+          "scores": [0.55, 0.75, 0.50, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "skillspector",
+          "name": "SkillSpector",
+          "description": "NVIDIA开源Agent技能安全扫描器，68种漏洞17类别两阶段检测+MCP Server运行时护栏",
+          "scores": [0.70, 0.60, 0.65, 0.70],
+          "status": "open-source"
         }
       ]
     }
@@ -1231,28 +1294,28 @@
       "id": "generation",
       "label": "Skill 生成",
       "maturityLevel": "growing",
-      "overallScore": 0.51,
+      "overallScore": 0.54,
       "status": "🟡 成长期"
     },
     {
       "id": "recall",
       "label": "Skill 召回",
       "maturityLevel": "growing",
-      "overallScore": 0.55,
+      "overallScore": 0.54,
       "status": "🟡 成长期"
     },
     {
       "id": "execution",
       "label": "Skill 执行",
       "maturityLevel": "growing",
-      "overallScore": 0.53,
+      "overallScore": 0.52,
       "status": "🟡 成长期"
     },
     {
       "id": "evaluation",
       "label": "Skill 评测",
       "maturityLevel": "growing",
-      "overallScore": 0.59,
+      "overallScore": 0.58,
       "status": "🟡 成长期"
     },
     {
@@ -1266,7 +1329,7 @@
       "id": "management",
       "label": "Skill 管理",
       "maturityLevel": "growing",
-      "overallScore": 0.51,
+      "overallScore": 0.52,
       "status": "🟡 成长期"
     }
   ]

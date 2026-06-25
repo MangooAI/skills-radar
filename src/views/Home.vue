@@ -10,8 +10,8 @@
             <span class="animate-pulse w-2 h-2 rounded-full bg-teal-400"></span>
             <span>实时追踪 · 自动更新</span>
           </div>
-          <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-            Skills Radar
+          <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight flex items-center justify-center gap-4">
+            <img :src="logoPath" alt="Skills Radar" class="h-20 lg:h-28 w-auto" />
           </h1>
           <p class="text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto">
             追踪 Skills 技术，让 Agent 能力进化有迹可循
@@ -253,6 +253,9 @@ import TechRadarChart from '../components/TechRadarChart.vue'
 
 const router = useRouter()
 const store = useRadarStore()
+
+const basePath = import.meta.env.DEV ? '' : '/skills-radar'
+const logoPath = `${basePath}/skill-radar-logo.svg`
 
 onMounted(async () => {
   await store.fetchData()
