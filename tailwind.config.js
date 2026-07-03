@@ -5,7 +5,9 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // line-clamp is included in Tailwind v3.3+
+    },
   },
   plugins: [],
 }

@@ -1,27 +1,25 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import { SCORE_WEIGHTS, getMaturityLevel, MATURITY_META } from '../constants/maturity'
 
 export const useRadarStore = defineStore('radar', () => {
   const categories = ref([])
   const technologies = ref([])
   const loading = ref(false)
   const error = ref(null)
-  const metadata = ref(null)
 
   // Fetch data from static JSON file
   async function fetchData() {
     loading.value = true
     error.value = null
     try {
-      // 开发模式用根路径，生产模式用 GitHub Pages 路径
       const basePath = import.meta.env.DEV ? '' : '/skills-radar'
       const response = await fetch(`${basePath}/data/radar-data.json`)
       if (!response.ok) throw new Error('数据加载失败')
       const data = await response.json()
-      metadata.value = data.metadata
       categories.value = data.categories || []
-      // 提取 technologies 并添加 categoryId（JSON 数据中 technologies 嵌套在 categories 内）
-      technologies.value = data.categories?.flatMap(cat =>
+      // 展平 technologies 并标注 categoryId
+      technologies.value = categories.value.flatMap(cat =>
         (cat.technologies || []).map(tech => ({ ...tech, categoryId: cat.id }))
       ) || []
     } catch (e) {
@@ -47,26 +45,25 @@ export const useRadarStore = defineStore('radar', () => {
     return technologies.value.filter(t => t.categoryId === categoryId)
   }
 
-  // Calculate overall score
+  // Calculate overall score (weights from single source of truth)
   function getOverallScore(tech) {
-    if (!tech.scores || tech.scores.length < 4) return 0
-    const weights = [0.30, 0.25, 0.25, 0.20]
-    return tech.scores.reduce((sum, score, i) => sum + score * weights[i], 0)
+    if (!tech?.scores || tech.scores.length < SCORE_WEIGHTS.length) return 0
+    return tech.scores.reduce((sum, score, i) => sum + score * SCORE_WEIGHTS[i], 0)
   }
 
   // Get maturity status
   function getMaturityStatus(score) {
-    if (score > 0.6) return { label: '成熟期', color: 'green', emoji: '🟢' }
-    if (score >= 0.4) return { label: '成长期', color: 'yellow', emoji: '🟡' }
-    return { label: '探索期', color: 'red', emoji: '🔴' }
+    const level = getMaturityLevel(score)
+    const meta = MATURITY_META[level]
+    return { label: meta.label, color: meta.badgeClass.replace('status-', ''), emoji: meta.emoji, level }
   }
 
   // Stats
   const stats = computed(() => {
     const total = technologies.value.length
-    const mature = technologies.value.filter(t => getOverallScore(t) > 0.6).length
-    const growing = technologies.value.filter(t => getOverallScore(t) >= 0.4 && getOverallScore(t) <= 0.6).length
-    const exploring = technologies.value.filter(t => getOverallScore(t) < 0.4).length
+    const mature = technologies.value.filter(t => getMaturityLevel(getOverallScore(t)) === 'mature').length
+    const growing = technologies.value.filter(t => getMaturityLevel(getOverallScore(t)) === 'growing').length
+    const exploring = technologies.value.filter(t => getMaturityLevel(getOverallScore(t)) === 'exploring').length
     return { total, mature, growing, exploring }
   })
 
@@ -75,7 +72,6 @@ export const useRadarStore = defineStore('radar', () => {
     technologies,
     loading,
     error,
-    metadata,
     stats,
     fetchData,
     getTechById,
