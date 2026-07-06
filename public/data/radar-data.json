@@ -531,6 +531,27 @@
           "description": "组合式技能路由（SAD），拆解-检索-编排三段式框架，分解而非检索是瓶颈，上下文消耗降低99.9%",
           "scores": [0.55, 0.75, 0.45, 0.40],
           "status": "research"
+        },
+        {
+          "id": "ucob",
+          "name": "UCOB",
+          "description": "信用感知双向自蒸馏框架，让Agent学会有选择地相信技能记忆，ALFWorld 89.1%超SOTA +23.5pp",
+          "scores": [0.60, 0.80, 0.55, 0.55],
+          "status": "research"
+        },
+        {
+          "id": "skill-collision",
+          "name": "Skill Collision",
+          "description": "微软生产环境中的技能描述碰撞优化，LLM单次重写替代人工调优，提速32倍",
+          "scores": [0.65, 0.60, 0.60, 0.40],
+          "status": "research"
+        },
+        {
+          "id": "skill-composer",
+          "name": "SkillComposer",
+          "description": "390万参数微型模型统一预测技能子集选择、数量和执行顺序，分布外Set F1领先+19.3pp",
+          "scores": [0.60, 0.70, 0.50, 0.55],
+          "status": "research"
         }
       ]
     },
@@ -807,6 +828,20 @@
           "description": "配对对比量化技能边际贡献，双维度（完成度+遵循度）评分，技能+便宜模型逼近旗舰模型成本1/3",
           "scores": [0.65, 0.70, 0.55, 0.55],
           "status": "active"
+        },
+        {
+          "id": "skillfuzz",
+          "name": "SkillFuzz",
+          "description": "基于MCTS的技能组合模糊测试，利用计划漂移发现1000+隐式意图，确认率超80%",
+          "scores": [0.55, 0.70, 0.45, 0.50],
+          "status": "research"
+        },
+        {
+          "id": "skillcoach",
+          "name": "SkillCoach",
+          "description": "自演化评分表体系分离过程评估与结果验证，轨迹筛选一致性从82提升到96，幻觉率降至0",
+          "scores": [0.55, 0.75, 0.50, 0.50],
+          "status": "research"
         }
       ]
     },
