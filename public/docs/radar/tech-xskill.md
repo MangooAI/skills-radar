@@ -46,7 +46,7 @@
 - 视觉接地：知识提取和适配均以视觉信息为锚点，适配多模态Agent场景
 - 在线积累：随执行批次持续积累，知识库动态增长
 
-![架构图](images/tech-xskill_architecture_overview.png)
+![架构图](images/xskill_architecture_overview.png)
 
 ---
 
@@ -83,7 +83,7 @@
 
 - **skill-rag** (SRA)：同为Skill检索范式，但SRA聚焦检索-融合-应用三阶段诊断，XSkill聚焦Skill+Experience双流协同
 - **skill-router**：路由技术决定调用哪个Skill，XSkill决定检索并注入哪段经验
-- **muse-autoskill-gen**：也做Skill自动创建，但MUSE是五阶段生命周期管理，XSkill是双流知识积累
+- **muse-autoskill**：也做Skill自动创建，但MUSE是五阶段生命周期管理，XSkill是双流知识积累
 
 ---
 

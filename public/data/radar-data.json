@@ -50,18 +50,6 @@
           "status": "active"
         },
         {
-          "id": "d2skill",
-          "name": "D2Skill",
-          "description": "双粒度动态技能库，驱动策略-技能协同进化",
-          "scores": [
-            0.5,
-            0.75,
-            0.35,
-            0.4
-          ],
-          "status": "active"
-        },
-        {
           "id": "skillx",
           "name": "SkillX",
           "description": "为Agent打造自动化构建、可复用的Skill库",
@@ -84,18 +72,6 @@
             0.3
           ],
           "status": "research"
-        },
-        {
-          "id": "skillrl",
-          "name": "SKILLRL",
-          "description": "通过技能的强化学习促进Agent自进化",
-          "scores": [
-            0.45,
-            0.8,
-            0.3,
-            0.4
-          ],
-          "status": "active"
         },
         {
           "id": "skill-creator",
@@ -158,7 +134,7 @@
           "status": "research"
         },
         {
-          "id": "muse-autoskill-gen",
+          "id": "muse-autoskill",
           "name": "MUSE-Autoskill",
           "description": "Skill五阶段生命周期框架，Skill级记忆(.memory.md)累积经验，SkillsBench 68.40% SOTA，自生成Skill达87.94%",
           "scores": [
@@ -274,6 +250,20 @@
           "description": "CUA多模态技能框架，保留截图而非改写为文字，MCP on-demand加载，Stage 2比纯文字版高8.3pp",
           "scores": [0.55, 0.80, 0.40, 0.45],
           "status": "research"
+        },
+        {
+          "id": "resource2skill",
+          "name": "RESOURCE2SKILL",
+          "description": "微软多模态技能蒸馏管线，从教学视频/代码/文章/参考作品提取可执行技能，7领域+11.9pp，人类偏好胜率83.3%",
+          "scores": [0.60, 0.75, 0.50, 0.60],
+          "status": "research"
+        },
+        {
+          "id": "skillfab",
+          "name": "SkillFab",
+          "description": "Agent原生技能生产平台，需求先行+复用先行，MCP端点+Git证据链+审查门禁，已部署skillfab.ai",
+          "scores": [0.70, 0.60, 0.55, 0.40],
+          "status": "active"
         }
       ]
     },
@@ -316,30 +306,6 @@
             0.6,
             0.65,
             0.5
-          ],
-          "status": "active"
-        },
-        {
-          "id": "agentskillos",
-          "name": "AgentSkillOS",
-          "description": "首个Agent技能生态管理框架，用能力树组织28万+技能，DAG编排实现多技能协同执行",
-          "scores": [
-            0.55,
-            0.75,
-            0.45,
-            0.5
-          ],
-          "status": "research"
-        },
-        {
-          "id": "skillnet",
-          "name": "SkillNet",
-          "description": "创建、评估与连接AI技能，已收录60万+技能",
-          "scores": [
-            0.65,
-            0.5,
-            0.6,
-            0.55
           ],
           "status": "active"
         },
@@ -551,6 +517,13 @@
           "name": "SkillComposer",
           "description": "390万参数微型模型统一预测技能子集选择、数量和执行顺序，分布外Set F1领先+19.3pp",
           "scores": [0.60, 0.70, 0.50, 0.55],
+          "status": "research"
+        },
+        {
+          "id": "skillreranker",
+          "name": "SkillReranker",
+          "description": "任务分解引导的自适应技能重排序，图匹配替代固定Top-K，技能数量由任务结构自主决定",
+          "scores": [0.55, 0.70, 0.45, 0.45],
           "status": "research"
         }
       ]
@@ -900,15 +873,10 @@
           "status": "research"
         },
         {
-          "id": "d2skill-opt",
+          "id": "d2skill",
           "name": "D2Skill",
-          "description": "根据模型能力动态调整Skill策略",
-          "scores": [
-            0.5,
-            0.75,
-            0.35,
-            0.4
-          ],
+          "description": "双粒度动态技能库，驱动策略-技能协同进化",
+          "scores": [0.50, 0.75, 0.35, 0.40],
           "status": "active"
         },
         {
@@ -1032,6 +1000,13 @@
           "status": "research"
         },
         {
+          "id": "skillrl",
+          "name": "SKILLRL",
+          "description": "通过技能的强化学习促进Agent自进化",
+          "scores": [0.45, 0.80, 0.30, 0.40],
+          "status": "active"
+        },
+        {
           "id": "skill0.5",
           "name": "Skill0.5",
           "description": "打破全外化vs全内化困局，通用技能内化打底+任务特定技能外挂调用，ALFWorld OOD超最强基线13.2个百分点",
@@ -1124,6 +1099,13 @@
           "description": "进化式Meta-Skill驱动的自动多智能体系统，多轨迹采样+选择性反思闭环，不修改模型参数",
           "scores": [0.55, 0.80, 0.40, 0.45],
           "status": "research"
+        },
+        {
+          "id": "metaskill-evolve",
+          "name": "MetaSkill-Evolve",
+          "description": "双时钟元技能进化，快时钟进化任务技能+慢时钟进化改进策略本身，基座冻结零微调三重增益",
+          "scores": [0.55, 0.80, 0.40, 0.45],
+          "status": "research"
         }
       ]
     },
@@ -1134,27 +1116,17 @@
       "color": "#B8B8B8",
       "technologies": [
         {
-          "id": "agentskillos-mgmt",
+          "id": "agentskillos",
           "name": "AgentSkillOS",
-          "description": "生态级技能的组织、编排与生命周期管理",
-          "scores": [
-            0.45,
-            0.5,
-            0.4,
-            0.5
-          ],
-          "status": "active"
+          "description": "首个Agent技能生态管理框架，用能力树组织28万+技能，DAG编排实现多技能协同执行",
+          "scores": [0.55, 0.75, 0.45, 0.50],
+          "status": "research"
         },
         {
-          "id": "skillnet-mgmt",
+          "id": "skillnet",
           "name": "SkillNet",
           "description": "创建、评估与连接AI技能，已收录60万+技能",
-          "scores": [
-            0.65,
-            0.5,
-            0.6,
-            0.55
-          ],
+          "scores": [0.65, 0.50, 0.60, 0.55],
           "status": "active"
         },
         {
@@ -1214,18 +1186,6 @@
             0.6,
             0.4,
             0.35
-          ],
-          "status": "research"
-        },
-        {
-          "id": "muse-autoskill-mgmt",
-          "name": "MUSE-Autoskill",
-          "description": "Skill五阶段生命周期框架，Skill级记忆(.memory.md)累积经验，SkillsBench 68.40% SOTA，自生成Skill达87.94%",
-          "scores": [
-            0.55,
-            0.8,
-            0.45,
-            0.4
           ],
           "status": "research"
         },
@@ -1319,6 +1279,13 @@
           "name": "SkillSpector",
           "description": "NVIDIA开源Agent技能安全扫描器，68种漏洞17类别两阶段检测+MCP Server运行时护栏",
           "scores": [0.70, 0.60, 0.65, 0.70],
+          "status": "open-source"
+        },
+        {
+          "id": "skillcenter",
+          "name": "SkillCenter",
+          "description": "21.7万条结构化技能覆盖24领域，SkillGate流水线自动化提取+来源可追溯+迭代校准，SQLite FTS5离线分发",
+          "scores": [0.70, 0.55, 0.60, 0.60],
           "status": "open-source"
         }
       ]

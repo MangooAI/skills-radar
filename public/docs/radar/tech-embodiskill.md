@@ -13,7 +13,7 @@ EmbodiSkill 提出**技能感知反思机制**，将执行轨迹细分为发现�
 - 发布年份：2026年
 
 **链接**:
-- 论文链接：https://arxiv.org/abs/2605.10010（待确认编号）
+- 论文链接：https://arxiv.org/abs/2605.10332
 
 ---
 
@@ -32,6 +32,8 @@ EmbodiSkill 针对具身场景中单主体自执行、自复盘、自修改的�
 - 不修改模型参数，全程无训练、外部化迭代
 - 核心洞察：执行失误不应触发技能修改，否则正确内容被错误覆盖导致越迭代越退化
 - 技能感知式靶向进化效果远高于粗粒度全局更新
+
+![alt text](images/embodiskill_architecture_overview.png)
 
 ---
 
@@ -74,5 +76,5 @@ EmbodiSkill 针对具身场景中单主体自执行、自复盘、自修改的�
 
 ## 参考资料
 
-- [论文](https://arxiv.org/abs/2605.10010)
+- [论文](https://arxiv.org/abs/2605.10332)
 - [详解](https://new.qq.com/rain/a/20260525A09ONS00)
