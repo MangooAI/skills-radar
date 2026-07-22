@@ -39,8 +39,6 @@ LLM提取候选后人类审计员审核，剔除背景介绍、元数据等非�
 
 DeepSeek V4 Flash作覆盖评判器。先在Claude Code+Opus 4.6轨迹集上采样350组约束-轨迹对做人类标注验证，**一致率93.71%，Cohen's $κ = 0.874$**。验证通过后冻结评判prompt和证据格式扩展到全量SkillsBench。
 
-![alt text](images/skill_coverage_architecture_overview.png)
-
 ---
 
 ## 主要能力

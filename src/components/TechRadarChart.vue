@@ -104,7 +104,7 @@ const positionedTechs = computed(() => {
       const labelX = x + labelOffset * Math.cos(techAngle)
       const labelY = y + labelOffset * Math.sin(techAngle)
       const maturityColor = MATURITY_META[getMaturityLevel(overallScore)].color
-      const shortName = tech.name.length > 12 ? tech.name.slice(0, 10) + '..' : tech.name
+      const shortName = tech.name.length > 18 ? tech.name.slice(0, 16) + '..' : tech.name
       const categoryLabel = cat.label_en ? `${cat.label} · ${cat.label_en}` : cat.label
       result.push({ ...tech, x, y, overallScore, color: cat.color, maturityColor, labelX, labelY, labelAnchor, shortName, categoryLabel, isHovered: hoveredTech.value?.id === tech.id })
     })

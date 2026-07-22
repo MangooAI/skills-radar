@@ -34,6 +34,8 @@ AutoSkill 由技能增强响应生成与技能进化两个耦合循环构成，�
 - 三大核心存储（用户专属技能库、共享技能库、向量缓存库）分层管理
 - 模型无关性：作为插件层兼容现有 LLM，支持跨 Agent、用户、任务的技能共享与迁移
 
+![alt text](images/autoskill_architecture_overview.png)
+
 ---
 
 ## 主要能力
@@ -75,5 +77,6 @@ AutoSkill 由技能增强响应生成与技能进化两个耦合循环构成，�
 
 ## 参考资料
 
+- [论文](https://arxiv.org/pdf/2603.01145)
 - [GitHub](https://github.com/ECNU-ICALK/AutoSkill)
 - [详解](https://blog.csdn.net/no2454410/article/details/159537096)
