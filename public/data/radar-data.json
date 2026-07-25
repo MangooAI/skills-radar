@@ -264,6 +264,13 @@
           "description": "Agent原生技能生产平台，需求先行+复用先行，MCP端点+Git证据链+审查门禁，已部署skillfab.ai",
           "scores": [0.70, 0.60, 0.55, 0.40],
           "status": "active"
+        },
+        {
+          "id": "geis",
+          "name": "GEIS",
+          "description": "基于技能的长文生成框架，六阶段写作+成对比较评测，评测发现映射为写作技能永久规则补丁，形成生成-评测-改进闭环",
+          "scores": [0.45, 0.70, 0.30, 0.30],
+          "status": "research"
         }
       ]
     },
@@ -524,6 +531,13 @@
           "name": "SkillReranker",
           "description": "任务分解引导的自适应技能重排序，图匹配替代固定Top-K，技能数量由任务结构自主决定",
           "scores": [0.55, 0.70, 0.45, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "skillsight",
+          "name": "SkillSight",
+          "description": "训练无关技能检索校准框架，揭示共享描述背景污染排名，SBC+LEC双通道，Recall@10提升20.21pp，比Dense+Reranker快677-1248倍",
+          "scores": [0.55, 0.80, 0.35, 0.45],
           "status": "research"
         }
       ]
@@ -815,6 +829,20 @@
           "description": "自演化评分表体系分离过程评估与结果验证，轨迹筛选一致性从82提升到96，幻觉率降至0",
           "scores": [0.55, 0.75, 0.50, 0.50],
           "status": "research"
+        },
+        {
+          "id": "openskillrisk",
+          "name": "OpenSkillRisk",
+          "description": "首个聚焦真实第三方技能执行期风险的Agent安全基准，17.5万技能筛263个真实风险技能，ASR+Awareness调和平均F_safe三维评测",
+          "scores": [0.55, 0.80, 0.35, 0.45],
+          "status": "academic"
+        },
+        {
+          "id": "skillsect-eval",
+          "name": "SkillSec-Eval",
+          "description": "Google技能全生命周期安全评估框架，创作到退役六阶段威胁分类法，327个真实技能逐道门攻防评测，混合防线将准入恶意率压至7.9%",
+          "scores": [0.55, 0.80, 0.35, 0.40],
+          "status": "academic"
         }
       ]
     },
@@ -1106,6 +1134,20 @@
           "description": "双时钟元技能进化，快时钟进化任务技能+慢时钟进化改进策略本身，基座冻结零微调三重增益",
           "scores": [0.55, 0.80, 0.40, 0.45],
           "status": "research"
+        },
+        {
+          "id": "msce",
+          "name": "MSCE",
+          "description": "训练无关记忆-技能协同进化框架，L1轨迹→L2策略→L3环境认知三层记忆，反射加权回填+三道闸门将策略结晶为可调用技能",
+          "scores": [0.50, 0.80, 0.35, 0.45],
+          "status": "research"
+        },
+        {
+          "id": "spyce",
+          "name": "SPyCE",
+          "description": "技能-策略协同进化框架，RL训练多模态Agent中将成功轨迹蒸馏为分层技能库，工作流技能管宏观规划+执行技能管局部操作，八个Benchmark全跑赢基线",
+          "scores": [0.50, 0.80, 0.30, 0.30],
+          "status": "research"
         }
       ]
     },
@@ -1287,6 +1329,13 @@
           "description": "21.7万条结构化技能覆盖24领域，SkillGate流水线自动化提取+来源可追溯+迭代校准，SQLite FTS5离线分发",
           "scores": [0.70, 0.55, 0.60, 0.60],
           "status": "open-source"
+        },
+        {
+          "id": "skillcorpus",
+          "name": "SkillCorpus",
+          "description": "开放SKILL.md生态聚合治理管道，82.1万原始文件经六阶段精炼为9.6万商用可分发技能，首在三个Benchmark两种Harness多骨架模型证明社区技能库稳定提升Agent表现",
+          "scores": [0.60, 0.80, 0.40, 0.45],
+          "status": "academic"
         }
       ]
     }
