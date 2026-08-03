@@ -185,91 +185,168 @@
           "id": "skillcomposer",
           "name": "SkillComposer",
           "description": "Create/Merge/Improve三操作驱动技能持续进化，Delta Pass Rate拒绝采样自动化质控",
-          "scores": [0.65, 0.65, 0.55, 0.65],
+          "scores": [
+            0.65,
+            0.65,
+            0.55,
+            0.65
+          ],
           "status": "active"
         },
         {
           "id": "anything2skill",
           "name": "ANYTHING2SKILL",
           "description": "异构知识编译为结构化技能，与RAG双通道检索，qsv 98.85%成功率",
-          "scores": [0.65, 0.65, 0.55, 0.65],
+          "scores": [
+            0.65,
+            0.65,
+            0.55,
+            0.65
+          ],
           "status": "active"
         },
         {
           "id": "colleague-skill",
           "name": "COLLEAGUE.SKILL",
           "description": "双轨蒸馏隐性经验为可安装技能包，兼容AgentSkills标准，GitHub 18.5k star",
-          "scores": [0.70, 0.65, 0.60, 0.70],
+          "scores": [
+            0.7,
+            0.65,
+            0.6,
+            0.7
+          ],
           "status": "open-source"
         },
         {
           "id": "mmg2skill",
           "name": "MMG2Skill",
           "description": "多模态人类教程自动转SKILL.md，闭环精炼反馈修正，跨底座宏平均+12.8~25.3pp",
-          "scores": [0.55, 0.60, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "sapo",
           "name": "SAPO",
           "description": "强模型生成技能边际效用近零，预算分劈A/B验证+策略自生成替代外部LLM调用",
-          "scores": [0.55, 0.60, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "evods",
           "name": "EvoDS",
           "description": "数据科学Agent自主合成验证入库复用技能+自适应上下文压缩，超最强基线28.9%",
-          "scores": [0.60, 0.60, 0.45, 0.50],
+          "scores": [
+            0.6,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "w2s",
           "name": "W2S",
           "description": "工作流规范重构替代文本摘要，Skill-IR四层中间表示，行为重放一致性+10.5%",
-          "scores": [0.55, 0.55, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "openclaw-skill",
           "name": "OpenClaw-Skill",
           "description": "CSTS集体技能树搜索+CSRL集体技能强化学习，9B小模型逼近闭源竞争力",
-          "scores": [0.55, 0.60, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillchain",
           "name": "SkillChain",
           "description": "首个生产部署电商AI助手技能自进化框架，三阶段闭环+单调质量保证，线上A/B验证增益显著",
-          "scores": [0.75, 0.65, 0.70, 0.65],
+          "scores": [
+            0.75,
+            0.65,
+            0.7,
+            0.65
+          ],
           "status": "active"
         },
         {
           "id": "visualskill",
           "name": "VisualSkill",
           "description": "CUA多模态技能框架，保留截图而非改写为文字，MCP on-demand加载，Stage 2比纯文字版高8.3pp",
-          "scores": [0.55, 0.80, 0.40, 0.45],
+          "scores": [
+            0.55,
+            0.8,
+            0.4,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "resource2skill",
           "name": "RESOURCE2SKILL",
           "description": "微软多模态技能蒸馏管线，从教学视频/代码/文章/参考作品提取可执行技能，7领域+11.9pp，人类偏好胜率83.3%",
-          "scores": [0.60, 0.75, 0.50, 0.60],
+          "scores": [
+            0.6,
+            0.75,
+            0.5,
+            0.6
+          ],
           "status": "research"
         },
         {
           "id": "skillfab",
           "name": "SkillFab",
           "description": "Agent原生技能生产平台，需求先行+复用先行，MCP端点+Git证据链+审查门禁，已部署skillfab.ai",
-          "scores": [0.70, 0.60, 0.55, 0.40],
+          "scores": [
+            0.7,
+            0.6,
+            0.55,
+            0.4
+          ],
           "status": "active"
         },
         {
           "id": "geis",
           "name": "GEIS",
           "description": "基于技能的长文生成框架，六阶段写作+成对比较评测，评测发现映射为写作技能永久规则补丁，形成生成-评测-改进闭环",
-          "scores": [0.45, 0.70, 0.30, 0.30],
+          "scores": [
+            0.45,
+            0.7,
+            0.3,
+            0.3
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skill-kd",
+          "name": "SKILL-KD",
+          "description": "对比技能蒸馏框架，将教师-学生行为差距蒸馏为可验证技能补丁，自适应重跑验证+漂移感知整合，不改参数注入prompt-time技能库",
+          "scores": [
+            0.45,
+            0.7,
+            0.3,
+            0.3
+          ],
           "status": "research"
         }
       ]
@@ -488,56 +565,96 @@
           "id": "skilljuror",
           "name": "SkillJuror",
           "description": "技能组织方式独立实验变量，82任务1230试验，结构影响行为但pass/fail指标不敏感",
-          "scores": [0.55, 0.55, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillpager",
           "name": "SkillPager",
           "description": "技能内检索六种语义类型+全局MMR选择，节省47% prompt token，充分性接近全文注入",
-          "scores": [0.50, 0.55, 0.40, 0.45],
+          "scores": [
+            0.5,
+            0.55,
+            0.4,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "skillweaver",
           "name": "SkillWeaver",
           "description": "组合式技能路由（SAD），拆解-检索-编排三段式框架，分解而非检索是瓶颈，上下文消耗降低99.9%",
-          "scores": [0.55, 0.75, 0.45, 0.40],
+          "scores": [
+            0.55,
+            0.75,
+            0.45,
+            0.4
+          ],
           "status": "research"
         },
         {
           "id": "ucob",
           "name": "UCOB",
           "description": "信用感知双向自蒸馏框架，让Agent学会有选择地相信技能记忆，ALFWorld 89.1%超SOTA +23.5pp",
-          "scores": [0.60, 0.80, 0.55, 0.55],
+          "scores": [
+            0.6,
+            0.8,
+            0.55,
+            0.55
+          ],
           "status": "research"
         },
         {
           "id": "skill-collision",
           "name": "Skill Collision",
           "description": "微软生产环境中的技能描述碰撞优化，LLM单次重写替代人工调优，提速32倍",
-          "scores": [0.65, 0.60, 0.60, 0.40],
+          "scores": [
+            0.65,
+            0.6,
+            0.6,
+            0.4
+          ],
           "status": "research"
         },
         {
           "id": "skill-composer",
           "name": "SkillComposer",
           "description": "390万参数微型模型统一预测技能子集选择、数量和执行顺序，分布外Set F1领先+19.3pp",
-          "scores": [0.60, 0.70, 0.50, 0.55],
+          "scores": [
+            0.6,
+            0.7,
+            0.5,
+            0.55
+          ],
           "status": "research"
         },
         {
           "id": "skillreranker",
           "name": "SkillReranker",
           "description": "任务分解引导的自适应技能重排序，图匹配替代固定Top-K，技能数量由任务结构自主决定",
-          "scores": [0.55, 0.70, 0.45, 0.45],
+          "scores": [
+            0.55,
+            0.7,
+            0.45,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "skillsight",
           "name": "SkillSight",
           "description": "训练无关技能检索校准框架，揭示共享描述背景污染排名，SBC+LEC双通道，Recall@10提升20.21pp，比Dense+Reranker快677-1248倍",
-          "scores": [0.55, 0.80, 0.35, 0.45],
+          "scores": [
+            0.55,
+            0.8,
+            0.35,
+            0.45
+          ],
           "status": "research"
         }
       ]
@@ -636,14 +753,36 @@
           "id": "aip",
           "name": "AIP",
           "description": "技能重构为有向执行图+Schema校验YAML规范，按图执行按节点调试按类型审计",
-          "scores": [0.45, 0.50, 0.35, 0.45],
+          "scores": [
+            0.45,
+            0.5,
+            0.35,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "notes2skills",
           "name": "Notes2Skills",
           "description": "确定性标签拆分事实/判断/建议，防止不确定性漂白和指令丢失两种致命错误",
-          "scores": [0.55, 0.55, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.4,
+            0.5
+          ],
+          "status": "research"
+        },
+        {
+          "id": "sigil",
+          "name": "SIGIL",
+          "description": "将prose skill编译为可执行agent harness的编译器，类型化AG-IR中间表示将确定性步骤转代码结构、开放判断保留为typed slot，模型无关且可审计溯源",
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.3
+          ],
           "status": "research"
         }
       ]
@@ -778,70 +917,120 @@
           "id": "skill-rm",
           "name": "Skill-RM",
           "description": "奖励建模变可复用可审计评估技能，每项分数背后有具体资源和结构化证据记录",
-          "scores": [0.55, 0.60, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "eval-skill",
           "name": "Eval-Skill",
           "description": "离线进化可复用评估技能替代在线rubric，RewardBench 2三底座最多+18.51pp",
-          "scores": [0.55, 0.55, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillvetbench",
           "name": "SkillVetBench",
           "description": "SARS五维Agentic风险评分+HF排行榜，零假阴性零假阳性，VirusTotal漏检67%",
-          "scores": [0.65, 0.65, 0.55, 0.60],
+          "scores": [
+            0.65,
+            0.65,
+            0.55,
+            0.6
+          ],
           "status": "active"
         },
         {
           "id": "skillaudit-assessment",
           "name": "SkillAudit",
           "description": "以技能为中心的评估审计框架，基线对比剥离backbone影响，PRG归因+静态动态双层安全检测",
-          "scores": [0.65, 0.70, 0.55, 0.60],
+          "scores": [
+            0.65,
+            0.7,
+            0.55,
+            0.6
+          ],
           "status": "active"
         },
         {
           "id": "skill-coverage",
           "name": "Skill Coverage",
           "description": "借鉴代码覆盖率度量技能测试充分性，SBC分母+双门覆盖判定，人类一致率93.71%",
-          "scores": [0.55, 0.70, 0.40, 0.40],
+          "scores": [
+            0.55,
+            0.7,
+            0.4,
+            0.4
+          ],
           "status": "research"
         },
         {
           "id": "tessl-skill-evaluation",
           "name": "Tessl Skill Evaluation",
           "description": "配对对比量化技能边际贡献，双维度（完成度+遵循度）评分，技能+便宜模型逼近旗舰模型成本1/3",
-          "scores": [0.65, 0.70, 0.55, 0.55],
+          "scores": [
+            0.65,
+            0.7,
+            0.55,
+            0.55
+          ],
           "status": "active"
         },
         {
           "id": "skillfuzz",
           "name": "SkillFuzz",
           "description": "基于MCTS的技能组合模糊测试，利用计划漂移发现1000+隐式意图，确认率超80%",
-          "scores": [0.55, 0.70, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.7,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillcoach",
           "name": "SkillCoach",
           "description": "自演化评分表体系分离过程评估与结果验证，轨迹筛选一致性从82提升到96，幻觉率降至0",
-          "scores": [0.55, 0.75, 0.50, 0.50],
+          "scores": [
+            0.55,
+            0.75,
+            0.5,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "openskillrisk",
           "name": "OpenSkillRisk",
           "description": "首个聚焦真实第三方技能执行期风险的Agent安全基准，17.5万技能筛263个真实风险技能，ASR+Awareness调和平均F_safe三维评测",
-          "scores": [0.55, 0.80, 0.35, 0.45],
+          "scores": [
+            0.55,
+            0.8,
+            0.35,
+            0.45
+          ],
           "status": "academic"
         },
         {
           "id": "skillsect-eval",
           "name": "SkillSec-Eval",
           "description": "Google技能全生命周期安全评估框架，创作到退役六阶段威胁分类法，327个真实技能逐道门攻防评测，混合防线将准入恶意率压至7.9%",
-          "scores": [0.55, 0.80, 0.35, 0.40],
+          "scores": [
+            0.55,
+            0.8,
+            0.35,
+            0.4
+          ],
           "status": "academic"
         }
       ]
@@ -904,7 +1093,12 @@
           "id": "d2skill",
           "name": "D2Skill",
           "description": "双粒度动态技能库，驱动策略-技能协同进化",
-          "scores": [0.50, 0.75, 0.35, 0.40],
+          "scores": [
+            0.5,
+            0.75,
+            0.35,
+            0.4
+          ],
           "status": "active"
         },
         {
@@ -1031,7 +1225,12 @@
           "id": "skillrl",
           "name": "SKILLRL",
           "description": "通过技能的强化学习促进Agent自进化",
-          "scores": [0.45, 0.80, 0.30, 0.40],
+          "scores": [
+            0.45,
+            0.8,
+            0.3,
+            0.4
+          ],
           "status": "active"
         },
         {
@@ -1062,91 +1261,204 @@
           "id": "skillaxe",
           "name": "SKILLAXE",
           "description": "完全无监督技能自改进框架，四维度自动诊断缺陷，SkillsBench相对提升28%",
-          "scores": [0.55, 0.60, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "selskill",
           "name": "SelSkill",
           "description": "技能调用独立优化目标，双粒度偏好学习，ALFWorld +10.9pp，策略可跨领域零样本迁移",
-          "scores": [0.55, 0.60, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "masa",
           "name": "MASA",
           "description": "模型条件化分层技能进化搜索+轻量改写器，打破一套技能适配所有模型假设",
-          "scores": [0.60, 0.60, 0.45, 0.50],
+          "scores": [
+            0.6,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skilladaptor",
           "name": "SkillAdaptor",
           "description": "归因-修改-审核三步闭环，定位首个故障步骤精确修订，免训练可插拔接入Agent框架",
-          "scores": [0.55, 0.60, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "federatedskill",
           "name": "FederatedSkill",
           "description": "联邦学习隐私保护搬进技能进化，语义patch+POMDP个性化更新，成功率最高+44.4%",
-          "scores": [0.55, 0.55, 0.40, 0.45],
+          "scores": [
+            0.55,
+            0.55,
+            0.4,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "openskill",
           "name": "OpenSkill",
           "description": "开放世界自进化，无参考答案自己搜知识建验证锚点，比封闭基线高8.9pp",
-          "scores": [0.55, 0.55, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillhone",
           "name": "SkillHone",
           "description": "持久化决策历史继承完整决策链，GAIA用公共Web访问比深度搜索Agent高15.8pp",
-          "scores": [0.55, 0.55, 0.40, 0.45],
+          "scores": [
+            0.55,
+            0.55,
+            0.4,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "skillaudit",
           "name": "SKILLAUDIT",
           "description": "无ground-truth配对轨迹审计自进化，PACE 12评估器四维行为对比，SkillsBench +33.0pp",
-          "scores": [0.60, 0.65, 0.45, 0.50],
+          "scores": [
+            0.6,
+            0.65,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillcat",
           "name": "SkillCAT",
           "description": "CCE因果分叉提取+AAE回放验证+TTE拓扑编译，SpreadsheetBench +25.83pp",
-          "scores": [0.60, 0.60, 0.45, 0.50],
+          "scores": [
+            0.6,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skill-mas-opt",
           "name": "Skill-MAS",
           "description": "进化式Meta-Skill驱动的自动多智能体系统，多轨迹采样+选择性反思闭环，不修改模型参数",
-          "scores": [0.55, 0.80, 0.40, 0.45],
+          "scores": [
+            0.55,
+            0.8,
+            0.4,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "metaskill-evolve",
           "name": "MetaSkill-Evolve",
           "description": "双时钟元技能进化，快时钟进化任务技能+慢时钟进化改进策略本身，基座冻结零微调三重增益",
-          "scores": [0.55, 0.80, 0.40, 0.45],
+          "scores": [
+            0.55,
+            0.8,
+            0.4,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "msce",
           "name": "MSCE",
           "description": "训练无关记忆-技能协同进化框架，L1轨迹→L2策略→L3环境认知三层记忆，反射加权回填+三道闸门将策略结晶为可调用技能",
-          "scores": [0.50, 0.80, 0.35, 0.45],
+          "scores": [
+            0.5,
+            0.8,
+            0.35,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "spyce",
           "name": "SPyCE",
           "description": "技能-策略协同进化框架，RL训练多模态Agent中将成功轨迹蒸馏为分层技能库，工作流技能管宏观规划+执行技能管局部操作，八个Benchmark全跑赢基线",
-          "scores": [0.50, 0.80, 0.30, 0.30],
+          "scores": [
+            0.5,
+            0.8,
+            0.3,
+            0.3
+          ],
+          "status": "research"
+        },
+        {
+          "id": "flowevo",
+          "name": "FlowEvo",
+          "description": "训练无关agent自进化框架，将成功工作流轨迹编译为可调用可验证可管理的技能记录，直接执行/技能条件生成/动态生成三种路由复用，对比效用策展自动压制负迁移技能",
+          "scores": [
+            0.5,
+            0.7,
+            0.35,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillrise",
+          "name": "SkillRise",
+          "description": "端到端强化学习框架，将相关不同任务排为渐进序列，单一policy交替解题与技能文档策展，解耦跨任务信用分配让agent推理时持续累积可迁移技能",
+          "scores": [
+            0.5,
+            0.7,
+            0.35,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skill-sp",
+          "name": "Skill Self-Play",
+          "description": "共进化自博弈框架，技能库作为训练时课程构建接口，Proposer-Solver-Controller三组件协作解决任务多样性与验证可靠性矛盾，持续生成前沿难度训练数据",
+          "scores": [
+            0.55,
+            0.75,
+            0.4,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "veriskill",
+          "name": "VeriSkill",
+          "description": "专为程序验证构建的skill自进化框架，责任归因区分skill缺陷/solver边界/任务不可满足，诊断签名聚类抽象教训，三道可执行验证关卡将失败转化为可信任可迁移skill改进",
+          "scores": [
+            0.5,
+            0.7,
+            0.35,
+            0.35
+          ],
           "status": "research"
         }
       ]
@@ -1161,14 +1473,24 @@
           "id": "agentskillos",
           "name": "AgentSkillOS",
           "description": "首个Agent技能生态管理框架，用能力树组织28万+技能，DAG编排实现多技能协同执行",
-          "scores": [0.55, 0.75, 0.45, 0.50],
+          "scores": [
+            0.55,
+            0.75,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillnet",
           "name": "SkillNet",
           "description": "创建、评估与连接AI技能，已收录60万+技能",
-          "scores": [0.65, 0.50, 0.60, 0.55],
+          "scores": [
+            0.65,
+            0.5,
+            0.6,
+            0.55
+          ],
           "status": "active"
         },
         {
@@ -1271,71 +1593,145 @@
           "id": "skillreact",
           "name": "SkillReact",
           "description": "揭示技能组合风险盲区，21万对组合22.25%触发禁止模式，18.2%确认真实风险",
-          "scores": [0.55, 0.55, 0.35, 0.45],
+          "scores": [
+            0.55,
+            0.55,
+            0.35,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "skillguard",
           "name": "SkillGuard",
           "description": "Android权限模型搬进技能生态，JSON DSL声明能力+运行时策略检查+用户交互授权",
-          "scores": [0.55, 0.55, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "malskillbench",
           "name": "MalSkillBench",
           "description": "首个恶意技能基准3944技能108攻击单元，现有提示注入检测全线崩塌",
-          "scores": [0.55, 0.55, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.55,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "rsa",
           "name": "RSA",
           "description": "运行时行为审计替代静态分析，准确率90.0%，自进化攻击下持续检出19-20/20",
-          "scores": [0.55, 0.60, 0.40, 0.50],
+          "scores": [
+            0.55,
+            0.6,
+            0.4,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "scr",
           "name": "SCR",
           "description": "技能组合路径级安全盲区形式化，SCR-Bench三风险机制，信任传递使攻击率从1.10%飙至83.89%",
-          "scores": [0.60, 0.60, 0.45, 0.50],
+          "scores": [
+            0.6,
+            0.6,
+            0.45,
+            0.5
+          ],
           "status": "research"
         },
         {
           "id": "skillwiki",
           "name": "SkillWiki",
           "description": "将技能管理从算法优化定义为基础设施问题，S0-S7完整生命周期+Git风格审计治理闭环",
-          "scores": [0.50, 0.65, 0.35, 0.40],
+          "scores": [
+            0.5,
+            0.65,
+            0.35,
+            0.4
+          ],
           "status": "research"
         },
         {
           "id": "locate-and-judge",
           "name": "Locate-and-Judge",
           "description": "注意力信号定位恶意片段+零样本判定，三个市场全量扫描131个恶意技能，precision 83%",
-          "scores": [0.55, 0.75, 0.50, 0.45],
+          "scores": [
+            0.55,
+            0.75,
+            0.5,
+            0.45
+          ],
           "status": "research"
         },
         {
           "id": "skillspector",
           "name": "SkillSpector",
           "description": "NVIDIA开源Agent技能安全扫描器，68种漏洞17类别两阶段检测+MCP Server运行时护栏",
-          "scores": [0.70, 0.60, 0.65, 0.70],
+          "scores": [
+            0.7,
+            0.6,
+            0.65,
+            0.7
+          ],
           "status": "open-source"
         },
         {
           "id": "skillcenter",
           "name": "SkillCenter",
           "description": "21.7万条结构化技能覆盖24领域，SkillGate流水线自动化提取+来源可追溯+迭代校准，SQLite FTS5离线分发",
-          "scores": [0.70, 0.55, 0.60, 0.60],
+          "scores": [
+            0.7,
+            0.55,
+            0.6,
+            0.6
+          ],
           "status": "open-source"
         },
         {
           "id": "skillcorpus",
           "name": "SkillCorpus",
           "description": "开放SKILL.md生态聚合治理管道，82.1万原始文件经六阶段精炼为9.6万商用可分发技能，首在三个Benchmark两种Harness多骨架模型证明社区技能库稳定提升Agent表现",
-          "scores": [0.60, 0.80, 0.40, 0.45],
+          "scores": [
+            0.6,
+            0.8,
+            0.4,
+            0.45
+          ],
           "status": "academic"
+        },
+        {
+          "id": "sigleak",
+          "name": "SigLeak",
+          "description": "定义并实现Skill Leakage攻击，仅凭良性黑盒查询和启/禁技能成对轨迹对比，无标签无正确答案即从行为签名推断隐藏专有skill内容",
+          "scores": [
+            0.45,
+            0.7,
+            0.25,
+            0.3
+          ],
+          "status": "academic"
+        },
+        {
+          "id": "skillgate",
+          "name": "SkillGate",
+          "description": "部署在agent MCP传输层的安全代理，530模式正则预筛选+片段化LLM裁决混合管线，skill安装前拦截恶意文件，F1=0.817、误报1.13%、延迟818ms",
+          "scores": [
+            0.65,
+            0.7,
+            0.55,
+            0.55
+          ],
+          "status": "active"
         }
       ]
     }
@@ -1352,35 +1748,35 @@
       "id": "recall",
       "label": "Skill 召回",
       "maturityLevel": "growing",
-      "overallScore": 0.54,
+      "overallScore": 0.55,
       "status": "🟡 成长期"
     },
     {
       "id": "execution",
       "label": "Skill 执行",
       "maturityLevel": "growing",
-      "overallScore": 0.52,
+      "overallScore": 0.51,
       "status": "🟡 成长期"
     },
     {
       "id": "evaluation",
       "label": "Skill 评测",
       "maturityLevel": "growing",
-      "overallScore": 0.58,
+      "overallScore": 0.57,
       "status": "🟡 成长期"
     },
     {
       "id": "optimization",
       "label": "Skill 优化",
       "maturityLevel": "growing",
-      "overallScore": 0.54,
+      "overallScore": 0.53,
       "status": "🟡 成长期"
     },
     {
       "id": "management",
       "label": "Skill 管理",
       "maturityLevel": "growing",
-      "overallScore": 0.52,
+      "overallScore": 0.53,
       "status": "🟡 成长期"
     }
   ]
