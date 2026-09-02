@@ -348,6 +348,30 @@
             0.3
           ],
           "status": "research"
+        },
+        {
+          "id": "killer",
+          "name": "SKILLER",
+          "description": "SKILLER 是语言级强化学习框架：把文本 skill 当可优化策略、小模型 agent loop 当 envi...",
+          "scores": [
+            0.62,
+            0.8,
+            0.5,
+            0.48
+          ],
+          "status": "active"
+        },
+        {
+          "id": "search2skill",
+          "name": "Search2Skill",
+          "description": "Search2Skill 是一个搜索驱动的 skill 获取框架，让 agent 识别能力缺口、外部搜索补证据、蒸...",
+          "scores": [
+            0.58,
+            0.74,
+            0.48,
+            0.42
+          ],
+          "status": "research"
         }
       ]
     },
@@ -656,6 +680,102 @@
             0.45
           ],
           "status": "research"
+        },
+        {
+          "id": "caskg",
+          "name": "CaSKG",
+          "description": "CaSKG 把技能图构建形式化成有预算的边置信度校准问题，用反事实探针（移除/替换/倒序）估必要性/特异性/方向性...",
+          "scores": [
+            0.6,
+            0.78,
+            0.52,
+            0.48
+          ],
+          "status": "research"
+        },
+        {
+          "id": "emotion2skill",
+          "name": "Emotion2Skill",
+          "description": "Emotion2Skill 是用 LLM 内部情绪信号驱动技能选择与演化的框架：从残差流抽27 维情绪向量经 3 ...",
+          "scores": [
+            0.56,
+            0.8,
+            0.5,
+            0.46
+          ],
+          "status": "research"
+        },
+        {
+          "id": "hierarchicalskillretrieval",
+          "name": "HierarchicalSkillRetrieval",
+          "description": "HSR 是面向长程机器人操作任务的分层技能检索框架，用 LLM 把目标任务分解为技能子任务、按先验库估的技能可学性...",
+          "scores": [
+            0.58,
+            0.68,
+            0.52,
+            0.42
+          ],
+          "status": "research"
+        },
+        {
+          "id": "optimalskillselection",
+          "name": "OptimalSkillSelection",
+          "description": "把 LLM agent 的技能选择形式化为正则化子模最大化（预算约束下能力效益减 token 惩罚），BPS 算法...",
+          "scores": [
+            0.54,
+            0.78,
+            0.45,
+            0.38
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillgate2",
+          "name": "SkillGate",
+          "description": "SkillGate 是针对长程 agent 选技能决策的训练方法，先诊断出 outcome-only RL 下选择...",
+          "scores": [
+            0.58,
+            0.76,
+            0.5,
+            0.46
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillreason",
+          "name": "SkillReason",
+          "description": "SkillReason 是面向隐式用户请求的技能检索框架，用两阶段训练把 CoT 推理蒸馏进查询向量——Stage...",
+          "scores": [
+            0.58,
+            0.76,
+            0.48,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skilltrace",
+          "name": "SkillTrace",
+          "description": "SkillTrace 是一个可组合 skill 检索框架，把复杂查询-skill 库关系建模成 Query-Ski...",
+          "scores": [
+            0.58,
+            0.78,
+            0.5,
+            0.46
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skt",
+          "name": "SKT",
+          "description": "SKT 是一个三阶段验证数据合成管线，从 Agent Skill 造出可执行任务和忠实使用 skill 的轨迹做 ...",
+          "scores": [
+            0.62,
+            0.7,
+            0.52,
+            0.5
+          ],
+          "status": "research"
         }
       ]
     },
@@ -782,6 +902,30 @@
             0.75,
             0.35,
             0.3
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillaligner",
+          "name": "SkillAligner",
+          "description": "SkillAligner 是执行时技能适配框架，把检索到的技能当可改编草稿而非成品指令，执行前一次联合适配（任务接...",
+          "scores": [
+            0.56,
+            0.74,
+            0.48,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsentry",
+          "name": "SKILLSentry",
+          "description": "",
+          "scores": [
+            0.58,
+            0.72,
+            0.48,
+            0.42
           ],
           "status": "research"
         }
@@ -1032,6 +1176,114 @@
             0.4
           ],
           "status": "academic"
+        },
+        {
+          "id": "agenticcontinuouseval",
+          "name": "AgenticContinuousEval",
+          "description": "ACES 是 NVIDIA 提出的技能评测框架，把 agent 技能当可执行制品配对跑 with-skill/ba...",
+          "scores": [
+            0.66,
+            0.74,
+            0.55,
+            0.55
+          ],
+          "status": "active"
+        },
+        {
+          "id": "continualskillbench",
+          "name": "ContinualSkillBench",
+          "description": "ContinualSkillBench 是评估 agent 持续 skill 学习的动态基准：5 域×100 排序...",
+          "scores": [
+            0.56,
+            0.72,
+            0.45,
+            0.42
+          ],
+          "status": "research"
+        },
+        {
+          "id": "maliciousskillbench",
+          "name": "MaliciousSkillBench",
+          "description": "MaliciousSkillBench 是面向 Agent Skill 恶意检测的综合基准，整合 13 个公开源、...",
+          "scores": [
+            0.58,
+            0.66,
+            0.46,
+            0.44
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillconsist",
+          "name": "SkillConsist",
+          "description": "SkillConsist 是技能声明-实现不一致检测框架，把不一致形式化成双向行为图对齐：声明侧/实现侧各建四节点...",
+          "scores": [
+            0.54,
+            0.76,
+            0.44,
+            0.38
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skilleval",
+          "name": "SkillEval",
+          "description": "SkillEval 是文档级技能质量评估框架，把技能质量拆成四维七指标，从受控正负技能对在冻结 LLM hidde...",
+          "scores": [
+            0.56,
+            0.72,
+            0.44,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsafety",
+          "name": "SkillSafe-Bench",
+          "description": "SkillSafe-Bench 是技能合并 LLM 的自适应越狱鲁棒性基准：六基座证静态安全不预测自适应鲁棒性（Q...",
+          "scores": [
+            0.56,
+            0.76,
+            0.45,
+            0.4
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsmetric",
+          "name": "SkillsMetric",
+          "description": "SkillsMetric 是一个五阶段静态分析框架 + 16 攻击类型分类法，扫描 Agent Skill 包给加...",
+          "scores": [
+            0.6,
+            0.7,
+            0.48,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillsreusable",
+          "name": "SkillsReusable",
+          "description": "对 138,133 份公开 SKILL.md 的两层缺陷分类普查：91.8% 含缺陷、89.3% 违规范，主导是路...",
+          "scores": [
+            0.6,
+            0.66,
+            0.48,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skilltvbench",
+          "name": "SkillTV-Bench",
+          "description": "SkillTV-Bench 是一个 skill-aware 的轨迹验证基准（681 案跨 11 域），把 task...",
+          "scores": [
+            0.6,
+            0.74,
+            0.47,
+            0.46
+          ],
+          "status": "research"
         }
       ]
     },
@@ -1460,6 +1712,90 @@
             0.35
           ],
           "status": "research"
+        },
+        {
+          "id": "branch2skill",
+          "name": "Branch2Skill",
+          "description": "Branch2Skill 是从 MCTS 推理树蒸馏技能更新的方法：沿 elite path 多深度对比选定步骤与...",
+          "scores": [
+            0.58,
+            0.76,
+            0.5,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillforge2",
+          "name": "SkillForge",
+          "description": "SkillForge 是阿里高德提出的持续技能演化框架，让 RL agent 用显式 `<skill_call>`...",
+          "scores": [
+            0.6,
+            0.68,
+            0.48,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillhex",
+          "name": "SkillHEX",
+          "description": "SkillHEX 是测试时技能自进化框架，把贪心原地精炼改成\"假设驱动自验证产稠密证据 + 证据引导树搜索保替代路...",
+          "scores": [
+            0.58,
+            0.76,
+            0.48,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillprox",
+          "name": "SkillProx",
+          "description": "SkillProx 是技能自进化框架，借近端梯度的前向-后向分工：前向同批重跑实测门控诊断更新、后向冻结 leav...",
+          "scores": [
+            0.58,
+            0.72,
+            0.48,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "surrogateskill",
+          "name": "SurrogateSkill",
+          "description": "reSolve 是按任务、oracle-in-the-loop 的技能自演化框架，用 solve-and-repr...",
+          "scores": [
+            0.6,
+            0.76,
+            0.52,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "trace",
+          "name": "TRACE",
+          "description": "TRACE 是一个不改模型权重的自进化技能库框架，靠轨迹对比反推可迁移的操作级技能，把 LLM agent 在车载...",
+          "scores": [
+            0.62,
+            0.7,
+            0.55,
+            0.48
+          ],
+          "status": "research"
+        },
+        {
+          "id": "wikiskill",
+          "name": "WikiSkill",
+          "description": "WikiSkill 是把 agent 经验与可执行技能分离的框架，在轨迹和技能间插入持久 wiki 知识层，技能可...",
+          "scores": [
+            0.6,
+            0.76,
+            0.52,
+            0.45
+          ],
+          "status": "research"
         }
       ]
     },
@@ -1732,6 +2068,66 @@
             0.55
           ],
           "status": "active"
+        },
+        {
+          "id": "colluskill",
+          "name": "ColluSkill",
+          "description": "ColluSkill 是跨技能共谋攻击框架：把恶意意图拆成互赖子载荷嵌入独立技能，靠链规划+扫描器反馈迭代改写保链...",
+          "scores": [
+            0.56,
+            0.76,
+            0.45,
+            0.42
+          ],
+          "status": "research"
+        },
+        {
+          "id": "evoskillinjection",
+          "name": "EvoSkillInjection",
+          "description": "首个针对自演化 agent 自主技能生成与演化流水线的威胁模型 EvoSkill Injection，配套 SAR...",
+          "scores": [
+            0.52,
+            0.7,
+            0.42,
+            0.38
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skilljack",
+          "name": "SkillJack",
+          "description": "SkillJack 是首个针对自进化 agent experience-to-skill 流水线的攻击：攻击者只污...",
+          "scores": [
+            0.56,
+            0.74,
+            0.44,
+            0.45
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillshield",
+          "name": "SKILLSHIELD",
+          "description": "SKILLSHIELD 是面向 API-only 编码 agent 的系统提示词防御方法，把从攻击数据离线合成的安...",
+          "scores": [
+            0.58,
+            0.68,
+            0.46,
+            0.42
+          ],
+          "status": "research"
+        },
+        {
+          "id": "skillzip",
+          "name": "SkillZip",
+          "description": "SkillZip 把自演化智能体积累的技能形式化为类型化合同，用最小描述长度目标在硬覆盖约束下找最短忠实表示，不跑...",
+          "scores": [
+            0.6,
+            0.76,
+            0.46,
+            0.42
+          ],
+          "status": "research"
         }
       ]
     }
